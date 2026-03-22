@@ -319,9 +319,9 @@ hydro.ev.emit('messages.upsert', msg)
         const content = JSON.stringify(m.message)
         const isCmd = !!(body || "").startsWith(prefix)
         const from = m.key.remoteJid
-        const messagesD = body.slice(0).trim().split(/ +/).shift().toLowerCase()
-        const command = isCmd ? body.slice(prefix.length).trim().split(/ +/).shift().toLowerCase() : ""
-        const args = body.trim().split(/ +/).slice(1)
+        const messagesD = (body || "").slice(0).trim().split(/ +/).shift().toLowerCase()
+        const command = isCmd ? (body || "").slice(prefix.length).trim().split(/ +/).shift().toLowerCase() : ""
+        const args = (body || "").trim().split(/ +/).slice(1)
         const userDb = global?.db?.users?.[m.sender]
         const pushname =
   (userDb?.registered && userDb?.name)
