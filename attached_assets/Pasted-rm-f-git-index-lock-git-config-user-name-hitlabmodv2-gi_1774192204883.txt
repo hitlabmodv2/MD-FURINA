@@ -1,0 +1,78 @@
+rm -f .git/index.lock && git config user.name "hitlabmodv2" && git config user.email "hitlabmodv2@users.noreply.github.com" && git remote remove origin 2>/dev/null; git remote add origin https://hitlabmodv2:${GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/hitlabmodv2/MD-FURINA.git && git add -A && git commit -m "Update: welcome, goodbye, logging improvements" && git push -u origin main
+[main 7d57cd4] Update: welcome, goodbye, logging improvements
+ 2 files changed, 17 insertions(+), 3 deletions(-)
+Enumerating objects: 7220, done.
+Counting objects: 100% (7220/7220), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5254/5254), done.
+Writing objects: 100% (7220/7220), 17.88 MiB | 5.38 MiB/s, done.
+Total 7220 (delta 2175), reused 6766 (delta 1944), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2175/2175), done.
+remote: error: GH013: Repository rule violations found for refs/heads/main.
+remote: 
+remote: - GITHUB PUSH PROTECTION
+remote:   —————————————————————————————————————————
+remote:     Resolve the following violations before pushing again
+remote: 
+remote:     - Push cannot contain secrets
+remote: 
+remote:     
+remote:      (?) Learn how to resolve a blocked push
+remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push
+remote:     
+remote:     
+remote:       —— OpenAI API Key ————————————————————————————————————
+remote:        locations:
+remote:          - commit: d2d9ab196c78a7b22fbae2605bae30c2efb3f565
+remote:            path: settings.js:226
+remote:          - commit: 921673f406c3ad5c6278f5cff6604d81ee5999ef
+remote:            path: settings.js:226
+remote:          - commit: 2efac0038160b10557c2edf14e3b7802c9a6128c
+remote:            path: settings.js:226
+remote:     
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.
+remote:        https://github.com/hitlabmodv2/MD-FURINA/security/secret-scanning/unblock-secret/3BJ13Ue8C2zWHoFfeo9eydAPl6z
+remote:     
+remote: 
+remote: 
+To https://github.com/hitlabmodv2/MD-FURINA.git
+ ! [remote rejected] main -> main (push declined due to repository rule violations)
+error: failed to push some refs to 'https://github.com/hitlabmodv2/MD-FURINA.git'
+~/workspace$ git push -u origin main --force
+Enumerating objects: 7220, done.
+Counting objects: 100% (7220/7220), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5254/5254), done.
+Writing objects: 100% (7220/7220), 17.88 MiB | 5.38 MiB/s, done.
+Total 7220 (delta 2174), reused 6766 (delta 1944), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2174/2174), done.
+remote: error: GH013: Repository rule violations found for refs/heads/main.
+remote: 
+remote: - GITHUB PUSH PROTECTION
+remote:   —————————————————————————————————————————
+remote:     Resolve the following violations before pushing again
+remote: 
+remote:     - Push cannot contain secrets
+remote: 
+remote:     
+remote:      (?) Learn how to resolve a blocked push
+remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push
+remote:     
+remote:     
+remote:       —— OpenAI API Key ————————————————————————————————————
+remote:        locations:
+remote:          - commit: d2d9ab196c78a7b22fbae2605bae30c2efb3f565
+remote:            path: settings.js:226
+remote:          - commit: 921673f406c3ad5c6278f5cff6604d81ee5999ef
+remote:            path: settings.js:226
+remote:          - commit: 2efac0038160b10557c2edf14e3b7802c9a6128c
+remote:            path: settings.js:226
+remote:     
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.
+remote:        https://github.com/hitlabmodv2/MD-FURINA/security/secret-scanning/unblock-secret/3BJ13Ue8C2zWHoFfeo9eydAPl6z
+remote:     
+remote: 
+remote: 
+To https://github.com/hitlabmodv2/MD-FURINA.git
+ ! [remote rejected] main -> main (push declined due to repository rule violations)
+error: failed to push some refs to 'https://github.com/hitlabmodv2/MD-FURINA.git'

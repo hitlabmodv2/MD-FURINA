@@ -1,0 +1,12 @@
+{
+   "auto_welcomeMsg": true,
+   "auto_leaveMsg": true,
+   "auto_sholat": true,
+   "sholat_city": "Jakarta",
+   "sholat_country": "Indonesia",
+   "sholat_method": 11,
+   "auto_reply": false,
+   "auto_reply_text": "Halo! Bot sedang aktif. Ketik *menu* untuk melihat fitur yang tersedia. 🌊",
+   "auto_reply_groups_only": false,
+   "auto_reply_private_only": false
+}

@@ -1,0 +1,32 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "B2Z58uEr34kqX0_8d5sKd"
+uri = "file://realtime/subuh.png"
+type = "image"
+title = "🌅 Subuh - Langit Fajar dengan Masjid & Danau"
+
+[[outputs]]
+id = "XIs5gE5kliRK4_o-PnfPP"
+uri = "file://realtime/dzuhur.png"
+type = "image"
+title = "☀️ Dzuhur - Siang Terik dengan Masjid & Air"
+
+[[outputs]]
+id = "woufzoLpnk-t35oaNf6zQ"
+uri = "file://realtime/ashar.png"
+type = "image"
+title = "🌤️ Ashar - Sore Keemasan dengan Masjid & Danau"
+
+[[outputs]]
+id = "V48dteW-_-F6oOJ6nJZ1W"
+uri = "file://realtime/maghrib.png"
+type = "image"
+title = "🌇 Maghrib - Sunset Dramatis dengan Masjid & Danau"
+
+[[outputs]]
+id = "19tjQfadwyDAspvB_AQUU"
+uri = "file://realtime/isya.png"
+type = "image"
+title = "🌙 Isya - Malam Berbintang dengan Masjid Bercahaya"
