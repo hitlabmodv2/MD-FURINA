@@ -1,0 +1,60 @@
+[Welcome Error] Error: forbidden
+    at assertNodeErrorFree (/home/runner/workspace/node_modules/socketon/lib/WABinary/generic-utils.js:55:15)
+    at query (/home/runner/workspace/node_modules/socketon/lib/Socket/socket.js:170:48)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Object.groupMetadata (/home/runner/workspace/node_modules/socketon/lib/Socket/groups.js:28:24)
+    at module.exports.welcome (/home/runner/workspace/lib/welcome.js:53:22)
+    at EventEmitter.<anonymous> (/home/runner/workspace/index.js:934:13) {
+  data: 403,
+  isBoom: true,
+  isServer: true,
+  output: {
+    statusCode: 500,
+    payload: {
+      statusCode: 500,
+      error: 'Internal Server Error',
+      message: 'An internal server error occurred'
+    },
+    headers: {}
+  }
+}
+[Welcome Error] Error: forbidden
+    at assertNodeErrorFree (/home/runner/workspace/node_modules/socketon/lib/WABinary/generic-utils.js:55:15)
+    at query (/home/runner/workspace/node_modules/socketon/lib/Socket/socket.js:170:48)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Object.groupMetadata (/home/runner/workspace/node_modules/socketon/lib/Socket/groups.js:28:24)
+    at module.exports.welcome (/home/runner/workspace/lib/welcome.js:53:22)
+    at EventEmitter.<anonymous> (/home/runner/workspace/index.js:934:13) {
+  data: 403,
+  isBoom: true,
+  isServer: true,
+  output: {
+    statusCode: 500,
+    payload: {
+      statusCode: 500,
+      error: 'Internal Server Error',
+      message: 'An internal server error occurred'
+    },
+    headers: {}
+  }
+}
+[Welcome Error] Error: forbidden
+    at assertNodeErrorFree (/home/runner/workspace/node_modules/socketon/lib/WABinary/generic-utils.js:55:15)
+    at query (/home/runner/workspace/node_modules/socketon/lib/Socket/socket.js:170:48)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Object.groupMetadata (/home/runner/workspace/node_modules/socketon/lib/Socket/groups.js:28:24)
+    at module.exports.welcome (/home/runner/workspace/lib/welcome.js:53:22)
+    at EventEmitter.<anonymous> (/home/runner/workspace/index.js:934:13) {
+  data: 403,
+  isBoom: true,
+  isServer: true,
+  output: {
+    statusCode: 500,
+    payload: {
+      statusCode: 500,
+      error: 'Internal Server Error',
+      message: 'An internal server error occurred'
+    },
+    headers: {}
+  }
+}
