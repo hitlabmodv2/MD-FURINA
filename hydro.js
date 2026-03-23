@@ -408,7 +408,7 @@ hydro.ev.emit('messages.upsert', msg)
     const numberQuery = q.replace(new RegExp('[()+-/ +/]', 'gi'), '') + '@s.whatsapp.net'
         const usernya = mentionByReply ? mentionByReply : mentionByTag[0]
         const Input = mentionByTag[0] ? mentionByTag[0] : mentionByReply ? mentionByReply : q ? numberQuery : false
-    	const isEval = body.startsWith('=>')
+    	const isEval = (body || '').startsWith('=>')
       const isAutoAiGc = m.isGroup ? openaigc.includes(m.chat) : true
       const IsHydroChat = m.isGroup ? ChatHydro.includes(m.chat) : true
       const shouldExit = true
@@ -2684,10 +2684,10 @@ ${themeemoji} Title: ${result.title}`;
 
 }
 //=========================================\\
-if (m.isGroup && isAlreadyResponList(m.chat, body.toLowerCase(), db_respon_list)) {
-var get_data_respon = getDataResponList(m.chat, body.toLowerCase(), db_respon_list)
+if (m.isGroup && isAlreadyResponList(m.chat, (body || "").toLowerCase(), db_respon_list)) {
+var get_data_respon = getDataResponList(m.chat, (body || "").toLowerCase(), db_respon_list)
 if (get_data_respon.isImage === false) {
-hydro.sendMessage(m.chat, { text: sendResponList(m.chat, body.toLowerCase(), db_respon_list) }, {
+hydro.sendMessage(m.chat, { text: sendResponList(m.chat, (body || "").toLowerCase(), db_respon_list) }, {
 quoted: m
 })
 } else {
@@ -3005,7 +3005,7 @@ kice = m.sender
 hydro.sendMessage(from, {text:`\`\`\`「 Tautan Terdeteksi 」\`\`\`\n\n@${m.sender.split("@")[0]} telah mengirimkan tautan dan berhasil dihapus`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
 } else {
 }
-if (m.isGroup && nttoxic.includes(m.chat) && badwords.some(bw => body.toLowerCase().includes(bw))) {
+if (m.isGroup && nttoxic.includes(m.chat) && badwords.some(bw => (body || "").toLowerCase().includes(bw))) {
     try {
         if (isAdmins) return
         if (Ahmad) return  
@@ -35331,7 +35331,7 @@ case 'awesomecheck':
 case 'lovelycheck':
   case 'uglycheck':
 if (!m.isGroup) return replytolak(mess.only.group)
-const cex = body.slice(0)
+const cex = (body || "").slice(0)
 const cek1 = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 const cek2 = cek1[Math.floor(Math.random() * cek1.length)]
 if (mentionByReply) {
@@ -37550,7 +37550,7 @@ case 'greatcheck':
 case 'evilcheck':case 'dogcheck':
 case 'coolcheck':
 case 'waifucheck':
-cantik = body.slice(1)
+cantik = (body || "").slice(1)
 const okebnh1 =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 const xeonkak = okebnh1[Math.floor(Math.random() * okebnh1.length)]
 hydro.sendMessage(m.chat, { text: xeonkak }, { quoted: m })
