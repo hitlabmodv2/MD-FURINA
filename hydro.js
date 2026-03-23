@@ -2274,7 +2274,7 @@ for (let [sholat, waktu] of Object.entries(jadwalSholat)) {
                         }
                     }, {
                         quoted: m,
-                        mentions: participants.map(a => a.id)
+                        mentions: (Array.isArray(participants) ? participants : []).map(a => a.id)
                     }),
             setTimeout(async () => {
                 delete hydro.autoshalat[m.chat]
@@ -16041,7 +16041,7 @@ if (!m.isGroup) return replytolak(mess.only.group)
 if (!isAdmins && !Ahmad) return reply(mess.only.admin)
 if (!isBotAdmins) return replytolak(mess.only.badmin)
                if (!m.quoted) return replyhydro(`Reply message with caption ${prefix + command}`)
-               hydro.sendMessage(m.chat, { forward: m.quoted.fakeObj, mentions: participants.map(a => a.id) })
+               hydro.sendMessage(m.chat, { forward: m.quoted.fakeObj, mentions: (Array.isArray(participants) ? participants : []).map(a => a.id) })
                }
                break
 
@@ -16057,7 +16057,7 @@ let teks = `╚»˙·٠${themeemoji}●♥ Tag All ♥●${themeemoji}٠·˙«�
 for (let mem of participants) {
 teks += `${themeemoji} @${mem.id.split('@')[0]}\n`
 }
-hydro.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
+hydro.sendMessage(m.chat, { text: teks, mentions: (Array.isArray(participants) ? participants : []).map(a => a.id) }, { quoted: m })
 }
 break
 case 'ebinary': {
