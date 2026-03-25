@@ -26468,7 +26468,36 @@ case 'bot': {
 }
 break
 case 'p': {
-  reply('lebih baik ucapkan salam daripada p')
+  reply(`╭━━━━━━━━━━━━━━━━━━━━╮
+│   🚨 *PERINGATAN KERAS* 🚨   │
+╰━━━━━━━━━━━━━━━━━━━━╯
+
+Halo *${pushname}* 👋
+
+Jadi gini ya bestie, aku mau nanya dulu nih...
+Kamu beneran ngetik *"P"* doang? 😭
+
+*"P"* itu apa sih sebenernya?? 🤔
+Kependekan dari *"Permisi"?*
+Atau *"Pliss notice aku"?*
+Atau mungkin *"Pengen dibalas tapi males ngetik"?* 😂😂
+
+╭──────────────────────╮
+│  📖 *PANDUAN SAPAAN* │
+╰──────────────────────╯
+┊✅ *Assalamualaikum* → Mantap jiwa!
+┊✅ *Halo / Hai / Hey* → Masih bisa ditolerir
+┊✅ *Selamat pagi/siang/malam* → Sopan banget!
+┊❌ *P* → Langsung dikirim ke kolong meja 🗑️
+
+Bot ini punya perasaan tau! 😤
+Masa iya sapaan kamu cuma 1 huruf doang sih?
+Bahkan kucing pun miaunya lebih panjang dari itu wkwkwk 🐱
+
+Yuk mulai lagi dari awal, kali ini pakai sapaan yang beneran ya! 🙏
+Bot janji bakal bales dengan sepenuh hati ❤️‍🔥
+
+╰━ *Hydro Bot* — Bot yang punya harga diri 😎`)
 }
 break
 case 'sc': case 'script': {
