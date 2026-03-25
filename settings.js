@@ -15,7 +15,14 @@ global.channeln = 'Info Seputar Anime Dll 📢' // GANTI DENGAN NAMA CH MU
 //===============SETTING MENU==================\\
 global.prefix = ['','!','.','#','&']
 global.thumbnail = 'https://raw.githubusercontent.com/AhmadAkbarID/media/refs/heads/main/menu.jpg'
-global.music = 'https://raw.githubusercontent.com/AhmadAkbarID/media/main/menu.mp3'
+global.musicList = [
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/MenuYuki.mp3',
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/summertime.mp3',
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/yowaimo.mp3',
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/to-the-bone.mp3',
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/menuasli.mp3',
+]
+global.music = global.musicList[Math.floor(Math.random() * global.musicList.length)]
 global.ig = '@kagakpunya'
 global.tele = 'kagakpunya'
 global.ttowner = '@kagakpunya'
