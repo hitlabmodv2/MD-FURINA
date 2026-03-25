@@ -20540,6 +20540,7 @@ break
 //=========================================\\
 case 'ceksesi': 
   case 'ceksession': {
+if (!Ahmad) return replytolak(mess.only.owner);
 const sessionFolder2 = './' + (global.sessionName || 'session');
 if (!fs.existsSync(sessionFolder2)) {
   return replyhydro('❌ Folder session tidak ditemukan: ' + sessionFolder2);
@@ -20581,6 +20582,7 @@ break
 case 'delsesi': 
   case 'clearsession': 
   case 'clearsesi': {
+if (!Ahmad) return replytolak(mess.only.owner);
 const sessionFolder = './' + (global.sessionName || 'session');
 if (!fs.existsSync(sessionFolder)) {
   return replyhydro('❌ Folder session tidak ditemukan: ' + sessionFolder);
