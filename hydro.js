@@ -3642,19 +3642,7 @@ if (isCmd && !m.key.fromMe) {
     
     if ((!user || !user.registered) && !Ahmad && !allowWithoutRegister.includes(command)) {
         await hydro.sendMessage(m.chat, { react: { text: '🚫', key: m.key } })
-        if (!quoted) return hydro.sendMessage(m.chat, {
-            text: `╭───────────────────────────╮\n│   🚫 *AKSES DITOLAK* 🚫   │\n╰───────────────────────────╯\n\n❌ Hei *${pushname}*, kamu belum terdaftar\nsebagai pengguna resmi bot ini.\n\n┌───────────────────────────┐\n│     📋 *CARA DAFTAR*      │\n├───────────────────────────┤\n│ Ketik : *${prefix}daftar nama,umur*\n│ Contoh: *${prefix}daftar Budi,17*\n└───────────────────────────┘\n\n🛡️ *Informasi Akses:*\n• Fitur umum → Wajib daftar dulu\n• Fitur khusus → Hanya Owner & Nomor Bot\n• Setelah daftar → Semua fitur terbuka!\n\n💡 _Daftar sekarang dan nikmati seluruh\nfitur bot secara gratis dan penuh!_`,
-            contextInfo: {
-                externalAdReply: {
-                    title: "🚫 Belum Terdaftar",
-                    body: `Ketik ${prefix}daftar nama,umur untuk mendaftar`,
-                    thumbnailUrl: global.thumbnail,
-                    mediaType: 1,
-                    showAdAttribution: false,
-                    renderLargerThumbnail: true
-                }
-            }
-        }, { quoted: m })
+        if (!quoted) return replytolak(`╭───────────────────────────╮\n│   🚫 *AKSES DITOLAK* 🚫   │\n╰───────────────────────────╯\n\n❌ Hei *${pushname}*, kamu belum terdaftar\nsebagai pengguna resmi bot ini.\n\n┌───────────────────────────┐\n│     📋 *CARA DAFTAR*      │\n├───────────────────────────┤\n│ Ketik : *${prefix}daftar nama,umur*\n│ Contoh: *${prefix}daftar Budi,17*\n└───────────────────────────┘\n\n🛡️ *Informasi Akses:*\n• Fitur umum → Wajib daftar dulu\n• Fitur khusus → Hanya Owner & Nomor Bot\n• Setelah daftar → Semua fitur terbuka!\n\n💡 _Daftar sekarang dan nikmati seluruh\nfitur bot secara gratis dan penuh!_`)
         return hydro.sendMessage(m.chat, {
             text: `❌ *${pushname}*, kamu belum terdaftar!\nKetik *${prefix}daftar nama,umur* untuk mendaftar.\nContoh: *${prefix}daftar Budi,17*`
         }, { quoted: m })
@@ -11697,11 +11685,11 @@ case 'daftar': {
     const umur = parseInt(umurStr)
     if (umur < 10) {
         await hydro.sendMessage(m.chat, { react: { text: '🤔', key: m.key } })
-        return reply(`🤔 *Masa iya umur kamu cuma ${umur} tahun?*\n\nBot ini untuk pengguna minimal *10 tahun* ya!`)
+        return replytolak(`🤔 *Masa iya umur kamu cuma ${umur} tahun?*\n\nBot ini untuk pengguna minimal *10 tahun* ya!`)
     }
     if (umur > 60) {
         await hydro.sendMessage(m.chat, { react: { text: '😂', key: m.key } })
-        return reply(`😂 *Wah, umur ${umur} tahun?*\n\nBot ini untuk pengguna maksimal *60 tahun* ya kak! 👴`)
+        return replytolak(`😂 *Wah, umur ${umur} tahun?*\n\nBot ini untuk pengguna maksimal *60 tahun* ya kak! 👴`)
     }
 
     const kodeReg = generateSN(8)
