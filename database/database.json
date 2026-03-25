@@ -6656,7 +6656,21 @@
       "lastrampok": 0,
       "lastnebang": 0,
       "lastweekly": 0,
-      "lastmonthly": 0
+      "lastmonthly": 0,
+      "petfood": 0,
+      "botol": 0,
+      "kardus": 0,
+      "kaleng": 0,
+      "gelas": 0,
+      "plastik": 0,
+      "panda": 0,
+      "babihutan": 0,
+      "makanan": 0,
+      "bibitanggur": 0,
+      "bibitpisang": 0,
+      "bibitapel": 0,
+      "bibitmangga": 0,
+      "bibitjeruk": 0
     },
     "6281353726941@s.whatsapp.net": {
       "afkTime": -1,
@@ -8496,9 +8510,9 @@
     "120363192554714254@g.us": {
       "totalChat": {
         "6289667923162@s.whatsapp.net": 56,
-        "120363192554714254@g.us": 84,
+        "120363192554714254@g.us": 87,
         "97968623505429@lid": 1,
-        "6289688206739@s.whatsapp.net": 10
+        "6289688206739@s.whatsapp.net": 13
       }
     },
     "120363421910941096@g.us": {
@@ -8509,7 +8523,7 @@
     "120363407152523539@g.us": {
       "totalChat": {
         "120363407152523539@g.us": 4,
-        "6289667923162@s.whatsapp.net": 32
+        "6289667923162@s.whatsapp.net": 42
       }
     },
     "120363407696889754@newsletter": {
@@ -8519,7 +8533,7 @@
     },
     "120363312297133690@newsletter": {
       "totalChat": {
-        "120363312297133690@newsletter": 1
+        "120363312297133690@newsletter": 2
       }
     },
     "120363380388430434@newsletter": {

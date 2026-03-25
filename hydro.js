@@ -3992,35 +3992,36 @@ case 'menu': {
   hydro.sendMessage(m.chat, { react: { text: `🌊`, key: m.key }})
 
 let teks = (`
-╭━━━〔 🌊 *${botname}* 〕━━━╮
+╭━━━━━━━━━━━━━━━━━━━━━━━━━━╮
+     🌊 *${botname}* 🌊
+╰━━━━━━━━━━━━━━━━━━━━━━━━━━╯
 
-👤 *User*   : ${pushname}
-👑 *Rank*   : ${Ahmad ? 'Pemilik 👨‍💻' : isOwn ? 'Owner Panel' : isPT ? 'PT Panel' : isAdminP ? 'Admin Panel' : isReseller ? 'Reseller Panel' : isPrem ? '⭐ Premium' : '🆓 Free User'}
-👥 *Total*  : ${Object.keys(global.db.users).length} pengguna
-⭐ *Rating* : ${rata2}/10 dari ${semuaRating.length} pengguna
+👤 *User*    : ${pushname}
+👑 *Rank*    : ${Ahmad ? 'Pemilik 👨‍💻' : isOwn ? 'Owner Panel' : isPT ? 'PT Panel' : isAdminP ? 'Admin Panel' : isReseller ? 'Reseller Panel' : isPrem ? '⭐ Premium' : '🆓 Free User'}
+👥 *Total*   : ${Object.keys(global.db.users).length} pengguna
+⭐ *Rating*  : ${rata2}/10 dari ${semuaRating.length} pengguna
 
-┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🤖 *Bot*   : ${botname}
-⚒️ *Fitur* : ${HydroFitur()} fitur
-⏱️ *Aktif* : ${runtime(process.uptime())}
-👾 *Versi* : v${versiSc}
+🤖 *Bot*     : ${botname}
+⚒️  *Fitur*   : ${HydroFitur()} fitur
+⏱️  *Aktif*   : ${runtime(process.uptime())}
+👾 *Versi*   : v${versiSc}
 
-┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🪀 *WA*       : wa.me/${ownernomer}
-🌐 *Panel*    : zanspiwptero.shoppanel.my.id
-📨 *Telegram* : t.me/${tele}
-📸 *IG*       : instagram.com/${ig}
+🪀 *WA*      : wa.me/${ownernomer}
+🌐 *Panel*   : zanspiwptero.shoppanel.my.id
+📨 *TG*      : t.me/${tele}
+📸 *IG*      : instagram.com/${ig}
 
-┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-💬 _"Kami terus berinovasi untuk memberikan_
-_pengalaman terbaik dalam setiap interaksi."_
+💬 _"Kami terus berinovasi untuk_
+_memberikan pengalaman terbaik!"_ ✨
 
-╰━━━━━━━━━━━━━━━━━━━━╯
 🚀 *Powered By ${botname}*
-`)
+`))
 
 const bet = {
   title: "ʟɪsᴛ ᴍᴇɴᴜ",
