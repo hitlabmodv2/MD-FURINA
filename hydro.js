@@ -765,7 +765,7 @@ if (isCmd && command && prefix !== "") {
     }
 }
 
-if (isCmd && !isUser) {
+if (isCmd && prefix !== '' && !isUser) {
 hydroverifikasiuser.push(sender)
 fs.writeFileSync('./database/user.json', JSON.stringify(hydroverifikasiuser, null, 2))
 }
@@ -3655,7 +3655,7 @@ let msg = {
 hydro.ev.emit('messages.upsert', msg)
 }
  
-if (isCmd && !m.key.fromMe) {
+if (isCmd && prefix !== '' && !m.key.fromMe) {
     const user = global.db.users[m.sender]
     const allowWithoutRegister = ['daftar']
     
