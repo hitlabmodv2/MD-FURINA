@@ -43,7 +43,11 @@ global.musicList = [
   'https://github.com/FahriAdison/Base-Sound/raw/main/sound/sound11.mp3',
   'https://github.com/FahriAdison/Base-Sound/raw/main/sound/sound12.mp3',
 ]
-global.music = global.musicList[Math.floor(Math.random() * global.musicList.length)]
+Object.defineProperty(global, 'music', {
+  get: () => global.musicList[Math.floor(Math.random() * global.musicList.length)],
+  configurable: true,
+  enumerable: true
+})
 global.ig = '@kagakpunya'
 global.tele = 'kagakpunya'
 global.ttowner = '@kagakpunya'
