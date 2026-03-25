@@ -1,0 +1,28 @@
+ // Anime / Japanese themed
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/MenuYuki.mp3',      // 142KB - anime bot BGM
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/summertime.mp3',    // 107KB - Summertime (Cinnamons)
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/yowaimo.mp3',       // 50KB  - anime
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/nande-nande.mp3',   // 113KB - Japanese anime
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/yamete.mp3',        // 42KB  - anime JP
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/karna-lo-wibu.mp3', // 45KB  - anime wibu
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/to-the-bone.mp3',   // 57KB  - anime community
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/menuasli.mp3',      // 61KB  - menu music
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/beat-box2.mp3',     // 129KB - beats
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/bidadari.mp3',      // 139KB - nice song
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/ku-coba.mp3',       // 189KB - nice song
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/gitar.mp3',         // 80KB  - guitar
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/hampa.mp3',         // 327KB - song
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/dengan-mu.mp3',     // 236KB - song
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/bahagia-aku.mp3',   // 292KB - song
+  'https://github.com/FahriAdison/Base-Sound/raw/main/audio/pak-sapardi.mp3',   // 213KB - song
+  // Sound tracks (full songs - tested ✅)
+  'https://github.com/FahriAdison/Base-Sound/raw/main/sound/sound1.mp3',        // 647KB
+  'https://github.com/FahriAdison/Base-Sound/raw/main/sound/sound2.mp3',        // 209KB
+  'https://github.com/FahriAdison/Base-Sound/raw/main/sound/sound3.mp3',        // 343KB
+  'https://github.com/FahriAdison/Base-Sound/raw/main/sound/sound5.mp3',        // 236KB
+  'https://github.com/FahriAdison/Base-Sound/raw/main/sound/sound6.mp3',        // 669KB
+  'https://github.com/FahriAdison/Base-Sound/raw/main/sound/sound7.mp3',        // 550KB
+  'https://github.com/FahriAdison/Base-Sound/raw/main/sound/sound8.mp3',        // 148KB
+  'https://github.com/FahriAdison/Base-Sound/raw/main/sound/sound10.mp3',       // 373KB
+  'https://github.com/FahriAdison/Base-Sound/raw/main/sound/sound11.mp3',       // 274KB
+  'https://github.com/FahriAdison/Base-Sound/raw/main/sound/sound12.mp3',       // 222KB
