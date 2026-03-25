@@ -4359,7 +4359,21 @@
       "lastrampok": 0,
       "lastnebang": 0,
       "lastweekly": 0,
-      "lastmonthly": 0
+      "lastmonthly": 0,
+      "petfood": 0,
+      "botol": 0,
+      "kardus": 0,
+      "kaleng": 0,
+      "gelas": 0,
+      "plastik": 0,
+      "panda": 0,
+      "babihutan": 0,
+      "makanan": 0,
+      "bibitanggur": 0,
+      "bibitpisang": 0,
+      "bibitapel": 0,
+      "bibitmangga": 0,
+      "bibitjeruk": 0
     },
     "6282272288038@s.whatsapp.net": {
       "afkTime": -1,
@@ -9743,7 +9757,7 @@
       "totalChat": {
         "6281295543915@s.whatsapp.net": 17,
         "6289504802678@s.whatsapp.net": 6,
-        "6289667923162@s.whatsapp.net": 81,
+        "6289667923162@s.whatsapp.net": 82,
         "6285956660403@s.whatsapp.net": 4,
         "6282268990535@s.whatsapp.net": 2,
         "62882007407746@s.whatsapp.net": 1,
@@ -9758,7 +9772,7 @@
         "6281358899877@s.whatsapp.net": 1,
         "6287793006207@s.whatsapp.net": 1,
         "6282393354095@s.whatsapp.net": 2,
-        "status@broadcast": 4,
+        "status@broadcast": 6,
         "6285136314199@s.whatsapp.net": 5,
         "6282189076619@s.whatsapp.net": 4,
         "6289681008411@s.whatsapp.net": 1,
@@ -9768,7 +9782,7 @@
         "6285757550727@s.whatsapp.net": 1,
         "6285150762138@s.whatsapp.net": 5,
         "6282258833301@s.whatsapp.net": 1,
-        "6289654837567@s.whatsapp.net": 1,
+        "6289654837567@s.whatsapp.net": 2,
         "6282272288038@s.whatsapp.net": 2,
         "6282136282264@s.whatsapp.net": 1,
         "6285876248925@s.whatsapp.net": 1,
@@ -9864,14 +9878,14 @@
     },
     "120363421910941096@g.us": {
       "totalChat": {
-        "120363421910941096@g.us": 11,
-        "60128595945@s.whatsapp.net": 117
+        "120363421910941096@g.us": 13,
+        "60128595945@s.whatsapp.net": 118
       }
     },
     "120363407152523539@g.us": {
       "totalChat": {
         "120363407152523539@g.us": 4,
-        "6289667923162@s.whatsapp.net": 130
+        "6289667923162@s.whatsapp.net": 131
       }
     },
     "120363407696889754@newsletter": {

@@ -11,15 +11,15 @@ global.autosahur = false // auto sahur (true to on, false to off)
 
 //===============SETTING MENU==================\\
 global.channel = '120363312297133690@newsletter' // GANTI DENGAN ID CHMU KALO ADA
-global.channeln = 'HYDRO COMMUNITY 📢📦' // GANTI DENGAN NAMA CH MU
+global.channeln = 'Info Seputar Anime Dll 📢' // GANTI DENGAN NAMA CH MU
 //===============SETTING MENU==================\\
 global.prefix = ['','!','.','#','&']
 global.thumbnail = 'https://raw.githubusercontent.com/AhmadAkbarID/media/refs/heads/main/menu.jpg'
 global.music = 'https://raw.githubusercontent.com/AhmadAkbarID/media/main/menu.mp3'
-global.ig = '@focabar'
-global.tele = 'miminhydro'
-global.ttowner = '@focabar'
-global.ownername = 'FocaBars'
+global.ig = '@kagakpunya'
+global.tele = 'kagakpunya'
+global.ttowner = '@kagakpunya'
+global.ownername = 'BangWily'
 global.owner = ['6289688206739'] // SETTING JUGA DI FOLDER DATABASE 
 global.ownernomer = '6289667923162'
 global.socialm = 'GitHub: -'
@@ -56,7 +56,7 @@ global.ownername = 'WilyKun'
 global.ownerNumber = ["6289667923162@s.whatsapp.net"]
 global.ownerweb = ""
 global.websitex = ""
-global.wagc = "https://chat.whatsapp.com/FvSBEz1UezQ4G7Xwfrr9sF"
+global.wagc = "https://chat.whatsapp.com/FnfatV8TlOZEMwLlLoDCRp?mode=gi_t"
 global.saluran = "https://whatsapp.com/channel/0029VaiyhS37IUYSuDJoJj1L"
 global.themeemoji = '🏞️'
 global.wm = "Asisten WilyKun ||| WhatsApps Bots"
