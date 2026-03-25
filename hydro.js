@@ -256,21 +256,29 @@ settings: {},
 }
 // read database
 let tebaklagu = []
+let tebaklagu_msg = {}
 let _family100 = []
 let kuismath = []
 let tebakgambar = []
 let tebakkata = []
 let transactionDetails = {};
 let caklontong = []
+let caklontong_msg = {}
 let caklontong_desk = []
 let tebakkalimat = []
 let tebaklirik = []
 let tebaktebakan = []
+let tebaktebakan_msg = {}
 let tebakbendera = []
+let tebakbendera_msg = {}
 let tebakbendera2 = []
+let tebakbendera2_msg = {}
 let tebakkabupaten = []
+let tebakkabupaten_msg = {}
 let tebakkimia = []
+let tebakkimia_msg = {}
 let tebakasahotak = []
+let tebakasahotak_msg = {}
 let tebaksiapakahaku = []
 let tebaksusunkata = []
 let tebaktekateki = []
@@ -1079,7 +1087,7 @@ async function sendhydroMessage(chatId, message, options = {}){
     return await hydro.relayMessage(chatId, generate.message, { messageId: generate.key.id })
 }
 
-const replyhydro = (teks) => {
+const replyhydro = (teks, quotedMsg) => {
 hydro.sendMessage(m.chat,
 { text: teks,
 contextInfo:{
@@ -1098,7 +1106,7 @@ forwardedNewsletterMessageInfo: {
 "previewType": "VIDEO",
 "thumbnailUrl": 'https://i.ibb.co.com/TqWTGXVM/474091701-979544940732791-1475207296815939677-n.jpg',
 "sourceUrl": 'https://wa.me/6289688206739'}}},
-{ quoted: m})
+{ quoted: quotedMsg || m})
 }
 
 const replytolak = (teks) => {
@@ -1124,7 +1132,7 @@ forwardedNewsletterMessageInfo: {
 { quoted: m})
 }
 
-const reply = (teks) => {
+const reply = (teks, quotedMsg) => {
 hydro.sendMessage(m.chat,
 { text: teks,
 contextInfo:{
@@ -1144,7 +1152,34 @@ forwardedNewsletterMessageInfo: {
 "previewType": "VIDEO",
 "thumbnailUrl": 'https://i.ibb.co.com/TqWTGXVM/474091701-979544940732791-1475207296815939677-n.jpg',
 "sourceUrl": `https://wa.me/${global.ownernomer}`}}},
-{ quoted: m})
+{ quoted: quotedMsg || m})
+}
+// === Cek game grup/user aktif ===
+const activeGroupGame = (chatId) => {
+  if (hydro.tebakkata?.[chatId]) return 'Tebak Kata'
+  if (hydro.tebakgambar?.[chatId]) return 'Tebak Gambar'
+  if (hydro.tekateki?.[chatId]) return 'Teka-Teki'
+  if (hydro.siapaaku?.[chatId]) return 'Siapa Aku'
+  if (hydro.susunkata?.[chatId]) return 'Susun Kata'
+  if (hydro.tebaklirik?.[chatId]) return 'Tebak Lirik'
+  if (hydro.tebaksurah?.[chatId]) return 'Tebak Surah'
+  if (hydro.tebaklogo?.[chatId]) return 'Tebak Logo'
+  if (hydro.game?.[chatId]) return 'Tebak Game'
+  if (hydro.family100?.[chatId]) return 'Family 100'
+  if (hydro.lengkapikalimat?.[chatId]) return 'Lengkapi Kalimat'
+  return null
+}
+const activeUserGame = (sKey, sJid) => {
+  if (tebaklagu?.[sKey]) return 'Tebak Lagu'
+  if (caklontong?.[sKey]) return 'Cak Lontong'
+  if (tebaktebakan?.[sKey]) return 'Tebak Tebakan'
+  if (tebakbendera?.[sKey]) return 'Tebak Bendera'
+  if (tebakbendera2?.[sKey]) return 'Tebak Bendera V2'
+  if (tebakkabupaten?.[sKey]) return 'Tebak Kabupaten'
+  if (tebakkimia?.[sKey]) return 'Tebak Kimia'
+  if (tebakasahotak?.[sKey]) return 'Asah Otak'
+  if (tebakanml?.[sJid]) return 'Tebak Anime ML'
+  return null
 }
 const isUrl = (url) => {
     return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
@@ -21042,6 +21077,7 @@ case 'tebakgambar': {
 let timeout = 60000
 let id = m.chat
 if (id in hydro.tebakkata) return replyhydro("Masih Ada Sesi Yang Belum Diselesaikan!")
+  { let _ag = activeGroupGame(id); if (_ag) return replyhydro(`⚠️ Ada game *${_ag}* yang sedang aktif di grup ini! Selesaikan dulu atau ketik *nyerah*.`) }
 async function tebakgambar() {
  let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakgambar.json')
  let result = anu[Math.floor(Math.random() * anu.length)]
@@ -21175,6 +21211,7 @@ case 'family100': {
   let winScore = 10000
   let id = m.chat
   if (id in hydro.family100) return replyhydro('Masih Ada Sesi Yang Belum Diselesaikan!')
+  { let _ag = activeGroupGame(id); if (_ag) return replyhydro(`⚠️ Ada game *${_ag}* yang sedang aktif di grup ini! Selesaikan dulu atau ketik *nyerah*.`) }
 
   let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')).json()
   let json = src[Math.floor(Math.random() * src.length)]
@@ -21220,6 +21257,7 @@ hydro.tebaksurah = hydro.tebaksurah ? hydro.tebaksurah : {}
     let id = m.chat
     let users = global.db.users[m.sender]
             if (!isGroup) return reply('❌ Hanya bisa digunakan di grup!')
+  { let _ag = activeGroupGame(id); if (_ag) return replyhydro(`⚠️ Ada game *${_ag}* yang sedang aktif di grup ini! Selesaikan dulu atau ketik *nyerah*.`) }
             let timeout = 120000
             let poin = 4999
             let ranSurah = Math.floor(Math.random() * 6236) + 1 // Total 6236 ayat
@@ -21276,6 +21314,9 @@ Tipe: ${json.surah.revelationType}
 break
 case 'tebaklogo': {
     if (!m.isGroup) return replytolak('❌ Hanya bisa digunakan di grup!')
+    let id = m.chat
+    if (hydro.tebaklogo?.[id]) return replyhydro('Masih Ada Sesi Yang Belum Diselesaikan!')
+  { let _ag = activeGroupGame(id); if (_ag) return replyhydro(`⚠️ Ada game *${_ag}* yang sedang aktif di grup ini! Selesaikan dulu atau ketik *nyerah*.`) }
     let timeout = 60000 // Waktu 60 detik
     let src = JSON.parse(fs.readFileSync('./database/tebaklogo.json')) // Load data soal
     let json = src[Math.floor(Math.random() * src.length)] // Pilih soal acak
@@ -21313,6 +21354,9 @@ Ketik *nyerah* untuk menyerah
 break
 case 'tebakgame': {
     if (!m.isGroup) return replytolak('❌ Hanya bisa digunakan di grup!')
+    let id = m.chat
+    if (hydro.game?.[id]) return replyhydro('Masih Ada Sesi Yang Belum Diselesaikan!')
+  { let _ag = activeGroupGame(id); if (_ag) return replyhydro(`⚠️ Ada game *${_ag}* yang sedang aktif di grup ini! Selesaikan dulu atau ketik *nyerah*.`) }
     let timeout = 120000 // Waktu 120 detik
     let poin = 4999
     let src = JSON.parse(fs.readFileSync('./database/tebakgame.json')) // Load data soal
