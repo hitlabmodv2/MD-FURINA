@@ -3638,7 +3638,7 @@ hydro.ev.emit('messages.upsert', msg)
  
 if (isCmd && !m.key.fromMe) {
     const user = global.db.users[m.sender]
-    const allowWithoutRegister = ['daftar', 'menu', 'infogrup', 'infobot', 'bacaperaturan']
+    const allowWithoutRegister = ['daftar']
     
     if (user && !user.registered && !Ahmad && !allowWithoutRegister.includes(command)) {
         return hydro.sendMessage(m.chat, {
