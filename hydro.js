@@ -11657,25 +11657,52 @@ case  'd18': {
 break
 case 'daftar': {
     const user = global.db.users[m.sender]
-    if (user.registered === true) return replytolak(`Kamu sudah terdaftar sebagai ${user.name}`)
+    if (user.registered === true) {
+        await hydro.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
+        return replytolak(`✅ *Kamu Sudah Terdaftar!*\n\n👤 Nama  : *${user.name}*\n🎂 Umur  : *${user.age} tahun*\n🔑 SN    : *${user.sn}*\n\n_Gunakan fitur bot sepuasnya!_ 🎉`)
+    }
     let normalizedText = text
     if (!text.includes(',') && /\.\d+$/.test(text)) {
         normalizedText = text.replace(/\.(\d+)$/, ',$1')
     }
-    if (!normalizedText || !normalizedText.includes(',')) return replytolak(`Contoh penggunaan: *${prefix}daftar nama,umur*`)
+    if (!normalizedText || !normalizedText.includes(',')) {
+        await hydro.sendMessage(m.chat, { react: { text: '❌', key: m.key } })
+        return replytolak(`❌ *Format Salah!*\n\n📝 Cara daftar yang benar:\n*${prefix}daftar nama,umur*\n\nContoh: *${prefix}daftar Budi,17*`)
+    }
 
     const [nama, umurStr] = normalizedText.split(',').map(v => v.trim())
 
-    if (!nama) return replytolak(`❌ Nama tidak boleh kosong!`)
-    if (nama.length < 4) return replytolak(`⚠️ Nama terlalu pendek!`)
-    if (!/^[a-zA-Z\s]+$/.test(nama)) return replytolak(`⚠️ Nama tidak valid`)
+    if (!nama) {
+        await hydro.sendMessage(m.chat, { react: { text: '❌', key: m.key } })
+        return replytolak(`❌ *Nama Tidak Boleh Kosong!*\n\n✏️ Masukkan namamu ya.\nContoh: *${prefix}daftar Budi,17*`)
+    }
+    if (nama.length < 4) {
+        await hydro.sendMessage(m.chat, { react: { text: '⚠️', key: m.key } })
+        return replytolak(`⚠️ *Nama Terlalu Pendek!*\n\n📏 Nama minimal *4 karakter*.\nNama kamu: *${nama}* (${nama.length} karakter)\n\nContoh: *${prefix}daftar Budi,17*`)
+    }
+    if (!/^[a-zA-Z\s]+$/.test(nama)) {
+        await hydro.sendMessage(m.chat, { react: { text: '⚠️', key: m.key } })
+        return replytolak(`⚠️ *Nama Tidak Valid!*\n\n🔤 Nama hanya boleh huruf A-Z.\nTidak boleh angka atau simbol.\n\nContoh: *${prefix}daftar Budi,17*`)
+    }
 
-    if (!umurStr) return replytolak(`❌ Format salah:\nContoh penggunaan: *${prefix}daftar nama,umur*`)
-    if (isNaN(umurStr)) return replytolak('⚠️ Umur harus berupa angka!')
+    if (!umurStr) {
+        await hydro.sendMessage(m.chat, { react: { text: '❌', key: m.key } })
+        return replytolak(`❌ *Umur Tidak Boleh Kosong!*\n\nFormat: *${prefix}daftar nama,umur*\nContoh: *${prefix}daftar Budi,17*`)
+    }
+    if (isNaN(umurStr)) {
+        await hydro.sendMessage(m.chat, { react: { text: '⚠️', key: m.key } })
+        return replytolak(`⚠️ *Umur Harus Berupa Angka!*\n\n🔢 Masukkan umur dalam angka, bukan huruf.\nContoh: *${prefix}daftar Budi,17*`)
+    }
 
     const umur = parseInt(umurStr)
-    if (umur < 10) return reply(`Masa si umur kamu ${umur}? 🤔`)
-    if (umur > 60) return reply(`Tua banget 😂, yakin umurnya ${umur}?`)
+    if (umur < 10) {
+        await hydro.sendMessage(m.chat, { react: { text: '🤔', key: m.key } })
+        return reply(`🤔 *Masa iya umur kamu cuma ${umur} tahun?*\n\nBot ini untuk pengguna minimal *10 tahun* ya!`)
+    }
+    if (umur > 60) {
+        await hydro.sendMessage(m.chat, { react: { text: '😂', key: m.key } })
+        return reply(`😂 *Wah, umur ${umur} tahun?*\n\nBot ini untuk pengguna maksimal *60 tahun* ya kak! 👴`)
+    }
 
     const kodeReg = generateSN(8)
     const tanggalDaftar = new Date().toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' })
