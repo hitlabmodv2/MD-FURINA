@@ -4182,6 +4182,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -4414,6 +4419,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -4621,6 +4631,11 @@ const bet = {
           title: "All Menu",
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
+        },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
         },
       ]
     },
@@ -4830,6 +4845,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -5037,6 +5057,11 @@ const bet = {
           title: "All Menu",
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
+        },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
         },
       ]
     },
@@ -5246,6 +5271,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -5453,6 +5483,11 @@ const bet = {
           title: "All Menu",
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
+        },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
         },
       ]
     },
@@ -5662,6 +5697,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -5870,6 +5910,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -6076,6 +6121,11 @@ const bet = {
           title: "All Menu",
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
+        },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
         },
       ]
     },
@@ -6284,6 +6334,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -6490,6 +6545,11 @@ const bet = {
           title: "All Menu",
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
+        },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
         },
       ]
     },
@@ -6786,6 +6846,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -6994,6 +7059,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -7201,6 +7271,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -7406,6 +7481,11 @@ const bet = {
           title: "All Menu",
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
+        },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
         },
       ]
     },
@@ -7614,6 +7694,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -7820,6 +7905,11 @@ const bet = {
           title: "All Menu",
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
+        },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
         },
       ]
     },
@@ -8028,6 +8118,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -8234,6 +8329,11 @@ const bet = {
           title: "All Menu",
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
+        },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
         },
       ]
     },
@@ -8442,6 +8542,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -8648,6 +8753,11 @@ const bet = {
           title: "All Menu",
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
+        },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
         },
       ]
     },
@@ -8856,6 +8966,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -9062,6 +9177,11 @@ const bet = {
           title: "All Menu",
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
+        },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
         },
       ]
     },
@@ -9270,6 +9390,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -9476,6 +9601,11 @@ const bet = {
           title: "All Menu",
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
+        },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
         },
       ]
     },
@@ -9684,6 +9814,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -9890,6 +10025,11 @@ const bet = {
           title: "All Menu",
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
+        },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
         },
       ]
     },
@@ -10098,6 +10238,11 @@ const bet = {
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
         },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
+        },
       ]
     },
     {
@@ -10304,6 +10449,11 @@ const bet = {
           title: "All Menu",
           description: "📌 Menampilkan All Menu",
           id: `allmenu`, 
+        },
+        {
+          title: "🏠 Kembali ke Menu Utama",
+          description: "↩️ Balik ke halaman menu awal",
+          id: `menu`,
         },
       ]
     },
