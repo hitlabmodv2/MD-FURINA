@@ -37758,10 +37758,31 @@ case 'rate': {
     await replyhydro(jawab);
 }
 break;
-            case 'rt': case 'runtime': {
-            	let lowq = `*The Bot Has Been Online For:*\n*${runtime(process.uptime())}*`
-replyhydro(lowq)
-            	}
+            case 'rt': case 'runtime': case 'run': {
+hydro.sendMessage(m.chat, { react: { text: '⏱️', key: m.key } });
+const usedRam = os.totalmem() - os.freemem();
+const totalRam = os.totalmem();
+const ramPersen = ((usedRam / totalRam) * 100).toFixed(1);
+const cpuModel = os.cpus()[0].model.trim();
+const cpuCount = os.cpus().length;
+const platform = os.platform();
+const nodeVer = process.version;
+let rtTeks = '*╭─❒ 「 RUNTIME BOT 」*\n';
+rtTeks += '├ ⏱️  *Runtime*  : ' + runtime(process.uptime()) + '\n';
+rtTeks += '├─────────────────────────\n';
+rtTeks += '├ 💾 *RAM Pakai* : ' + formatp(usedRam) + '\n';
+rtTeks += '├ 💽 *RAM Total* : ' + formatp(totalRam) + '\n';
+rtTeks += '├ 📊 *RAM %*     : ' + ramPersen + '%\n';
+rtTeks += '├─────────────────────────\n';
+rtTeks += '├ 🖥️  *CPU*       : ' + cpuModel + '\n';
+rtTeks += '├ 🔢 *Core*      : ' + cpuCount + ' Core\n';
+rtTeks += '├─────────────────────────\n';
+rtTeks += '├ 🤖 *Bot*       : ' + global.botname + '\n';
+rtTeks += '├ 📦 *Node.js*   : ' + nodeVer + '\n';
+rtTeks += '├ 🖱️  *Platform*  : ' + platform + '\n';
+rtTeks += '╰─❒';
+replyhydro(rtTeks);
+            }
             break
             case 'stupidcheck':case 'uncleancheck':
 case 'hotcheck': case 'smartcheck':
