@@ -334,9 +334,9 @@ hydro.ev.emit('messages.upsert', msg)
     .includes(m.sender);
         const text = args.join(" ")
         const q = text
-        const quoted = m.quoted ? m.quoted : m
-        const mime = (quoted.msg || quoted).mimetype || ''
-        const qmsg = (quoted.msg || quoted)
+        const quoted = m.quoted || null
+        const mime = (quoted?.msg || quoted)?.mimetype || ''
+        const qmsg = (quoted?.msg || quoted) || {}
         const isMedia = /image|video|sticker|audio/.test(mime)
         const isImage = (type == 'imageMessage')
 		const isVideo = (type == 'videoMessage')
@@ -13361,7 +13361,7 @@ quoted: m,
         }
         break
 case 'q': case 'quoted': {
-if (!m.quoted) return replyhydro('Reply the Message!!')
+if (!quoted) return replyhydro('Reply the Message!!')
 let xeonquotx= await hydro.serializeM(await m.getQuotedObj())
 if (!xeonquotx.quoted) return replyhydro('Pesan yang Anda balas tidak dikirim oleh bot')
 await xeonquotx.quoted.copyNForward(m.chat, true)
@@ -13990,7 +13990,7 @@ const anuu = await UploadFileUgu (media)
 break
 case 'tozombie':
 case 'jadizombie': {
-  if (!m.quoted) return m.reply(`Kirim/reply gambar dengan caption *${prefix + command}*`);
+  if (!quoted) return m.reply(`Kirim/reply gambar dengan caption *${prefix + command}*`);
   const { GoogleGenerativeAI } = require ("@google/generative-ai");
   let mime = m.quoted.mimetype || "";
   let defaultPrompt = "Create a 1/7 scale commercialized figure of the character in the illustration, in a realistic style and environment. Place the figure on a computer desk, using a circular transparent acrylic base without any text. On the computer screen, display the ZBrush modeling process of the figure. Next to the computer screen, place a BANDAI-style toy packaging box printed with the original artwork.";
@@ -14151,7 +14151,7 @@ case '🐦':
 case 'readvo':
 case 'rvo':
 case 'readviewonce': {
-    if (!m.quoted) return replyhydro(global.mess.query.image);
+    if (!quoted) return replyhydro(global.mess.query.image);
     if (!mime) return replyhydro(global.mess.query.image);
 
     await replyhydro(global.mess.wait);
@@ -14929,6 +14929,7 @@ hydro.groupRevokeInvite(m.chat)
 break
             case 'react': {
 if (!Ahmad) return replytolak(mess.only.owner)
+if (!quoted) return replyhydro(`Reply pesan yang ingin di-react!`)
 reactionMessage = {
 react: {
     text: args[0],
@@ -15850,7 +15851,7 @@ await replyhydro(`*[ Done ]*`)
 
             case 'delete': case 'del': {
     if (!isAdmins && !Ahmad) return reply(mess.only.admin)
-    if (!m.quoted) return reply('Reply pesan yang ingin dihapus')
+    if (!quoted) return reply('Reply pesan yang ingin dihapus')
     
     hydro.sendMessage(m.chat, { 
         delete: { 
@@ -15863,7 +15864,7 @@ await replyhydro(`*[ Done ]*`)
 }
 break
             case '>l': {
-if (!m.quoted) throw false
+if (!quoted) throw false
 let { chat, id } = m.quoted
  hydro.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.quoted.id, participant: m.quoted.sender } })
             }
@@ -15876,7 +15877,7 @@ hydro.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nGroup Link : ${
             }
             break
 case 'd': {
-                if (!m.quoted) throw false
+                if (!quoted) throw false
                 let { chat, fromMe, id, isBaileys } = m.quoted
                 if (!isBaileys) return replyhydro('The message was not sent by a bot!')
                  hydro.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
@@ -16210,7 +16211,7 @@ case 'totag': {
 if (!m.isGroup) return replytolak(mess.only.group)
 if (!isAdmins && !Ahmad) return reply(mess.only.admin)
 if (!isBotAdmins) return replytolak(mess.only.badmin)
-               if (!m.quoted) return replyhydro(`Reply message with caption ${prefix + command}`)
+               if (!quoted) return replyhydro(`Reply message with caption ${prefix + command}`)
                hydro.sendMessage(m.chat, { forward: m.quoted.fakeObj, mentions: (Array.isArray(participants) ? participants : []).map(a => a.id) })
                }
                break
@@ -16363,7 +16364,7 @@ break;
 case 'removebg':
 case 'nobg':
 case 'hapusbackground': {
-    if (!m.quoted) return m.reply(`Kirim/reply gambar dengan caption *${prefix + command}*`);
+    if (!quoted) return m.reply(`Kirim/reply gambar dengan caption *${prefix + command}*`);
     let mime = m.quoted.mimetype || "";
     
     if (!/image/.test(mime) && !/webp/.test(mime)) return m.reply(`Format ${mime} tidak didukung! Hanya gambar/stiker.`);
@@ -32719,7 +32720,7 @@ case 'listtoxic': {
 }
 break;
 case 'hytam': {
-  if (!m.quoted) return m.reply(`Kirim/reply gambar dengan caption *${prefix + command}*`);
+  if (!quoted) return m.reply(`Kirim/reply gambar dengan caption *${prefix + command}*`);
   const { GoogleGenerativeAI } = require ("@google/generative-ai");
   let mime = m.quoted.mimetype || "";
   let defaultPrompt = "Ubahlah Karakter Dari Gambar Tersebut Diubah Kulitnya Menjadi Hitam se hitam-hitam nya";
@@ -33683,7 +33684,7 @@ break
 case 'd': case'done':{
       if (!isAdmins) return
       if (!m.isGroup) return replytolak(mess.only.group)
-			if (!m.quoted) return m.reply('Reply pesanan yang telah di proses')
+			if (!quoted) return m.reply('Reply pesanan yang telah di proses')
             let tek = m.quoted ? quoted.text : quoted.text.split(args[0])[1]
             let sukses = `── 「 *DETAIL PESANAN* 」 ──\n\n\`\`\`› Status : 「 Transaksi Success 」\n› Pesanan : @user\n› Date : @tanggal\n› Clock : @jam\n› Status Pesanan : Terkirim ✅\n› Catatan Pesanan 📝 :\`\`\`\n*@pesanan*\n\n_*Terimakasih sudah order di @group*_\n*_kami tunggu orderan berikutnya_* 🤗🤗`            
             const getTextD = getTextSetDone((m.isGroup? m.chat: botNumber), set_done);
@@ -33704,7 +33705,7 @@ reply(`Sukses delete set done`)
 break
 case'proses':{
   if (!m.isGroup) return replytolak(mess.only.group)
-			if (!m.quoted) return m.reply('Reply pesanan yang akan proses')
+			if (!quoted) return m.reply('Reply pesanan yang akan proses')
             let tek = m.quoted ? quoted.text : quoted.text.split(args[0])[1]
             let proses = `── 「 *DETAIL PESANAN* 」 ──\n\n\`\`\`› Status : 「 Transaksi Pending 」\n› Pesanan : @user\n› Date : @tanggal\n› Clock : @jam\n› Status Pesanan : Diproses ⌛\n› Catatan Pesanan 📝 :\`\`\`\n*@pesanan*\n\n_*Tunggu Sebentar, Orderan Kamu Sedang Diproses Oleh Admin @admin.*_`
             const getTextP = getTextSetProses((m.isGroup? m.chat: botNumber), set_proses);
@@ -34686,7 +34687,7 @@ teks += `\n*Total : ${prem.length}*`
 hydro.sendMessage(m.chat, { text: teks.trim() }, 'extendedTextMessage', { quoted: m, contextInfo: { "mentionedJid": prem } })
 break
 case 'setcmd': {
-if (!m.quoted) return replyhydro('Reply Message!')
+if (!quoted) return replyhydro('Reply Message!')
 if (!m.quoted.fileSha256) return replyhydro('SHA256 Hash Missing')
 if (!text) return replyhydro(`For What Command?`)
 let hash = m.quoted.fileSha256.toString('base64')
@@ -34720,7 +34721,7 @@ hydro.sendText(m.chat, teks, m, { mentions: Object.values(global.db.sticker).map
             break 
 case 'lockcmd': {
 if (!Ahmad) return replytolak(mess.only.owner)
-if (!m.quoted) return replyhydro('Reply Message!')
+if (!quoted) return replyhydro('Reply Message!')
 if (!m.quoted.fileSha256) return replyhydro('SHA256 Hash Missing')
 let hash = m.quoted.fileSha256.toString('base64')
 if (!(hash in global.db.sticker)) return replyhydro('Hash not found in database')
@@ -34729,7 +34730,7 @@ replyhydro('Done!')
             }
             break
 case 'addmsg': {
-if (!m.quoted) return replyhydro('Reply Message You Want To Save In Database')
+if (!quoted) return replyhydro('Reply Message You Want To Save In Database')
 if (!text) return replyhydro(`Example : ${prefix + command} filename`)
 let msgs = global.db.database
 if (text.toLowerCase() in msgs) return replyhydro(`'${text}' registered in the message list`)
@@ -35236,7 +35237,7 @@ case 'toimg': {
     const getRandom = (ext) => {
         return `${Math.floor(Math.random() * 10000)}${ext}`
     }
-    if (!m.quoted) return replyhydro(`_Reply to Any Sticker._`)
+    if (!quoted) return replyhydro(`_Reply to Any Sticker._`)
     let mime = m.quoted.mtype
     if (mime == "imageMessage" || mime == "stickerMessage") {
         let media = await hydro.downloadAndSaveMediaMessage(m.quoted, "./temp/")
