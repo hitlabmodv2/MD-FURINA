@@ -3666,18 +3666,24 @@ if (isCmd && prefix !== '' && !m.key.fromMe) {
     }
 }
 // Tebakan ML
-if (global.tebakanml[m.sender]) {
+if (global.tebakanml[m.sender] && !m.key.fromMe) {
     let jawaban = global.tebakanml[m.sender].jawaban
     let poin = global.tebakanml[m.sender].poin
+    const inputTebak = budy.toLowerCase().trim()
 
-    if (budy.toLowerCase() === jawaban) {
-        reply(`🎉 Jawaban Benar!\n+${poin} XP\nJawaban: *${jawaban}*`)
+    if (inputTebak === jawaban.trim()) {
+        reply(`🎉 Jawaban Benar!
++${poin} XP
+Jawaban: *${jawaban}*`)
         if (!global.db.users[m.sender]) global.db.users[m.sender] = { exp: 0 }
         global.db.users[m.sender].exp += poin
         delete global.tebakanml[m.sender]
-    } else if (budy.toLowerCase() === 'nyerah') {
-        reply(`❌ Menyerah ya?\nJawabannya adalah: *${jawaban}*`)
+    } else if (inputTebak === 'nyerah') {
+        reply(`❌ Menyerah ya?
+Jawabannya adalah: *${jawaban}*`)
         delete global.tebakanml[m.sender]
+    } else if (inputTebak.length > 0) {
+        reply(`❌ Jawaban salah! Coba lagi atau ketik *nyerah* untuk menyerah.`)
     }
 }
 
