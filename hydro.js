@@ -3847,6 +3847,7 @@ break
 case 'listjadibot': 
 try {
   const rentbotPath = path.join(__dirname, './database/rentbot');
+  if (!fs.existsSync(rentbotPath)) fs.mkdirSync(rentbotPath, { recursive: true });
   let folders = fs.readdirSync(rentbotPath, { withFileTypes: true })
                   .filter(dirent => dirent.isDirectory())
                   .map(dirent => dirent.name);
