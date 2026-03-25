@@ -76,7 +76,6 @@ const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep, reSize } = require('./lib/myfunc')
 
 const prefix = ''
-let phoneNumber = "6285187063723"
 global.db = JSON.parse(fs.readFileSync('./database/database.json'))
 if (global.db) global.db = {
 sticker: {},
@@ -89,7 +88,7 @@ chats: {},
 settings: {},
 ...(global.db || {})
 }
-const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
+const pairingCode = global.usePairingCode || process.argv.includes("--pairing-code")
 
 const useMobile = process.argv.includes("--mobile")
 const owner = JSON.parse(fs.readFileSync('./database/owner.json'))
@@ -240,11 +239,16 @@ shouldSyncHistoryMessage: () => false,
     }
     // =================================================
 if (!hydro.authState.creds.registered) {
-const phoneNumber = await question('Masukin nomor yang mau dijadikan bot.. contoh: 6285187063723\n');
-const pairinghydro = "WILYCODE";
-let code = await hydro.requestPairingCode(phoneNumber, pairinghydro);
-code = code?.match(/.{1,4}/g)?.join("-") || code;
-console.log(`Ini kodenya:`, code);
+    if (pairingCode) {
+        let phoneNumber = global.nomerBot
+        if (!phoneNumber) {
+            phoneNumber = await question('Masukin nomor yang mau dijadikan bot.. contoh: 6285187063723\n')
+        }
+        const pairinghydro = global.customPairingCode || "WILYCODE"
+        let code = await hydro.requestPairingCode(phoneNumber.trim(), pairinghydro)
+        code = code?.match(/.{1,4}/g)?.join("-") || code
+        console.log(`Ini kodenya:`, code)
+    }
 }
     store.bind(hydro.ev)
 

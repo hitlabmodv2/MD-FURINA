@@ -48,6 +48,10 @@ global.anovo = false // KOSONG KAN JIKA TIDAK ADA
 global.botname = "Asisten Zerobot 🌊"
 global.ownernumber = '6289688206739'
 global.botnumber = '6289688206739'
+//==================setting koneksi===========================\\
+global.usePairingCode = true // true = pairing code, false = QR code
+global.nomerBot = '6285187063723' // nomor bot (digunakan jika usePairingCode = true)
+global.customPairingCode = 'WILYCODE' // custom pairing code (bisa diubah sesuai keinginan)
 global.ownername = 'WilyKun'
 global.ownerNumber = ["6285187063723@s.whatsapp.net"]
 global.ownerweb = ""
