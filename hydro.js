@@ -37760,26 +37760,75 @@ case 'rate': {
 break;
             case 'rt': case 'runtime': case 'run': {
 hydro.sendMessage(m.chat, { react: { text: '⏱️', key: m.key } });
-const usedRam = os.totalmem() - os.freemem();
-const totalRam = os.totalmem();
-const ramPersen = ((usedRam / totalRam) * 100).toFixed(1);
-const cpuModel = os.cpus()[0].model.trim();
-const cpuCount = os.cpus().length;
-const platform = os.platform();
-const nodeVer = process.version;
+const _rtStart = Date.now();
+// CPU usage realtime
+const _cpuStart = os.cpus();
+await new Promise(r => setTimeout(r, 150));
+const _cpuEnd = os.cpus();
+let _idle = 0, _total = 0;
+for (let i = 0; i < _cpuStart.length; i++) {
+  const s = _cpuStart[i].times, e = _cpuEnd[i].times;
+  _idle += e.idle - s.idle;
+  _total += Object.keys(s).reduce((a, t) => a + (e[t] - s[t]), 0);
+}
+const cpuUsage = (100 - Math.round((_idle / _total) * 100));
+// RAM
+const _usedRam = os.totalmem() - os.freemem();
+const _totalRam = os.totalmem();
+const _ramPct = ((_usedRam / _totalRam) * 100).toFixed(1);
+// Swap
+let _swapTotal = 0, _swapFree = 0;
+try {
+  if (fs.existsSync('/proc/meminfo')) {
+    const _mi = fs.readFileSync('/proc/meminfo', 'utf8');
+    const _st = _mi.match(/^SwapTotal:\s+(\d+)/m);
+    const _sf = _mi.match(/^SwapFree:\s+(\d+)/m);
+    _swapTotal = _st ? parseInt(_st[1]) * 1024 : 0;
+    _swapFree = _sf ? parseInt(_sf[1]) * 1024 : 0;
+  }
+} catch(e) {}
+const _swapUsed = _swapTotal - _swapFree;
+// CPU info
+const _cpus = os.cpus();
+const _cpuModel = _cpus[0].model.trim();
+const _cpuCore = _cpus.length;
+const _cpuSpeed = (_cpus.reduce((a, c) => a + c.speed, 0) / _cpus.length).toFixed(0);
+// DB stats
+const _totalUser = Object.keys(global.db.users || {}).length;
+const _totalChat = Object.keys(global.db.chats || {}).length;
+// Time
+const _now = moment().tz('Asia/Jakarta');
+const _jam = _now.format('HH:mm:ss');
+const _tgl = _now.locale('id').format('dddd, D MMMM YYYY');
+// Ping
+const _ping = Date.now() - _rtStart;
+// RAM bar
+const _barLen = 10;
+const _filled = Math.round((_usedRam / _totalRam) * _barLen);
+const _ramBar = '█'.repeat(_filled) + '░'.repeat(_barLen - _filled);
+// Build text
 let rtTeks = '*╭─❒ 「 RUNTIME BOT 」*\n';
-rtTeks += '├ ⏱️  *Runtime*  : ' + runtime(process.uptime()) + '\n';
+rtTeks += '├ 🕐 *Tanggal*   : ' + _tgl + '\n';
+rtTeks += '├ 🕑 *Waktu WIB* : ' + _jam + '\n';
 rtTeks += '├─────────────────────────\n';
-rtTeks += '├ 💾 *RAM Pakai* : ' + formatp(usedRam) + '\n';
-rtTeks += '├ 💽 *RAM Total* : ' + formatp(totalRam) + '\n';
-rtTeks += '├ 📊 *RAM %*     : ' + ramPersen + '%\n';
+rtTeks += '├ ⏱️  *Uptime*    : ' + runtime(process.uptime()) + '\n';
+rtTeks += '├ 📡 *Ping*      : ' + _ping + ' ms\n';
 rtTeks += '├─────────────────────────\n';
-rtTeks += '├ 🖥️  *CPU*       : ' + cpuModel + '\n';
-rtTeks += '├ 🔢 *Core*      : ' + cpuCount + ' Core\n';
+rtTeks += '├ 💾 *RAM Pakai* : ' + formatp(_usedRam) + ' / ' + formatp(_totalRam) + '\n';
+rtTeks += '├ 📊 *RAM Bar*   : [' + _ramBar + '] ' + _ramPct + '%\n';
+if (_swapTotal > 0) rtTeks += '├ 🔄 *Swap*      : ' + formatp(_swapUsed) + ' / ' + formatp(_swapTotal) + '\n';
+rtTeks += '├─────────────────────────\n';
+rtTeks += '├ 🖥️  *CPU*       : ' + _cpuModel + '\n';
+rtTeks += '├ 🔢 *Core*      : ' + _cpuCore + ' Core @ ' + _cpuSpeed + ' MHz\n';
+rtTeks += '├ 📈 *CPU Pakai* : ' + cpuUsage + '%\n';
 rtTeks += '├─────────────────────────\n';
 rtTeks += '├ 🤖 *Bot*       : ' + global.botname + '\n';
-rtTeks += '├ 📦 *Node.js*   : ' + nodeVer + '\n';
-rtTeks += '├ 🖱️  *Platform*  : ' + platform + '\n';
+rtTeks += '├ 👑 *Owner*     : ' + global.ownername + '\n';
+rtTeks += '├ 📦 *Node.js*   : ' + process.version + '\n';
+rtTeks += '├ 🖱️  *Platform*  : ' + os.platform() + '\n';
+rtTeks += '├─────────────────────────\n';
+rtTeks += '├ 👥 *Total User* : ' + _totalUser + ' user\n';
+rtTeks += '├ 💬 *Total Chat* : ' + _totalChat + ' grup/dm\n';
 rtTeks += '╰─❒';
 replyhydro(rtTeks);
             }
