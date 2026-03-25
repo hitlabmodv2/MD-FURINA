@@ -49,7 +49,7 @@ global.botname = "Asisten Zerobot 🌊"
 global.ownernumber = '6289688206739'
 global.botnumber = '6289688206739'
 //==================setting koneksi===========================\\
-global.usePairingCode = true // true = pairing code, false = QR code
+global.usePairingCode = false // true = pairing code, false = QR code
 global.nomerBot = '6289667923162' // nomor bot (digunakan jika usePairingCode = true)
 global.customPairingCode = 'WILYCODE' // custom pairing code (bisa diubah sesuai keinginan)
 global.ownername = 'WilyKun'
