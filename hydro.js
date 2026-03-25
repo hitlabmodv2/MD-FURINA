@@ -20538,6 +20538,46 @@ function clockString(ms) {
 }
 break
 //=========================================\\
+case 'ceksesi': 
+  case 'ceksession': {
+const sessionFolder2 = './' + (global.sessionName || 'session');
+if (!fs.existsSync(sessionFolder2)) {
+  return replyhydro('❌ Folder session tidak ditemukan: ' + sessionFolder2);
+}
+try {
+  const allFiles2 = fs.readdirSync(sessionFolder2);
+  const filtered2 = allFiles2.filter(item =>
+    item.startsWith('pre-key') ||
+    item.startsWith('sender-key') ||
+    item.startsWith('session-') ||
+    item.startsWith('app-state')
+  );
+  const preKey2 = filtered2.filter(f => f.startsWith('pre-key'));
+  const senderKey2 = filtered2.filter(f => f.startsWith('sender-key'));
+  const sessionF2 = filtered2.filter(f => f.startsWith('session-'));
+  const appState2 = filtered2.filter(f => f.startsWith('app-state'));
+  let cekTeks = '🔍 *Cek Session Folder*\n';
+  cekTeks += '━━━━━━━━━━━━━━━━━━━━\n';
+  cekTeks += '📂 Total file session: *' + filtered2.length + ' file*\n';
+  cekTeks += '━━━━━━━━━━━━━━━━━━━━\n';
+  if (preKey2.length > 0) cekTeks += '🔑 Pre-Key Files (' + preKey2.length + ')\n';
+  if (senderKey2.length > 0) cekTeks += '📨 Sender-Key Files (' + senderKey2.length + ')\n';
+  if (sessionF2.length > 0) cekTeks += '💬 Session Files (' + sessionF2.length + ')\n';
+  if (appState2.length > 0) cekTeks += '📱 App-State Files (' + appState2.length + ')\n';
+  cekTeks += '━━━━━━━━━━━━━━━━━━━━\n';
+  cekTeks += '🛡️ Aman (tidak dihapus):\n• creds.json\n\n';
+  if (filtered2.length === 0) {
+    cekTeks += '✅ Session bersih, tidak ada file yang perlu dihapus.';
+  } else {
+    cekTeks += '💡 Gunakan *clearsesi* untuk menghapus semua file session.';
+  }
+  replyhydro(cekTeks);
+} catch(e) {
+  replyhydro('❌ Gagal cek session: ' + e.message);
+}
+}
+break
+//=========================================\
 case 'delsesi': 
   case 'clearsession': 
   case 'clearsesi': {
