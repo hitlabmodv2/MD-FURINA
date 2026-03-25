@@ -62,7 +62,7 @@ global.themeemoji = '🏞️'
 global.wm = "Asisten WilyKun ||| WhatsApps Bots"
 global.botscript = 'Dah gede nyari sc 🗿🖕' //script link
 global.packname = "WilyKun"
-global.author = "\n\n\n\n\nDibuat Oleh Asisten Hydro\nNo hape/wa : 6289688206739"
+global.author = "\n\n\n\n\nDibuat Oleh Asisten Zerobot\nNo hape/wa : 6289688206739"
 global.creator = "6289688206739@s.whatsapp.net"
 //======================== CPANEL FITUR ===========================\\
 global.domain = 'https://panel.sekedarstore.com' // Isi Domain Lu jangan kasih tanda / di akhir link

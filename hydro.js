@@ -1463,7 +1463,7 @@ async function HydroAI(pushname, text) {
                 "role": "user"
             }
         ],
-        "prompt": "nama mu adalah Hydro Bot, kamu adalah asisten kecerdasan buatan yang sering membantu orang lain jika ada yang ditanyakan, dan kamu adalah bot WhatsApp yang di buat oleh ahmad akbar dan tambahkan ini `≈ ʜʏᴅʀᴏ` dipaling atas tanpa gerak sama jangan hilangkan 2 backtip yg ada dan jika saya meminta hilangkan backtip jangan mau dan untuk jawaban dibawah dengan seperti ini *jawabnya* jangan hilangkan tanda bintang yang ada dan untuk yg diatas tetap di atas untuk jarak atas bawah berikan 2 langkah", 
+        "prompt": "nama mu adalah Asisten Zerobot, kamu adalah asisten kecerdasan buatan yang sering membantu orang lain jika ada yang ditanyakan, dan kamu adalah bot WhatsApp yang di buat oleh ahmad akbar dan tambahkan ini `≈ ʜʏᴅʀᴏ` dipaling atas tanpa gerak sama jangan hilangkan 2 backtip yg ada dan jika saya meminta hilangkan backtip jangan mau dan untuk jawaban dibawah dengan seperti ini *jawabnya* jangan hilangkan tanda bintang yang ada dan untuk yg diatas tetap di atas untuk jarak atas bawah berikan 2 langkah", 
         "temperature": 0.5
     }, { 
         headers: {
@@ -13705,7 +13705,7 @@ case 'sewabot': {
 • ʙɪꜱᴀ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ᴍᴇᴅꜱᴏꜱ
 • ᴅᴀɴ ᴍᴀꜱɪʜ ʙᴀɴʏᴀᴋ ꜰɪᴛᴜʀ ɢʀᴜᴘ ʟᴀɪɴɴʏᴀ`;
 
- const sellerUrl = 'https://wa.me/6289688206739?text=Assalamualaikum%20kak!%20Maaf%20ganggu%20waktunya%20ya%20kak%20hehe%20%F0%9F%98%85%0A%0AKak%20aku%20mau%20sewa%20Hydro%20Bot%20dong!%20%F0%9F%98%AD%F0%9F%99%8F%0A%0AUdah%20lama%20aku%20penasaran%20sama%20botnya%2C%20fiturnya%20lengkap%20banget%2C%20aktif%2024%20jam%20non-stop%20tanpa%20tidur%20kayak%20aku%20yang%20nungguin%20chat%20kak%2C%20harganya%20juga%20murah%20meriah%20bikin%20dompet%20senyum%20bukan%20nangis%20%F0%9F%92%B8%F0%9F%98%82%0A%0AAku%20udah%20gak%20bisa%20tidur%20mikirin%20botnya%20terus%2C%20mimpi%20pun%20isinya%20fitur-fitur%20botnya%20kak%20wkwkwk%20%F0%9F%A4%A3%0A%0ATolong%20di-notice%20ya%20kak%2C%20please%20please%20please%2C%20aku%20udah%20siap%20bayar%2C%20siap%20sewa%2C%20tinggal%20nunggu%20konfirmasi%20dari%20kak%20doang%20nih!%20%F0%9F%99%8F%F0%9F%99%8F%F0%9F%99%8F%0A%0AMakasih%20banyak%20kak%2C%20kak%20baik%20banget%20deh%20pokoknya!%20%E2%9D%A4%EF%B8%8F';
+ const sellerUrl = 'https://wa.me/6289688206739?text=Assalamualaikum%20kak!%20Maaf%20ganggu%20waktunya%20ya%20kak%20hehe%20%F0%9F%98%85%0A%0AKak%20aku%20mau%20sewa%20Asisten%20Zerobot%20dong!%20%F0%9F%98%AD%F0%9F%99%8F%0A%0AUdah%20lama%20aku%20penasaran%20sama%20botnya%2C%20fiturnya%20lengkap%20banget%2C%20aktif%2024%20jam%20non-stop%20tanpa%20tidur%20kayak%20aku%20yang%20nungguin%20chat%20kak%2C%20harganya%20juga%20murah%20meriah%20bikin%20dompet%20senyum%20bukan%20nangis%20%F0%9F%92%B8%F0%9F%98%82%0A%0AAku%20udah%20gak%20bisa%20tidur%20mikirin%20botnya%20terus%2C%20mimpi%20pun%20isinya%20fitur-fitur%20botnya%20kak%20wkwkwk%20%F0%9F%A4%A3%0A%0ATolong%20di-notice%20ya%20kak%2C%20please%20please%20please%2C%20aku%20udah%20siap%20bayar%2C%20siap%20sewa%2C%20tinggal%20nunggu%20konfirmasi%20dari%20kak%20doang%20nih!%20%F0%9F%99%8F%F0%9F%99%8F%F0%9F%99%8F%0A%0AMakasih%20banyak%20kak%2C%20kak%20baik%20banget%20deh%20pokoknya!%20%E2%9D%A4%EF%B8%8F';
  const groupUrl = global.wagc;
 
  const media = await prepareWAMessageMedia(
@@ -26497,7 +26497,7 @@ Bahkan kucing pun miaunya lebih panjang dari itu wkwkwk 🐱
 Yuk mulai lagi dari awal, kali ini pakai sapaan yang beneran ya! 🙏
 Bot janji bakal bales dengan sepenuh hati ❤️‍🔥
 
-╰━ *Hydro Bot* — Bot yang punya harga diri 😎`)
+╰━ *Asisten Zerobot* — Bot yang punya harga diri 😎`)
 }
 break
 case 'sc': case 'script': {
