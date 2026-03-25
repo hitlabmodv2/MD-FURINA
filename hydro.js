@@ -24068,6 +24068,29 @@ case 'resetlevel': {
   replyhydro(`♻️ Level berhasil direset\n👤 @${target.split('@')[0]}\n🎯 Level: 0`, { mentions: [target] })
 }
 break
+case 'resetdb':
+case 'resetdatabase':
+case 'resetalldata': {
+  if (!Ahmad) return replytolak(`🚫 *Akses Ditolak!*\n\nFitur ini hanya bisa digunakan oleh *Owner* dan *Nomor Bot*.`)
+  if (text.toLowerCase() !== 'konfirmasi') {
+    return replytolak(
+      `╭───────────────────────────╮\n│  ⚠️ *RESET DATABASE* ⚠️   │\n╰───────────────────────────╯\n\n🚨 *PERINGATAN KERAS!*\nKamu akan mereset *SEMUA DATA* bot!\n\n📦 *Data yang akan dihapus:*\n• 👥 Semua data pengguna terdaftar\n• 💬 Semua data grup/chat\n• 🎮 Semua data game\n• 🏷️ Semua data sticker & lainnya\n\n❗ *Setelah reset:*\n• Semua user harus daftar ulang\n• Semua saldo, exp, level hilang\n• Tidak bisa di-undo!\n\n✅ *Jika yakin, ketik:*\n*\${prefix}resetdb konfirmasi*`
+    )
+  }
+  await hydro.sendMessage(m.chat, { react: { text: '⏳', key: m.key } })
+  global.db.users = {}
+  global.db.chats = {}
+  global.db.sticker = {}
+  global.db.database = {}
+  global.db.game = {}
+  global.db.others = { vote: [] }
+  await global.db.save()
+  await hydro.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
+  replytolak(
+    `╭───────────────────────────╮\n│  ✅ *RESET BERHASIL* ✅    │\n╰───────────────────────────╯\n\n🗑️ Semua data telah direset!\n\n📋 *Status Database:*\n• 👥 Users     → 0 data\n• 💬 Chats     → 0 data\n• 🎮 Game      → 0 data\n• 🏷️ Sticker   → 0 data\n• 📦 Lainnya   → 0 data\n\n💡 Semua pengguna sekarang\nharus daftar ulang dengan:\n*\${prefix}daftar nama,umur*\n\n_Reset dilakukan oleh Owner_ 👑`
+  )
+}
+break
 case 'setlimit': {
   if (!m.isGroup) return replytolak(mess.only.group)
   if (!Ahmad) return replyhydro(mess.only.owner)
