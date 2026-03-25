@@ -18915,10 +18915,10 @@ case 'payment': {
                     ...(await prepareWAMessageMedia({ image: { url: './data/image/payment/qris.jpg' } }, { upload: hydro.waUploadToServer })),
                     title: '',
                     gifPlayback: true,
-                    subtitle: ownername,
+                    subtitle: '',
                     hasMediaAttachment: false
                   }),
-                  body: { text: `💳 *QRIS — ${global.ownername}*\n📌 NMID: ID1025463009916\n\n> Scan QR di atas pake kamera HP\n> Support via semua e-wallet & mobile banking\n\n🧧 *Nominal bebas, tapi seikhlasnya ya bestie* 🥰` },
+                  body: { text: `💳 *QRIS — ${global.ownername}*\n📌 NMID: ID1025463009916\n📱 Scan QR di atas pake kamera HP\n🏦 Support semua e-wallet & m-banking\n🧧 Nominal bebas, seikhlasnya ya bestie 🥰` },
                   nativeFlowMessage: {
                     buttons: [
                       {
