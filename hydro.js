@@ -39067,7 +39067,8 @@ let e = String(err)
 }
 
 process.on('uncaughtException', function (err) {
-console.log('Caught exception: ', err)
+  if (err?.data === 429 || String(err).includes('rate-overlimit')) return
+  console.log('Caught exception: ', err)
 })
 
 
