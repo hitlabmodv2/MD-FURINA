@@ -2262,7 +2262,21 @@
       "lastrampok": 0,
       "lastnebang": 0,
       "lastweekly": 0,
-      "lastmonthly": 0
+      "lastmonthly": 0,
+      "petfood": 0,
+      "botol": 0,
+      "kardus": 0,
+      "kaleng": 0,
+      "gelas": 0,
+      "plastik": 0,
+      "panda": 0,
+      "babihutan": 0,
+      "makanan": 0,
+      "bibitanggur": 0,
+      "bibitpisang": 0,
+      "bibitapel": 0,
+      "bibitmangga": 0,
+      "bibitjeruk": 0
     },
     "6289678522775@s.whatsapp.net": {
       "afkTime": -1,
@@ -10362,7 +10376,7 @@
       "totalChat": {
         "6281295543915@s.whatsapp.net": 17,
         "6289504802678@s.whatsapp.net": 7,
-        "6289667923162@s.whatsapp.net": 94,
+        "6289667923162@s.whatsapp.net": 95,
         "6285956660403@s.whatsapp.net": 5,
         "6282268990535@s.whatsapp.net": 5,
         "62882007407746@s.whatsapp.net": 1,
@@ -10372,12 +10386,12 @@
         "6289666467284@s.whatsapp.net": 3,
         "6289608959040@s.whatsapp.net": 1,
         "6281374976765@s.whatsapp.net": 6,
-        "62859106779529@s.whatsapp.net": 1,
+        "62859106779529@s.whatsapp.net": 2,
         "6289678522775@s.whatsapp.net": 2,
         "6281358899877@s.whatsapp.net": 1,
         "6287793006207@s.whatsapp.net": 1,
         "6282393354095@s.whatsapp.net": 2,
-        "status@broadcast": 45,
+        "status@broadcast": 47,
         "6285136314199@s.whatsapp.net": 5,
         "6282189076619@s.whatsapp.net": 4,
         "6289681008411@s.whatsapp.net": 2,
@@ -10482,20 +10496,20 @@
         "6289667923162@s.whatsapp.net": 73,
         "120363192554714254@g.us": 151,
         "97968623505429@lid": 1,
-        "6289688206739@s.whatsapp.net": 48,
+        "6289688206739@s.whatsapp.net": 49,
         "6289681008411@s.whatsapp.net": 15
       }
     },
     "120363421910941096@g.us": {
       "totalChat": {
-        "120363421910941096@g.us": 543,
-        "60128595945@s.whatsapp.net": 419
+        "120363421910941096@g.us": 570,
+        "60128595945@s.whatsapp.net": 436
       }
     },
     "120363407152523539@g.us": {
       "totalChat": {
         "120363407152523539@g.us": 4,
-        "6289667923162@s.whatsapp.net": 397
+        "6289667923162@s.whatsapp.net": 440
       }
     },
     "120363407696889754@newsletter": {
