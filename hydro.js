@@ -3640,9 +3640,9 @@ if (isCmd && !m.key.fromMe) {
     const user = global.db.users[m.sender]
     const allowWithoutRegister = ['daftar']
     
-    if (user && !user.registered && !Ahmad && !allowWithoutRegister.includes(command)) {
+    if ((!user || !user.registered) && !Ahmad && !allowWithoutRegister.includes(command)) {
         await hydro.sendMessage(m.chat, { react: { text: '🚫', key: m.key } })
-        return hydro.sendMessage(m.chat, {
+        if (!quoted) return hydro.sendMessage(m.chat, {
             text: `╭───────────────────────────╮\n🚫 *AKSES DITOLAK* 🚫\n╰───────────────────────────╯\n\n❌ Hei *${pushname}*, kamu belum terdaftar\nsebagai pengguna resmi bot ini.\n\n┌────────────────────\n│ 📋 *CARA DAFTAR*\n│ Ketik: *${prefix}daftar nama,umur*\n│ Contoh: *${prefix}daftar Budi,17*\n└────────────────────\n\n🛡️ *Informasi Akses:*\n• Fitur umum → Wajib daftar dulu\n• Fitur khusus → Hanya Owner & Nomor Bot\n• Setelah daftar → Semua fitur terbuka!\n\n💡 _Daftar sekarang dan nikmati seluruh\nfitur bot secara gratis dan penuh!_`,
             contextInfo: {
                 externalAdReply: {
@@ -3654,6 +3654,9 @@ if (isCmd && !m.key.fromMe) {
                     renderLargerThumbnail: true
                 }
             }
+        }, { quoted: m })
+        return hydro.sendMessage(m.chat, {
+            text: `❌ *${pushname}*, kamu belum terdaftar!\nKetik *${prefix}daftar nama,umur* untuk mendaftar.\nContoh: *${prefix}daftar Budi,17*`
         }, { quoted: m })
     }
 }
