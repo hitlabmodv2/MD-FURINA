@@ -3638,15 +3638,15 @@ hydro.ev.emit('messages.upsert', msg)
  
 if (isCmd && !m.key.fromMe) {
     const user = global.db.users[m.sender]
-    const restrictedCmds = ['menu', 'allmenu', 'brat', 'bratvid', 'iqc', 'hd', 'play', 'ytmp3', 'ytmp4']
+    const allowWithoutRegister = ['daftar', 'menu', 'infogrup', 'infobot', 'bacaperaturan']
     
-    if (user && !user.registered && restrictedCmds.includes(command)) {
+    if (user && !user.registered && !allowWithoutRegister.includes(command)) {
         return hydro.sendMessage(m.chat, {
-            text: `⚠️ Kamu belum terdaftar!\nSilakan melakukan *${prefix}daftar nama,umur*`,
+            text: `🚫 *Akses Ditolak!*\n\nKamu belum terdaftar sebagai pengguna bot ini.\n\n📋 *Cara Daftar:*\n➞ Ketik *${prefix}daftar nama,umur*\n➞ Contoh: *${prefix}daftar Budi,20*\n\n💡 Setelah daftar, kamu bisa menggunakan semua fitur bot secara penuh!`,
             contextInfo: {
                 externalAdReply: {
-                    title: "Akses Ditolak",
-                    body: `Powered By ${botname}`,
+                    title: "⚠️ Belum Terdaftar",
+                    body: `Silakan daftar dulu — ${prefix}daftar nama,umur`,
                     thumbnailUrl: global.thumbnail,
                     mediaType: 1,
                     showAdAttribution: false,
