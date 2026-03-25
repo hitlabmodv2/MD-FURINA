@@ -18891,16 +18891,6 @@ case 'pay':
 case 'donasi':
 case 'payment': {
   await hydro.sendMessage(m.chat, { react: { text: `⏱️`, key: m.key }});
-  const url = "https://telegra.ph/file/65469aa05e05c2543469c.jpg";
-
-  async function image(url) {
-    const { imageMessage } = await generateWAMessageContent({
-      image: { url }
-    }, {
-      upload: hydro.waUploadToServer
-    });
-    return imageMessage;
-  }
 
   let msg = generateWAMessageFromContent(
     m.chat,
@@ -18909,46 +18899,10 @@ case 'payment': {
         message: {
           interactiveMessage: {
             body: {
-              text: `Berikut daftar metode pembayaran saya ya~`
+              text: `💸 *Donasi Bot*\n\nTerima kasih sudah mau support bot ini!\nSilakan scan QRIS di bawah untuk berdonasi 🙏`
             },
             carouselMessage: {
               cards: [
-                {
-                  header: proto.Message.InteractiveMessage.Header.create({
-                    ...(await prepareWAMessageMedia({ image: { url: './data/image/payment/dana.jpg' } }, { upload: hydro.waUploadToServer })),
-                    title: '',
-                    gifPlayback: true,
-                    subtitle: ownername,
-                    hasMediaAttachment: false
-                  }),
-                  body: { text: `> Klik tombol DANA di bawah\n> DANA A/N: ${global.andana}` },
-                  nativeFlowMessage: {
-                    buttons: [
-                      {
-                        "name": "cta_copy",
-                        "buttonParamsJson": `{\"display_text\":\"Payment DANA\",\"id\":\"123456789\",\"copy_code\":\"${global.nodana}\"}`
-                      },
-                    ],
-                  },
-                },
-                {
-                  header: proto.Message.InteractiveMessage.Header.create({
-                    ...(await prepareWAMessageMedia({ image: { url: './data/image/payment/gopay.jpg' } }, { upload: hydro.waUploadToServer })),
-                    title: '',
-                    gifPlayback: true,
-                    subtitle: ownername,
-                    hasMediaAttachment: false
-                  }),
-                  body: { text: `> Klik tombol GOPAY di bawah\n> GOPAY A/N: ${global.angopay}` },
-                  nativeFlowMessage: {
-                    buttons: [
-                      {
-                        "name": "cta_copy",
-                        "buttonParamsJson": `{\"display_text\":\"Payment GOPAY\",\"id\":\"123456789\",\"copy_code\":\"${global.nogopay}\"}`
-                      },
-                    ],
-                  },
-                },
                 {
                   header: proto.Message.InteractiveMessage.Header.create({
                     ...(await prepareWAMessageMedia({ image: { url: './data/image/payment/qris.jpg' } }, { upload: hydro.waUploadToServer })),
@@ -18957,12 +18911,12 @@ case 'payment': {
                     subtitle: ownername,
                     hasMediaAttachment: false
                   }),
-                  body: { text: `> SCAN di atas / klik tombol` },
+                  body: { text: `> 📱 SCAN QRIS di atas\n> A/N: ${global.ownername}\n> Nominal bebas, semua sangat berarti!` },
                   nativeFlowMessage: {
                     buttons: [
                       {
                         "name": "cta_url",
-                        "buttonParamsJson": `{\"display_text\":\"Payment QRIS\",\"url\":\"https://qu.ax/xRqoK.jpg\",\"merchant_url\":\"https://www.google.com\"}`
+                        "buttonParamsJson": `{\"display_text\":\"💳 Lihat QRIS\",\"url\":\"https://qu.ax/xRqoK.jpg\",\"merchant_url\":\"https://www.google.com\"}`
                       },
                     ],
                   },
