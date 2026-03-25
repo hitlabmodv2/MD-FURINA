@@ -18899,16 +18899,14 @@ case 'payment': {
         message: {
           interactiveMessage: {
             body: {
-              text: `\u{1F4B8} *— D O N A S I  B O T —*\n\n` +
-              `Hei kamu yang baik hati! 🥿😊\n` +
-              `Bot ini butuh *modal buat bayar panel server* biar bisa jalan 24 jam nonstop tanpa ngambek kayak mantan 😅\n\n` +
-              `*Kenapa harus donasi?*\n` +
-              `📦 Biar bot ini tetap hidup & gak mati lampu\n` +
-              `🚀 Biar fiturnya makin gila-gilaan\n` +
-              `\u{1F9E0} Biar developer-nya gak nangis di pojokan sambil makan mie instan 🍜\n\n` +
-              `*Nominal?* Bebas! Receh juga gapapa, yang penting ikhlas 🙏\n` +
-              `*Cara donasi?* Scan QRIS di bawah, gampang banget!\n\n` +
-              `Makasih ya, semoga rezekinya balik 10x lipat 🌟💫`
+              text: `💸 *— DONASI BOT —*\n\n` +
+              `Hei kamu yang baik hati! 😊\n` +
+              `Bot ini butuh modal buat bayar panel server 😅\n\n` +
+              `📦 Biar bot tetap hidup 24 jam\n` +
+              `🚀 Biar fiturnya makin keren\n` +
+              `🍜 Biar dev-nya gak makan mie instan terus\n\n` +
+              `Nominal bebas, receh juga gapapa 🙏\n` +
+              `Makasih, semoga rezekinya balik 10x lipat! 🌟`
             },
             carouselMessage: {
               cards: [
