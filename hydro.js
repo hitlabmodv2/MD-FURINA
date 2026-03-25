@@ -1959,7 +1959,7 @@ jpegThumbnail: defaultpp } } }
 		const fgclink = {key: {participant: "0@s.whatsapp.net","remoteJid": "0@s.whatsapp.net"},"message": {"groupInviteMessage": {"groupJid": "6288213840883-1616169743@g.us","inviteCode": "m","groupName": wm, "caption": `${pushname}`, 'jpegThumbnail': thumb}}}
 		const fvideo = {key: { fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {}) },message: { "videoMessage": { "title":botname, "h": wm,'seconds': '359996400', 'caption': `${pushname}`, 'jpegThumbnail': thumb}}}
 		const floc = {key : {participant : '0@s.whatsapp.net', ...(m.chat ? { remoteJid: `status@broadcast` } : {}) },message: {locationMessage: {name: wm,jpegThumbnail: thumb}}}
-		const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': ownername, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${ownername},;;;\nFN:${ownername}\nitem1.TEL;waid=6285187063723:6285187063723\nitem1.X-ABLabel:Mobile\nEND:VCARD`, 'jpegThumbnail': thumb, thumbnail: thumb,sendEphemeral: true}}}
+		const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': ownername, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${ownername},;;;\nFN:${ownername}\nitem1.TEL;waid=6289667923162:6289667923162\nitem1.X-ABLabel:Mobile\nEND:VCARD`, 'jpegThumbnail': thumb, thumbnail: thumb,sendEphemeral: true}}}
 	    const fakestatus = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})},message: { "imageMessage": {"url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc","mimetype": "image/jpeg","caption": wm,"fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=","fileLength": "28777","height": 1080,"width": 1079,"mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=","fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=","directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69","mediaKeyTimestamp": "1610993486","jpegThumbnail": fs.readFileSync('./data/image/thumb.jpg'),"scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="}}}
 
 let list = []
@@ -13497,7 +13497,7 @@ case 'sewabot': {
 • ʙɪꜱᴀ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ᴍᴇᴅꜱᴏꜱ
 • ᴅᴀɴ ᴍᴀꜱɪʜ ʙᴀɴʏᴀᴋ ꜰɪᴛᴜʀ ɢʀᴜᴘ ʟᴀɪɴɴʏᴀ`;
 
- const sellerUrl = 'https://wa.me/6285187063723?text=Kak+mau+sewabot';
+ const sellerUrl = 'https://wa.me/6289667923162?text=Kak+mau+sewabot';
  const groupUrl = global.wagc;
 
  const media = await prepareWAMessageMedia(
@@ -13543,7 +13543,7 @@ case 'sewabot': {
  } catch (e) {
  await hydro.sendMessage(m.chat, {
  image: fs.readFileSync('./data/image/sewa.png'),
- caption: `${sun}\n\nPesan: https://wa.me/6285187063723?text=Kak+mau+sewabot\nGrup: ${global.wagc}`
+ caption: `${sun}\n\nPesan: https://wa.me/6289667923162?text=Kak+mau+sewabot\nGrup: ${global.wagc}`
  }, { quoted: m });
  }
 }
@@ -25990,7 +25990,7 @@ replyhydro(`Number ${bnnd} Has Become An Owner!!!`)
 break
 case 'delowner':
 if (!Ahmad) return replytolak(mess.only.owner)
-if (!args[0]) return replyhydro(`Use ${prefix+command} nomor\nExample ${prefix+command} 6285187063723`)
+if (!args[0]) return replyhydro(`Use ${prefix+command} nomor\nExample ${prefix+command} 6289667923162`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')
 unp = owner.indexOf(ya)
 owner.splice(unp, 1)
@@ -34208,7 +34208,7 @@ break
 //=========================================\\
 case 'addprem': {
 if (!Ahmad) return replytolak(mess.only.owner)
-if (!args[0]) return replyhydro(`Use ${prefix+command} number\nExample ${prefix+command} 6285187063723`)
+if (!args[0]) return replyhydro(`Use ${prefix+command} number\nExample ${prefix+command} 6289667923162`)
 prrkek = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 let ceknya = await hydro.onWhatsApp(prrkek)
 if (ceknya.length == 0) return replyhydro(`Masukkan nomor yang valid dan terdaftar di WhatsApp!!!`)
@@ -34219,7 +34219,7 @@ replyhydro(`The Number ${prrkek} Has Been Premium!`)
 break
 case 'addhyd': {
 if (!Ahmad && !isHydro) return replytolak(mess.only.owner)
-if (!args[0]) return replyhydro(`Use ${prefix+command} number\nExample ${prefix+command} 6285187063723`)
+if (!args[0]) return replyhydro(`Use ${prefix+command} number\nExample ${prefix+command} 6289667923162`)
 prrkek = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 let ceknya = await hydro.onWhatsApp(prrkek)
 if (ceknya.length == 0) return replyhydro(`Masukkan nomor yang valid dan terdaftar di WhatsApp!!!`)
@@ -34230,7 +34230,7 @@ replyhydro(`The Number ${prrkek} Has Been Own Jasher!`)
 break
 case 'addhydro': {
 if (!Ahmad) return replytolak(mess.only.owner)
-if (!args[0]) return replyhydro(`Use ${prefix+command} number\nExample ${prefix+command} 6285187063723`)
+if (!args[0]) return replyhydro(`Use ${prefix+command} number\nExample ${prefix+command} 6289667923162`)
 prrkek = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 let ceknya = await hydro.onWhatsApp(prrkek)
 if (ceknya.length == 0) return replyhydro(`Masukkan nomor yang valid dan terdaftar di WhatsApp!!!`)
@@ -34241,7 +34241,7 @@ replyhydro(`The Number ${prrkek} Has Been PT Jasher!`)
 break
 case 'addresellerp': {
 if (!Ahmad && !isAdminP && !isPT && !isOwn) return replyhydro(mess.only.owner)
-if (!args[0]) return replyhydro(`Use ${prefix+command} number\nExample ${prefix+command} 6285187063723`)
+if (!args[0]) return replyhydro(`Use ${prefix+command} number\nExample ${prefix+command} 6289667923162`)
 prrkek = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 let ceknya = await hydro.onWhatsApp(prrkek)
 if (ceknya.length == 0) return replyhydro(`Masukkan nomor yang valid dan terdaftar di WhatsApp!!!`)
@@ -34252,7 +34252,7 @@ replyhydro(`Woah Lu ${prrkek} Jadi Reseller Panel!`)
 break
 case 'addadminp': {
 if (!Ahmad && !isPT && !isOwn) return replyhydro(mess.only.owner)
-if (!args[0]) return replyhydro(`Use ${prefix+command} number\nExample ${prefix+command} 6285187063723`)
+if (!args[0]) return replyhydro(`Use ${prefix+command} number\nExample ${prefix+command} 6289667923162`)
 prrkek = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 let ceknya = await hydro.onWhatsApp(prrkek)
 if (ceknya.length == 0) return replyhydro(`Masukkan nomor yang valid dan terdaftar di WhatsApp!!!`)
@@ -34263,7 +34263,7 @@ replyhydro(`Woah Lu ${prrkek} Jadi Admin Panel!`)
 break
 case 'addptp': {
 if (!Ahmad && !isOwn) return replyhydro(mess.only.owner)
-if (!args[0]) return replyhydro(`Use ${prefix+command} number\nExample ${prefix+command} 6285187063723`)
+if (!args[0]) return replyhydro(`Use ${prefix+command} number\nExample ${prefix+command} 6289667923162`)
 prrkek = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 let ceknya = await hydro.onWhatsApp(prrkek)
 if (ceknya.length == 0) return replyhydro(`Masukkan nomor yang valid dan terdaftar di WhatsApp!!!`)
@@ -34274,7 +34274,7 @@ replyhydro(`Woah Lu ${prrkek} Jadi PT Panel!`)
 break
 case 'addownp': {
 if (!Ahmad) return replytolak(mess.only.owner)
-if (!args[0]) return replyhydro(`Use ${prefix+command} number\nExample ${prefix+command} 6285187063723`)
+if (!args[0]) return replyhydro(`Use ${prefix+command} number\nExample ${prefix+command} 6289667923162`)
 prrkek = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 let ceknya = await hydro.onWhatsApp(prrkek)
 if (ceknya.length == 0) return replyhydro(`Masukkan nomor yang valid dan terdaftar di WhatsApp!!!`)
@@ -34286,7 +34286,7 @@ break
 //=========================================\\
 case 'delprem':
 if (!Ahmad) return replytolak(mess.only.owner)
-if (!args[0]) return replyhydro(`Use ${prefix+command} nomor\nExample ${prefix+command} 6285187063723`)
+if (!args[0]) return replyhydro(`Use ${prefix+command} nomor\nExample ${prefix+command} 6289667923162`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 unp = prem.indexOf(ya)
 prem.splice(unp, 1)
@@ -34295,7 +34295,7 @@ replyhydro(`The Number ${ya} Has Been Removed Premium!`)
 break
 case 'delresellerp':
 if (!Ahmad && !isAdminP && !isPT && !isOwn) return replyhydro(mess.only.owner)
-if (!args[0]) return replyhydro(`Use ${prefix+command} nomor\nExample ${prefix+command} 6285187063723`)
+if (!args[0]) return replyhydro(`Use ${prefix+command} nomor\nExample ${prefix+command} 6289667923162`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 unp = resellerp.indexOf(ya)
 resellerp.splice(unp, 1)
@@ -34304,7 +34304,7 @@ replyhydro(`The Number ${ya} Has Been Removed Reseller Panel!`)
 break
 case 'deladminp':
 if (!Ahmad && !isPT && !isOwn) return replyhydro(mess.only.owner)
-if (!args[0]) return replyhydro(`Use ${prefix+command} nomor\nExample ${prefix+command} 6285187063723`)
+if (!args[0]) return replyhydro(`Use ${prefix+command} nomor\nExample ${prefix+command} 6289667923162`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 unp = adminp.indexOf(ya)
 adminp.splice(unp, 1)
@@ -34313,7 +34313,7 @@ replyhydro(`The Number ${ya} Has Been Removed Admin Panel!`)
 break
 case 'delptp':
 if (!Ahmad && !isOwn) return replyhydro(mess.only.owner)
-if (!args[0]) return replyhydro(`Use ${prefix+command} nomor\nExample ${prefix+command} 6285187063723`)
+if (!args[0]) return replyhydro(`Use ${prefix+command} nomor\nExample ${prefix+command} 6289667923162`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 unp = ptp.indexOf(ya)
 ptp.splice(unp, 1)
@@ -34322,7 +34322,7 @@ replyhydro(`The Number ${ya} Has Been Removed PT Panel!`)
 break
 case 'delownp':
 if (!Ahmad) return replytolak(mess.only.owner)
-if (!args[0]) return replyhydro(`Use ${prefix+command} nomor\nExample ${prefix+command} 6285187063723`)
+if (!args[0]) return replyhydro(`Use ${prefix+command} nomor\nExample ${prefix+command} 6289667923162`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 unp = ownp.indexOf(ya)
 ownp.splice(unp, 1)

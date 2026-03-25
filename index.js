@@ -244,10 +244,25 @@ if (!hydro.authState.creds.registered) {
         if (!phoneNumber) {
             phoneNumber = await question('Masukin nomor yang mau dijadikan bot.. contoh: 6285187063723\n')
         }
+        phoneNumber = phoneNumber.trim()
         const pairinghydro = global.customPairingCode || "WILYCODE"
-        let code = await hydro.requestPairingCode(phoneNumber.trim(), pairinghydro)
-        code = code?.match(/.{1,4}/g)?.join("-") || code
-        console.log(`Ini kodenya:`, code)
+        console.log(color(`[ PAIRING ] Menunggu koneksi sebelum request kode...`, 'yellow'))
+        await delay(5000)
+        try {
+            let code = await hydro.requestPairingCode(phoneNumber, pairinghydro)
+            code = code?.match(/.{1,4}/g)?.join("-") || code
+            console.log(color(`[ PAIRING CODE ] ${code}`, 'cyan'))
+        } catch (e) {
+            console.log(color(`[ PAIRING ] Gagal dapat kode, coba lagi...`, 'red'))
+            await delay(3000)
+            try {
+                let code = await hydro.requestPairingCode(phoneNumber, pairinghydro)
+                code = code?.match(/.{1,4}/g)?.join("-") || code
+                console.log(color(`[ PAIRING CODE ] ${code}`, 'cyan'))
+            } catch (err) {
+                console.log(color(`[ PAIRING ] Error: ${err.message}`, 'red'))
+            }
+        }
     }
 }
     store.bind(hydro.ev)

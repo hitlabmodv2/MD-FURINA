@@ -21,7 +21,7 @@ global.tele = 'miminhydro'
 global.ttowner = '@focabar'
 global.ownername = 'FocaBars'
 global.owner = ['6289688206739'] // SETTING JUGA DI FOLDER DATABASE 
-global.ownernomer = '6285187063723'
+global.ownernomer = '6289667923162'
 global.socialm = 'GitHub: -'
 global.location = 'Indonesia' 
 //========================Setting API=====================\\
@@ -50,10 +50,10 @@ global.ownernumber = '6289688206739'
 global.botnumber = '6289688206739'
 //==================setting koneksi===========================\\
 global.usePairingCode = true // true = pairing code, false = QR code
-global.nomerBot = '6285187063723' // nomor bot (digunakan jika usePairingCode = true)
+global.nomerBot = '6289667923162' // nomor bot (digunakan jika usePairingCode = true)
 global.customPairingCode = 'WILYCODE' // custom pairing code (bisa diubah sesuai keinginan)
 global.ownername = 'WilyKun'
-global.ownerNumber = ["6285187063723@s.whatsapp.net"]
+global.ownerNumber = ["6289667923162@s.whatsapp.net"]
 global.ownerweb = ""
 global.websitex = ""
 global.wagc = "https://chat.whatsapp.com/FvSBEz1UezQ4G7Xwfrr9sF"
