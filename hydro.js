@@ -18899,7 +18899,16 @@ case 'payment': {
         message: {
           interactiveMessage: {
             body: {
-              text: `💸 *Donasi Bot*\n\nTerima kasih sudah mau support bot ini!\nSilakan scan QRIS di bawah untuk berdonasi 🙏`
+              text: `\u{1F4B8} *— D O N A S I  B O T —*\n\n` +
+              `Hei kamu yang baik hati! 🥿😊\n` +
+              `Bot ini butuh *modal buat bayar panel server* biar bisa jalan 24 jam nonstop tanpa ngambek kayak mantan 😅\n\n` +
+              `*Kenapa harus donasi?*\n` +
+              `📦 Biar bot ini tetap hidup & gak mati lampu\n` +
+              `🚀 Biar fiturnya makin gila-gilaan\n` +
+              `\u{1F9E0} Biar developer-nya gak nangis di pojokan sambil makan mie instan 🍜\n\n` +
+              `*Nominal?* Bebas! Receh juga gapapa, yang penting ikhlas 🙏\n` +
+              `*Cara donasi?* Scan QRIS di bawah, gampang banget!\n\n` +
+              `Makasih ya, semoga rezekinya balik 10x lipat 🌟💫`
             },
             carouselMessage: {
               cards: [
@@ -18911,12 +18920,12 @@ case 'payment': {
                     subtitle: ownername,
                     hasMediaAttachment: false
                   }),
-                  body: { text: `> 📱 SCAN QRIS di atas\n> A/N: ${global.ownername}\n> Nominal bebas, semua sangat berarti!` },
+                  body: { text: `💳 *QRIS — ${global.ownername}*\n📌 NMID: ID1025463009916\n\n> Scan QR di atas pake kamera HP\n> Support via semua e-wallet & mobile banking\n\n🧧 *Nominal bebas, tapi seikhlasnya ya bestie* 🥰` },
                   nativeFlowMessage: {
                     buttons: [
                       {
                         "name": "cta_url",
-                        "buttonParamsJson": `{\"display_text\":\"💳 Lihat QRIS\",\"url\":\"https://qu.ax/xRqoK.jpg\",\"merchant_url\":\"https://www.google.com\"}`
+                        "buttonParamsJson": `{\"display_text\":\"💳 Lihat QRIS\",\"url\":\"https://i.postimg.cc/5yqydNdS/Whats-App-Image-2026-03-25-at-13-51-12.jpg\",\"merchant_url\":\"https://www.google.com\"}`
                       },
                     ],
                   },
