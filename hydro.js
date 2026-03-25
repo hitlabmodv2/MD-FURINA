@@ -3663,9 +3663,11 @@ if (global.tebakanml[m.sender]) {
 }
 
 // Konfirmasi Reset DB via reply pesan
-if (Ahmad && quoted && quoted.fromMe && quoted.text &&
-    quoted.text.includes('RESET DATABASE') &&
+if (!global.resetPending) global.resetPending = {}
+if (Ahmad && quoted && quoted.fromMe && global.resetPending[m.sender] &&
+    (Date.now() - global.resetPending[m.sender]) < 5 * 60 * 1000 &&
     ['1', 'ya', 'iya', 'ok', 'reset'].includes(body.toLowerCase().trim())) {
+  delete global.resetPending[m.sender]
   await hydro.sendMessage(m.chat, { react: { text: '⏳', key: m.key } })
   global.db.users = {}
   global.db.chats = {}
@@ -24087,6 +24089,8 @@ case 'resetdatabase':
 case 'resetalldata': {
   if (!Ahmad) return replytolak(`🚫 *Akses Ditolak!*\n\nFitur ini hanya bisa digunakan oleh *Owner* dan *Nomor Bot*.`)
   if (text.toLowerCase() !== 'konfirmasi') {
+    if (!global.resetPending) global.resetPending = {}
+    global.resetPending[m.sender] = Date.now()
     return replytolak(
       `╭───────────────────────────╮\n│  ⚠️ *RESET DATABASE* ⚠️   │\n╰───────────────────────────╯\n\n🚨 *PERINGATAN KERAS!*\nKamu akan mereset *SEMUA DATA* bot!\n\n📦 *Data yang akan dihapus:*\n• 👥 Semua data pengguna terdaftar\n• 💬 Semua data grup/chat\n• 🎮 Semua data game\n• 🏷️ Semua data sticker & lainnya\n\n❗ *Setelah reset:*\n• Semua user harus daftar ulang\n• Semua saldo, exp, level hilang\n• Tidak bisa di-undo!\n\n✅ *Jika yakin, ketik:*\n*\${prefix}resetdb konfirmasi*\n\n💬 *Atau balas/reply pesan ini dengan:*\n*1* / *ya* / *iya* / *ok*`
     )
