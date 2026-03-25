@@ -20545,29 +20545,110 @@ const sessionFolder = './' + (global.sessionName || 'session');
 if (!fs.existsSync(sessionFolder)) {
   return replyhydro('❌ Folder session tidak ditemukan: ' + sessionFolder);
 }
-fs.readdir(sessionFolder, async function (err, files) {
-if (err) {
-console.log('Unable to scan directory: ' + err);
-return replyhydro('❌ Gagal scan folder session: ' + err.message);
-} 
-let filteredArray = files.filter(item => item.startsWith("pre-key") ||
-item.startsWith("sender-key") || item.startsWith("session-") || item.startsWith("app-state")
-)
-console.log(filteredArray.length); 
-let teks = '✅ Terdeteksi ' + filteredArray.length + ' file session\n\n'
-if(filteredArray.length == 0) return replyhydro(teks)
-filteredArray.map(function(e, i){
-teks += (i+1)+'. ' + e + '\n'
-})
-replyhydro(teks) 
-await sleep(2000)
-replyhydro("🗑️ Menghapus file session...")
-filteredArray.forEach(function (file) {
-try { fs.unlinkSync(sessionFolder + '/' + file) } catch(e) {}
-});
-await sleep(2000)
-replyhydro("✅ Berhasil menghapus semua file session!")     
-});
+try {
+  const allFiles = fs.readdirSync(sessionFolder);
+  const filteredArray = allFiles.filter(item =>
+    item.startsWith('pre-key') ||
+    item.startsWith('sender-key') ||
+    item.startsWith('session-') ||
+    item.startsWith('app-state')
+  );
+
+  if (filteredArray.length === 0) {
+    return replyhydro('✅ Tidak ada file session yang perlu dihapus.
+
+🛡️ File aman (tidak dihapus):
+• creds.json');
+  }
+
+  const preKeyFiles = filteredArray.filter(f => f.startsWith('pre-key'));
+  const senderKeyFiles = filteredArray.filter(f => f.startsWith('sender-key'));
+  const sessionFiles = filteredArray.filter(f => f.startsWith('session-'));
+  const appStateFiles = filteredArray.filter(f => f.startsWith('app-state'));
+
+  let listTeks = '🔍 *Scan Session Folder*
+';
+  listTeks += '━━━━━━━━━━━━━━━━━━━━
+';
+  listTeks += '📂 Total file terdeteksi: *' + filteredArray.length + ' file*
+
+';
+
+  if (preKeyFiles.length > 0) {
+    listTeks += '🔑 *Pre-Key Files (' + preKeyFiles.length + ')*
+';
+    preKeyFiles.forEach((f, i) => { listTeks += '  ' + (i+1) + '. ' + f + '
+'; });
+    listTeks += '
+';
+  }
+  if (senderKeyFiles.length > 0) {
+    listTeks += '📨 *Sender-Key Files (' + senderKeyFiles.length + ')*
+';
+    senderKeyFiles.forEach((f, i) => { listTeks += '  ' + (i+1) + '. ' + f + '
+'; });
+    listTeks += '
+';
+  }
+  if (sessionFiles.length > 0) {
+    listTeks += '💬 *Session Files (' + sessionFiles.length + ')*
+';
+    sessionFiles.forEach((f, i) => { listTeks += '  ' + (i+1) + '. ' + f + '
+'; });
+    listTeks += '
+';
+  }
+  if (appStateFiles.length > 0) {
+    listTeks += '📱 *App-State Files (' + appStateFiles.length + ')*
+';
+    appStateFiles.forEach((f, i) => { listTeks += '  ' + (i+1) + '. ' + f + '
+'; });
+    listTeks += '
+';
+  }
+
+  listTeks += '━━━━━━━━━━━━━━━━━━━━
+';
+  listTeks += '🛡️ *Aman (tidak dihapus):*
+• creds.json
+
+';
+  listTeks += '⏳ Sedang memproses penghapusan...';
+
+  replyhydro(listTeks);
+  await sleep(2000);
+
+  let berhasil = 0;
+  let gagal = 0;
+  filteredArray.forEach(file => {
+    try {
+      fs.unlinkSync(sessionFolder + '/' + file);
+      berhasil++;
+    } catch(e) {
+      gagal++;
+    }
+  });
+
+  await sleep(1000);
+
+  let hasilTeks = '✅ *Clear Session Selesai!*
+';
+  hasilTeks += '━━━━━━━━━━━━━━━━━━━━
+';
+  hasilTeks += '🗑️ Berhasil dihapus: *' + berhasil + ' file*
+';
+  if (gagal > 0) hasilTeks += '⚠️ Gagal dihapus: *' + gagal + ' file*
+';
+  hasilTeks += '🛡️ Aman tersimpan: *creds.json*
+';
+  hasilTeks += '━━━━━━━━━━━━━━━━━━━━
+';
+  hasilTeks += '💡 Bot tetap terhubung. Session bersih!';
+
+  replyhydro(hasilTeks);
+} catch(e) {
+  replyhydro('❌ Gagal clear session: ' + e.message);
+}
 }
 break
 //================================================================
