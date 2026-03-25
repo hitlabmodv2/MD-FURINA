@@ -20561,29 +20561,34 @@ function clockString(ms) {
 break
 //=========================================\\
 case 'delsesi': 
-  case 'clearsession': {
-fs.readdir("./furina", async function (err, files) {
+  case 'clearsession': 
+  case 'clearsesi': {
+const sessionFolder = './' + (global.sessionName || 'session');
+if (!fs.existsSync(sessionFolder)) {
+  return replyhydro('❌ Folder session tidak ditemukan: ' + sessionFolder);
+}
+fs.readdir(sessionFolder, async function (err, files) {
 if (err) {
 console.log('Unable to scan directory: ' + err);
-return replyhydro('Unable to scan directory: ' + err);
+return replyhydro('❌ Gagal scan folder session: ' + err.message);
 } 
-let filteredArray = await files.filter(item => item.startsWith("pre-key") ||
+let filteredArray = files.filter(item => item.startsWith("pre-key") ||
 item.startsWith("sender-key") || item.startsWith("session-") || item.startsWith("app-state")
-   )
+)
 console.log(filteredArray.length); 
-let teks =`Terdeteksi ${filteredArray.length} file kenangan <3\n\n`
-if(filteredArray.length == 0) return replyhydro(`${teks}`)
+let teks = '✅ Terdeteksi ' + filteredArray.length + ' file session\n\n'
+if(filteredArray.length == 0) return replyhydro(teks)
 filteredArray.map(function(e, i){
-teks += (i+1)+`. ${e}\n`
-})     
-replyhydro(`${teks}`) 
+teks += (i+1)+'. ' + e + '\n'
+})
+replyhydro(teks) 
 await sleep(2000)
-replyhydro("Menghapus file Kenangan...")
-await filteredArray.forEach(function (file) {
-fs.unlinkSync(`./furina/${file}`)
+replyhydro("🗑️ Menghapus file session...")
+filteredArray.forEach(function (file) {
+try { fs.unlinkSync(sessionFolder + '/' + file) } catch(e) {}
 });
 await sleep(2000)
-replyhydro("Berhasil menghapus semua Kenangan di folder session")     
+replyhydro("✅ Berhasil menghapus semua file session!")     
 });
 }
 break
