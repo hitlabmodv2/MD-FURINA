@@ -4034,6 +4034,7 @@ const bet = {
         { title: "📖 Peraturan",          description: "Baca peraturan penggunaan bot sebelum pakai",       id: "bacaperaturan" },
         { title: "💸 Donasi",             description: "Support bot agar terus berkembang via QRIS",        id: "donasi" },
         { title: "📋 Info Bot",           description: "Informasi lengkap bot, versi, dan statistik",       id: "infobot" },
+        { title: "👥 Info Grup",          description: "Link grup WhatsApp resmi bot untuk bergabung",       id: "infogrup" },
       ]
     },
     {
@@ -4314,6 +4315,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -4541,6 +4547,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -4743,6 +4754,11 @@ const bet = {
           title: "Info Bot",
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
+        },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
         },
       ]
     }
@@ -4947,6 +4963,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -5149,6 +5170,11 @@ const bet = {
           title: "Info Bot",
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
+        },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
         },
       ]
     }
@@ -5353,6 +5379,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -5555,6 +5586,11 @@ const bet = {
           title: "Info Bot",
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
+        },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
         },
       ]
     }
@@ -5759,6 +5795,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -5962,6 +6003,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -6163,6 +6209,11 @@ const bet = {
           title: "Info Bot",
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
+        },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
         },
       ]
     }
@@ -6366,6 +6417,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -6567,6 +6623,11 @@ const bet = {
           title: "Info Bot",
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
+        },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
         },
       ]
     }
@@ -6858,6 +6919,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -7061,6 +7127,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -7263,6 +7334,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -7463,6 +7539,11 @@ const bet = {
           title: "Info Bot",
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
+        },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
         },
       ]
     }
@@ -7666,6 +7747,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -7867,6 +7953,11 @@ const bet = {
           title: "Info Bot",
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
+        },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
         },
       ]
     }
@@ -8070,6 +8161,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -8271,6 +8367,11 @@ const bet = {
           title: "Info Bot",
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
+        },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
         },
       ]
     }
@@ -8474,6 +8575,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -8675,6 +8781,11 @@ const bet = {
           title: "Info Bot",
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
+        },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
         },
       ]
     }
@@ -8878,6 +8989,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -9079,6 +9195,11 @@ const bet = {
           title: "Info Bot",
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
+        },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
         },
       ]
     }
@@ -9282,6 +9403,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -9483,6 +9609,11 @@ const bet = {
           title: "Info Bot",
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
+        },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
         },
       ]
     }
@@ -9686,6 +9817,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -9887,6 +10023,11 @@ const bet = {
           title: "Info Bot",
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
+        },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
         },
       ]
     }
@@ -10090,6 +10231,11 @@ const bet = {
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
         },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
+        },
       ]
     }
   ]
@@ -10291,6 +10437,11 @@ const bet = {
           title: "Info Bot",
           description: "📋 Informasi total fitur dan lainnya",
           id: `infobot`, 
+        },
+        {
+          title: "👥 Info Grup",
+          description: "Link grup WhatsApp resmi bot untuk bergabung",
+          id: `infogrup`,
         },
       ]
     }
@@ -26185,6 +26336,25 @@ Terima kasih telah menggunakan bot kami! 😊
 
 Berkat kalian, bot ini bisa berkembang dan terus memberikan yang terbaik! 🚀✨
 `)
+}
+break
+
+//=========================================\
+case 'infogrup': {
+let grupTeks = '*╭─❒ 「 INFO GRUP RESMI BOT 」*\n';
+grupTeks += '├─────────────────────────\n';
+grupTeks += '├ *Grup Bot V1*\n';
+grupTeks += '├ > https://chat.whatsapp.com/FnfatV8TlOZEMwLlLoDCRp?mode=gi_t\n';
+grupTeks += '├─────────────────────────\n';
+grupTeks += '├ *Grup Bot V2*\n';
+grupTeks += '├ > https://chat.whatsapp.com/KaNQoAG6eGWLGnso3cKvwq?mode=gi_t\n';
+grupTeks += '├─────────────────────────\n';
+grupTeks += '├ *Grup Info Bot (No Main Bot)*\n';
+grupTeks += '├ > https://chat.whatsapp.com/LkEuHgYf7Yk41wXoUMH0lc?mode=gi_t\n';
+grupTeks += '├─────────────────────────\n';
+grupTeks += '╰ _Khusus admin yang boleh main bot di grup info_\n';
+grupTeks += '╰─❒';
+replyhydro(grupTeks);
 }
 break
 case 'bot': {

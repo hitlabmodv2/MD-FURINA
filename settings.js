@@ -10,7 +10,7 @@ global.antispam = false //auto kick spammer (true to on, false to off)
 global.autosahur = false // auto sahur (true to on, false to off)
 
 //===============SETTING MENU==================\\
-global.channel = '120363416755002041@newsletter' // GANTI DENGAN ID CHMU KALO ADA
+global.channel = '120363312297133690@newsletter' // GANTI DENGAN ID CHMU KALO ADA
 global.channeln = 'HYDRO COMMUNITY 📢📦' // GANTI DENGAN NAMA CH MU
 //===============SETTING MENU==================\\
 global.prefix = ['','!','.','#','&']
@@ -57,7 +57,7 @@ global.ownerNumber = ["6289667923162@s.whatsapp.net"]
 global.ownerweb = ""
 global.websitex = ""
 global.wagc = "https://chat.whatsapp.com/FvSBEz1UezQ4G7Xwfrr9sF"
-global.saluran = "https://whatsapp.com/channel/0029VbAYRBf4o7qSa74h2m0t"
+global.saluran = "https://whatsapp.com/channel/0029VaiyhS37IUYSuDJoJj1L"
 global.themeemoji = '🏞️'
 global.wm = "Asisten WilyKun ||| WhatsApps Bots"
 global.botscript = 'Dah gede nyari sc 🗿🖕' //script link
