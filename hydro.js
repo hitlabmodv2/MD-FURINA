@@ -757,12 +757,11 @@ console.error(err)
 if (m.isGroup && isMute) {
 if (!isAdmins && !Ahmad) return
 }
-if (isCmd && command) {
-    const _cmdDisplay = body || (prefix + command);
+if (isCmd && command && prefix !== "") {
     if (m.isGroup) {
-        console.log(`${chalk.cyan("[CMD]")} ${chalk.yellow(groupName)} | ${chalk.magenta(pushname)}: ${chalk.blue(_cmdDisplay)}`);
+        console.log(`${chalk.cyan("[CMD]")} ${chalk.yellow(groupName)} | ${chalk.magenta(pushname)}: ${chalk.blue(body)}`);
     } else {
-        console.log(`${chalk.cyan("[CMD]")} ${chalk.magenta(pushname)}: ${chalk.blue(_cmdDisplay)}`);
+        console.log(`${chalk.cyan("[CMD]")} ${chalk.magenta(pushname)}: ${chalk.blue(body)}`);
     }
 }
 
