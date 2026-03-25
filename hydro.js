@@ -3398,7 +3398,7 @@ hydro.tebaksurah = hydro.tebaksurah ? hydro.tebaksurah : {}
     }
 //=============================================================
     hydro.game = hydro.game ? hydro.game : {}
-    if (id in hydro.game) {
+    if (id in hydro.game && !m.key.fromMe) {
         let json = hydro.game[id][1]
     let id = 'tebakgame-' + m.chat
     let users = global.db.users[m.sender]
@@ -3423,7 +3423,7 @@ hydro.tebaksurah = hydro.tebaksurah ? hydro.tebaksurah : {}
     }
 //=============================================================
     hydro.game = hydro.game ? hydro.game : {}
-    if (id in hydro.game) {
+    if (id in hydro.game && !m.key.fromMe) {
         let json = hydro.game[id][1]
     let id = 'tebakanml-' + m.chat
     let users = global.db.users[m.sender]
@@ -3447,7 +3447,7 @@ hydro.tebaksurah = hydro.tebaksurah ? hydro.tebaksurah : {}
     }
 //=============================================================
 hydro.tebakkata = hydro.tebakkata ? hydro.tebakkata : {}  
-if (from in hydro.tebakkata) {
+if (from in hydro.tebakkata && !m.key.fromMe) {
 let id = m.chat
 let users = global.db.users[m.sender]
 let json = JSON.parse(JSON.stringify(hydro.tebakkata[id][1]))
@@ -3465,7 +3465,7 @@ if (budy.toLowerCase() == json.jawaban.toLowerCase().trim()) {
 } else replyhydro('❌ Jawaban salah!')
 }
 hydro.tebakgambar = hydro.tebakgambar ? hydro.tebakgambar : {} 
-if(from in hydro.tebakgambar) {
+if(from in hydro.tebakgambar && !m.key.fromMe) {
 kuis = true
 let id = m.chat
 let users = global.db.users[m.sender]
@@ -3534,7 +3534,7 @@ delete tebakkimia[m.sender.split('@')[0]]
         
 //=========================================\\
 hydro.tekateki = hydro.tekateki ? hydro.tekateki : {}  
-if(from in hydro.tekateki){
+if(from in hydro.tekateki && !m.key.fromMe){
 let users = global.db.users[m.sender]
 const similarity = require('similarity')
 const threshold = 0.72
@@ -3569,7 +3569,7 @@ delete tebakasahotak[m.sender.split('@')[0]]
         }
 //=========================================\\
         hydro.siapaaku = hydro.siapaaku ? hydro.siapaaku : {}
-if(from in hydro.siapaaku){
+if(from in hydro.siapaaku && !m.key.fromMe){
 const similarity = require('similarity')
 const threshold = 0.72
 let id = m.chat
