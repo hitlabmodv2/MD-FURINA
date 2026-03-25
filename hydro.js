@@ -3662,6 +3662,22 @@ if (global.tebakanml[m.sender]) {
     }
 }
 
+// Konfirmasi Reset DB via reply pesan
+if (Ahmad && quoted && quoted.fromMe && quoted.text &&
+    quoted.text.includes('RESET DATABASE') &&
+    ['1', 'ya', 'iya', 'ok', 'reset'].includes(body.toLowerCase().trim())) {
+  await hydro.sendMessage(m.chat, { react: { text: '⏳', key: m.key } })
+  global.db.users = {}
+  global.db.chats = {}
+  global.db.sticker = {}
+  global.db.database = {}
+  global.db.game = {}
+  global.db.others = { vote: [] }
+  saveDB(global.db)
+  await hydro.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
+  replytolak(`╭───────────────────────────╮\n│  ✅ *RESET BERHASIL* ✅    │\n╰───────────────────────────╯\n\n🗑️ Semua data telah direset!\n\n📋 *Status Database:*\n• 👥 Users     → 0 data\n• 💬 Chats     → 0 data\n• 🎮 Game      → 0 data\n• 🏷️ Sticker   → 0 data\n• 📦 Lainnya   → 0 data\n\n💡 Semua pengguna sekarang\nharus daftar ulang dengan:\n*${prefix}daftar nama,umur*\n\n_Reset dilakukan oleh Owner_ 👑`)
+}
+
 switch (command) {
 case 'ttc': case 'ttt': case 'tictactoe': {
             let TicTacToe = require("./lib/tictactoe")
@@ -24072,7 +24088,7 @@ case 'resetalldata': {
   if (!Ahmad) return replytolak(`🚫 *Akses Ditolak!*\n\nFitur ini hanya bisa digunakan oleh *Owner* dan *Nomor Bot*.`)
   if (text.toLowerCase() !== 'konfirmasi') {
     return replytolak(
-      `╭───────────────────────────╮\n│  ⚠️ *RESET DATABASE* ⚠️   │\n╰───────────────────────────╯\n\n🚨 *PERINGATAN KERAS!*\nKamu akan mereset *SEMUA DATA* bot!\n\n📦 *Data yang akan dihapus:*\n• 👥 Semua data pengguna terdaftar\n• 💬 Semua data grup/chat\n• 🎮 Semua data game\n• 🏷️ Semua data sticker & lainnya\n\n❗ *Setelah reset:*\n• Semua user harus daftar ulang\n• Semua saldo, exp, level hilang\n• Tidak bisa di-undo!\n\n✅ *Jika yakin, ketik:*\n*\${prefix}resetdb konfirmasi*`
+      `╭───────────────────────────╮\n│  ⚠️ *RESET DATABASE* ⚠️   │\n╰───────────────────────────╯\n\n🚨 *PERINGATAN KERAS!*\nKamu akan mereset *SEMUA DATA* bot!\n\n📦 *Data yang akan dihapus:*\n• 👥 Semua data pengguna terdaftar\n• 💬 Semua data grup/chat\n• 🎮 Semua data game\n• 🏷️ Semua data sticker & lainnya\n\n❗ *Setelah reset:*\n• Semua user harus daftar ulang\n• Semua saldo, exp, level hilang\n• Tidak bisa di-undo!\n\n✅ *Jika yakin, ketik:*\n*\${prefix}resetdb konfirmasi*\n\n💬 *Atau balas/reply pesan ini dengan:*\n*1* / *ya* / *iya* / *ok*`
     )
   }
   await hydro.sendMessage(m.chat, { react: { text: '⏳', key: m.key } })
