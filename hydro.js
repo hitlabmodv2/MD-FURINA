@@ -4019,12 +4019,7 @@ case 'menu': {
 
   hydro.sendMessage(m.chat, { react: { text: `🌊`, key: m.key }})
 
-let teks = (`
-╭━━━━『 🌊 *${botname}* 🌊 』━━━━╮
-│  ➤━━━━━━━━━━━━━━━━━━━━━━━◀  │
-╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯
-
-╭─「 👤 *INFO PENGGUNA* 」
+let teks = (`╭─「 👤 *INFO PENGGUNA* 」
 │
 ├➤ *Nama*   : ${pushname}
 ├➤ *Rank*   : ${Ahmad ? '👨‍💻 Pemilik' : isOwn ? '🔱 Owner Panel' : isPT ? '🏢 PT Panel' : isAdminP ? '🛡️ Admin Panel' : isReseller ? '💼 Reseller' : isPrem ? '⭐ Premium' : '🆓 Free User'}
@@ -4143,7 +4138,30 @@ const bet = {
   ]
 }
 await listbut2(m.chat, teks, bet, m)
-await hydro.sendMessage(from, { audio: { url: global.music}, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
+await hydro.sendMessage(from, {
+  audio: { url: global.music },
+  mimetype: 'audio/mp4',
+  ptt: true,
+  contextInfo: {
+    mentionedJid: [sender],
+    forwardingScore: 999,
+    isForwarded: true,
+    forwardedNewsletterMessageInfo: {
+      newsletterJid: `${global.channel}`,
+      serverMessageId: Math.floor(Math.random() * 9999) + 1,
+      newsletterName: `${global.channeln}`,
+    },
+    externalAdReply: {
+      showAdAttribution: true,
+      containsAutoReply: true,
+      title: `🎵 ${global.botname}`,
+      body: `🌊 Selamat datang — Nikmati musiknya!`,
+      previewType: 'VIDEO',
+      thumbnailUrl: 'https://i.ibb.co.com/TqWTGXVM/474091701-979544940732791-1475207296815939677-n.jpg',
+      sourceUrl: `https://wa.me/${global.ownernomer}`
+    }
+  }
+}, { quoted: m })
 }
 break
 //=========================================\\
