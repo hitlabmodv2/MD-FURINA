@@ -525,6 +525,13 @@ const _prayerImages = {
 const _arabicPrayer = {
     Subuh: 'الصُّبْح', Dzuhur: 'الظُّهْر', Ashar: 'الْعَصْر', Maghrib: 'الْمَغْرِب', Isya: 'الْعِشَاء'
 }
+const _arabicMeaning = {
+    Subuh:   '_(Fajar — Cahaya pertama sebelum matahari terbit)_',
+    Dzuhur:  '_(Tengah Hari — Saat matahari condong ke barat)_',
+    Ashar:   '_(Petang — Sore menjelang matahari terbenam)_',
+    Maghrib: '_(Senja — Saat matahari terbenam di ufuk barat)_',
+    Isya:    '_(Malam — Kegelapan langit setelah mega merah hilang)_'
+}
 
 setInterval(async () => {
     try {
@@ -564,6 +571,7 @@ setInterval(async () => {
                 `┌─────────────────────\n` +
                 `│ ✨ Telah masuk waktu\n` +
                 `│ 🕌 *${prayer}* — ${_arabicPrayer[prayer] || ''}\n` +
+                `│ ${_arabicMeaning[prayer] || ''}\n` +
                 `│ ⏰ Pukul *${waktu} WIB*\n` +
                 `│ 📍 *${city}* & sekitarnya\n` +
                 `└─────────────────────\n\n` +
