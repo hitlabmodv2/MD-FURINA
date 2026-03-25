@@ -24084,7 +24084,7 @@ case 'resetalldata': {
   global.db.database = {}
   global.db.game = {}
   global.db.others = { vote: [] }
-  await global.db.save()
+  saveDB(global.db)
   await hydro.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
   replytolak(
     `╭───────────────────────────╮\n│  ✅ *RESET BERHASIL* ✅    │\n╰───────────────────────────╯\n\n🗑️ Semua data telah direset!\n\n📋 *Status Database:*\n• 👥 Users     → 0 data\n• 💬 Chats     → 0 data\n• 🎮 Game      → 0 data\n• 🏷️ Sticker   → 0 data\n• 📦 Lainnya   → 0 data\n\n💡 Semua pengguna sekarang\nharus daftar ulang dengan:\n*\${prefix}daftar nama,umur*\n\n_Reset dilakukan oleh Owner_ 👑`
