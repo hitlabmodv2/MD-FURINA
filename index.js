@@ -535,6 +535,16 @@ setInterval(async () => {
         const now = moment.tz('Asia/Jakarta').format('HH:mm')
         const today = moment.tz('Asia/Jakarta').format('YYYY-MM-DD')
         const city = cfg.sholat_city || 'Jakarta'
+        const _nowMoment = moment.tz('Asia/Jakarta')
+        const _hariTgl = _nowMoment.locale('id').format('dddd, D MMMM YYYY')
+        const _jamWib = _nowMoment.format('HH:mm:ss')
+        const _prayerMsg = {
+            Subuh:   `🌅 _Subuh adalah sholat yang paling berat bagi orang munafik,_\n_namun paling mulia bagi orang beriman._\n\n_Bangunlah dari tidurmu, sucikan dirimu,_\n_dan sambut fajar dengan sujud kepada Allah._`,
+            Dzuhur:  `☀️ _Di tengah kesibukan hari ini, berhentilah sejenak._\n_Tinggalkan urusan dunia untuk menghadap Sang Pencipta._\n\n_Sholat Dzuhur adalah pengingat bahwa segala_\n_aktivitasmu hanya bermakna jika dilandasi ibadah._`,
+            Ashar:   `🌤️ _Jaga sholat Ashar dengan sebaik-baiknya,_\n_karena Allah secara khusus menyebutnya sebagai_\n_"sholat wustha" — sholat yang paling utama._\n\n_Jangan biarkan sore harimu berlalu tanpa sujud._`,
+            Maghrib: `🌆 _Matahari telah terbenam, tanda hari hampir usai._\n_Sudahkah kita bersyukur atas nikmat hari ini?_\n\n_Segera tunaikan sholat Maghrib sebelum waktunya habis,_\n_karena waktunya sangat singkat dan mulia._`,
+            Isya:    `🌙 _Sholat Isya adalah penutup ibadah harian kita._\n_Akhiri harimu dengan bersujud kepada Allah,_\n_memohon ampunan dan keberkahan untuk esok hari._\n\n_Jangan biarkan matamu terpejam sebelum menunaikannya._`
+        }
         for (const [prayer, waktu] of Object.entries(times)) {
             if (now !== waktu) continue
             const key = `${today}_${prayer}`
@@ -543,15 +553,26 @@ setInterval(async () => {
             const prayerImgPath = _prayerImages[prayer]
             if (!fs.existsSync(prayerImgPath)) continue
             const masjidBuf = fs.readFileSync(prayerImgPath)
-            const caption = `🕌 *السَّلَامُ عَلَيْكُمْ*\n\n` +
-                `╔══════════════╗\n` +
+            const _pesan = _prayerMsg[prayer] || `_Bersegeralah menunaikan sholat tepat waktu._ 🤲`
+            const caption =
+                `🕌 *السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ*\n\n` +
+                `╔══════════════════╗\n` +
                 `  🌙 *WAKTU SHOLAT* 🌙\n` +
-                `╚══════════════╝\n\n` +
-                `✨ Telah masuk waktu *${prayer}* ${_arabicPrayer[prayer] || ''}\n` +
-                `⏰ Pukul *${waktu} WIB*\n` +
-                `📍 Kota *${city}*\n\n` +
-                `_Bersegeralah menunaikan sholat tepat waktu_ 🤲\n\n` +
-                `🌊 _Semoga ibadah kita diterima Allah SWT_ 🌊`
+                `╚══════════════════╝\n\n` +
+                `📅 *${_hariTgl}*\n` +
+                `🕐 Pukul *${_jamWib} WIB*\n\n` +
+                `┌─────────────────────\n` +
+                `│ ✨ Telah masuk waktu\n` +
+                `│ 🕌 *${prayer}* — ${_arabicPrayer[prayer] || ''}\n` +
+                `│ ⏰ Pukul *${waktu} WIB*\n` +
+                `│ 📍 *${city}* & sekitarnya\n` +
+                `└─────────────────────\n\n` +
+                `${_pesan}\n\n` +
+                `〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n` +
+                `🤲 _Semoga Allah SWT menerima sholat kita,_\n` +
+                `_mengampuni segala dosa-dosa kita,_\n` +
+                `_dan memberkahi setiap langkah kita._\n\n` +
+                `*آمِيْنَ يَا رَبَّ الْعَالَمِيْنَ* 🌊`
             for (const [chatId, enabled] of Object.entries(global.autoSholatDB)) {
                 if (!enabled) continue
                 try {
