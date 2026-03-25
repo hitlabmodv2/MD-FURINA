@@ -3641,12 +3641,13 @@ if (isCmd && !m.key.fromMe) {
     const allowWithoutRegister = ['daftar']
     
     if (user && !user.registered && !Ahmad && !allowWithoutRegister.includes(command)) {
+        await hydro.sendMessage(m.chat, { react: { text: '🚫', key: m.key } })
         return hydro.sendMessage(m.chat, {
-            text: `🚫 *Akses Ditolak!*\n\nKamu belum terdaftar sebagai pengguna bot ini.\n\n📋 *Cara Daftar:*\n➞ Ketik *${prefix}daftar nama,umur*\n➞ Contoh: *${prefix}daftar Budi,20*\n\n💡 Setelah daftar, kamu bisa menggunakan semua fitur bot secara penuh!`,
+            text: `╭───────────────────────────╮\n🚫 *AKSES DITOLAK* 🚫\n╰───────────────────────────╯\n\n❌ Hei *${pushname}*, kamu belum terdaftar\nsebagai pengguna resmi bot ini.\n\n┌────────────────────\n│ 📋 *CARA DAFTAR*\n│ Ketik: *${prefix}daftar nama,umur*\n│ Contoh: *${prefix}daftar Budi,17*\n└────────────────────\n\n🛡️ *Informasi Akses:*\n• Fitur umum → Wajib daftar dulu\n• Fitur khusus → Hanya Owner & Nomor Bot\n• Setelah daftar → Semua fitur terbuka!\n\n💡 _Daftar sekarang dan nikmati seluruh\nfitur bot secara gratis dan penuh!_`,
             contextInfo: {
                 externalAdReply: {
-                    title: "⚠️ Belum Terdaftar",
-                    body: `Silakan daftar dulu — ${prefix}daftar nama,umur`,
+                    title: "🚫 Belum Terdaftar",
+                    body: `Ketik ${prefix}daftar nama,umur untuk mendaftar`,
                     thumbnailUrl: global.thumbnail,
                     mediaType: 1,
                     showAdAttribution: false,
