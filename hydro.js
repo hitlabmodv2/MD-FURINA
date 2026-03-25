@@ -3286,10 +3286,13 @@ hydro.tebaklagu = hydro.tebaklagu ? hydro.tebaklagu : {};
 if (tebaklagu.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebaklagu[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
+if (budy.toLowerCase() == 'nyerah') {
+ replyhydro('❌ Menyerah! Jawabannya: ' + jawaban)
+ delete tebaklagu[m.sender.split('@')[0]]
+} else if (budy.toLowerCase() == jawaban) {
    hydro.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/14744917bea0185b52fb1.jpg' }, caption: `🎮 Tebak Lagu 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? Silahkan Ketik Tebak Lagu`}, {quoted:m}) 
  delete tebaklagu[m.sender.split('@')[0]]
-} else console.log('*Jawaban Salah!*')
+} else replyhydro('❌ Jawaban salah!')
 }
 //=============================================================
     hydro.tebaklogo = hydro.tebaklogo ? hydro.tebaklogo : {}
@@ -3420,7 +3423,11 @@ if (budy.toLowerCase() == json.jawaban.toLowerCase().trim()) {
  replyhydro(`${teks}`)
  clearTimeout(hydro.tebakkata[id][2])
  delete hydro.tebakkata[id]
-} else console.log('*Jawaban Salah!*')
+} else if (/nyerah|surrender/i.test(budy)) {
+ replyhydro(`❌ Menyerah! Jawabannya: *${json.jawaban}*`)
+ clearTimeout(hydro.tebakkata[id][2])
+ delete hydro.tebakkata[id]
+} else replyhydro('❌ Jawaban salah!')
 }
 hydro.tebakgambar = hydro.tebakgambar ? hydro.tebakgambar : {} 
 if(from in hydro.tebakgambar) {
@@ -3434,7 +3441,11 @@ let json = JSON.parse(JSON.stringify(hydro.tebakgambar[id][1]))
  replyhydro(`${teks}`)
  clearTimeout(hydro.tebakgambar[id][3])
  delete hydro.tebakgambar[id]
-} else console.log('*Jawaban Salah!*')
+} else if (/nyerah|surrender/i.test(budy)) {
+ replyhydro(`❌ Menyerah! Jawabannya: *${json.jawaban}*`)
+ clearTimeout(hydro.tebakgambar[id][3])
+ delete hydro.tebakgambar[id]
+} else replyhydro('❌ Jawaban salah!')
 }
 
 hydro.tebakbendera2 = hydro.tebakbendera2 ? hydro.tebakbendera2 : {};
@@ -3447,7 +3458,7 @@ delete tebakbendera2[m.sender.split('@')[0]]
             } else if (budy.toLowerCase() == jawaban) {
 await hydro.sendText(m.chat, `🎮 Tebak Bendera 🎮\n\nJawaban Benar 🎉`, m)
 delete tebakbendera2[m.sender.split('@')[0]]
-            } else console.log('*Jawaban Salah!*')
+            } else replyhydro('❌ Jawaban salah!')
         }
 hydro.tebakbendera = hydro.tebakbendera ? hydro.tebakbendera : {};
 if (tebakbendera.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -3459,7 +3470,7 @@ delete tebakbendera[m.sender.split('@')[0]]
             } else if (budy.toLowerCase() == jawaban) {
 await hydro.sendText(m.chat, `🎮 Tebak Gambar 🎮\n\nJawaban Benar 🎉`, m)
 delete tebakbendera[m.sender.split('@')[0]]
-            } else console.log('*Jawaban Salah!*')
+            } else replyhydro('❌ Jawaban salah!')
         }
 hydro.tebakkabupaten = hydro.tebakkabupaten ? hydro.tebakkabupaten : {};
  if (tebakkabupaten.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -3471,7 +3482,7 @@ delete tebakkabupaten[m.sender.split('@')[0]]
             } else if (budy.toLowerCase() == jawaban) {
 await hydro.sendText(m.chat, `🎮 Tebak Kabupaten 🎮\n\nJawaban Benar 🎉`, m)
 delete tebakkabupaten[m.sender.split('@')[0]]
-            } else console.log('*Jawaban Salah!*')
+            } else replyhydro('❌ Jawaban salah!')
         }
  hydro.tebakkimia = hydro.tebakkimia ? hydro.tebakkimia : {};
         if (tebakkimia.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -3483,7 +3494,7 @@ delete tebakkimia[m.sender.split('@')[0]]
             } else if (budy.toLowerCase() == jawaban) {
 await hydro.sendText(m.chat, `🎮 Tebak Kimia 🎮\n\nJawaban Benar 🎉`, m)
 delete tebakkimia[m.sender.split('@')[0]]
-            } else console.log('*Jawaban Salah!*')
+            } else replyhydro('❌ Jawaban salah!')
         }
         
 //=========================================\\
@@ -3501,7 +3512,12 @@ users.money += hydro.tekateki[id][2]
  replyhydro(`${teks}`)
  clearTimeout(hydro.tekateki[id][3])
  delete hydro.tekateki[id]
+ } else if (/nyerah|surrender/i.test(budy)) {
+ replyhydro(`❌ Menyerah! Jawabannya: *${json.jawaban}*`)
+ clearTimeout(hydro.tekateki[id][3])
+ delete hydro.tekateki[id]
  } else if(similarity(budy.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold) replyhydro(`*Dikit Lagi!*`)
+ else replyhydro('❌ Jawaban salah!')
 }
 //=========================================\\
 hydro.tebakasahotak = hydro.tebakasahotak ? hydro.tebakasahotak : {};
@@ -3514,7 +3530,7 @@ delete tebakasahotak[m.sender.split('@')[0]]
             } else if (budy.toLowerCase() == jawaban) {
 await hydro.sendText(m.chat, `🎮 Asah Otak 🎮\n\nJawaban Benar 🎉`, m)
 delete tebakasahotak[m.sender.split('@')[0]]
-            } else console.log('*Jawaban Salah!*')
+            } else replyhydro('❌ Jawaban salah!')
         }
 //=========================================\\
         hydro.siapaaku = hydro.siapaaku ? hydro.siapaaku : {}
@@ -3531,8 +3547,12 @@ var teks = `*GAME SIAPAKAH AKU*\n\nJawaban Kamu Benar!\n Hadiah : +${hydro.siapa
    replyhydro(`${teks}`)
  clearTimeout(hydro.siapaaku[id][3])
  delete hydro.siapaaku[id]
+ } else if (/nyerah|surrender/i.test(budy)) {
+ replyhydro(`❌ Menyerah! Jawabannya: *${json.jawaban}*`)
+ clearTimeout(hydro.siapaaku[id][3])
+ delete hydro.siapaaku[id]
  } else if(similarity(budy.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold) replyhydro(`*Dikit Lagi!*`)
-// else reply(`*Salah!*`) 
+ else replyhydro('❌ Jawaban salah!')
 }
 //=========================================\\
         hydro.susunkata = hydro.susunkata ? hydro.susunkata : {}  
@@ -3549,9 +3569,12 @@ users.money += hydro.susunkata[id][2]
 replyhydro(`${teks}`)
  clearTimeout(hydro.susunkata[id][3])
  delete hydro.susunkata[id]
+ } else if (/nyerah|surrender/i.test(budy)) {
+ replyhydro(`❌ Menyerah! Jawabannya: *${json.jawaban}*`)
+ clearTimeout(hydro.susunkata[id][3])
+ delete hydro.susunkata[id]
  } else if(similarity(budy.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold) replyhydro(`*Dikit Lagi!*`)
-// else reply(`*Salah!*`)
- 
+ else replyhydro('❌ Jawaban salah!')
 }
 //=========================================\\
 hydro.caklontong = hydro.caklontong ? hydro.caklontong : {};
@@ -3559,11 +3582,15 @@ if (caklontong.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = caklontong[m.sender.split('@')[0]]
 deskripsi = caklontong_desk[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
+if (budy.toLowerCase() == 'nyerah') {
+ replyhydro('❌ Menyerah! Jawabannya: ' + jawaban)
+ delete caklontong[m.sender.split('@')[0]]
+ delete caklontong_desk[m.sender.split('@')[0]]
+} else if (budy.toLowerCase() == jawaban) {
  hydro.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/14744917bea0185b52fb1.jpg' }, caption: `🎮 Tebak Lontong 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? Silahkan Ketik Tebak Lontong`}, {quoted:m}) 
  delete caklontong[m.sender.split('@')[0]]
 delete caklontong_desk[m.sender.split('@')[0]]
-} else console.log('*Jawaban Salah!*')
+} else replyhydro('❌ Jawaban salah!')
 }
 hydro.tebakkalimat = hydro.tebakkalimat ? hydro.tebakkalimat : {};
 if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -3572,7 +3599,7 @@ jawaban = tebakkalimat[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
  hydro.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/14744917bea0185b52fb1.jpg' }, caption: `🎮 Tebak Kalimat 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? Silahkan Ketik Tebak Kalimat`}, {quoted:m}) 
  delete tebakkalimat[m.sender.split('@')[0]]
-} else console.log('*Jawaban Salah!*')
+} else replyhydro('❌ Jawaban salah!')
 }
 function generateSN(length = 8) { 
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -3593,24 +3620,31 @@ let users = global.db.users[m.sender]
 let json = JSON.parse(JSON.stringify(hydro.tebaklirik[id][1]))
 
  if (budy.toLowerCase() == json.jawaban.toLowerCase().trim()) {
-user.money += hydro.tebaklirik[id][2]
+users.money += hydro.tebaklirik[id][2]
  global.db.users[m.sender].exp += 10
    var teks = `*GAME TEBAK LIRIK*\n\nJawaban Kamu Benar!\n Hadiah : +${hydro.tebaklirik[id][2]} Money 💸\n EXP: +10`
   replyhydro(`${teks}`)
  clearTimeout(hydro.tebaklirik[id][3])
  delete hydro.tebaklirik[id]
+ } else if (/nyerah|surrender/i.test(budy)) {
+ replyhydro(`❌ Menyerah! Jawabannya: *${json.jawaban}*`)
+ clearTimeout(hydro.tebaklirik[id][3])
+ delete hydro.tebaklirik[id]
  } else if(similarity(budy.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold) replyhydro(`*Dikit Lagi!*`)
-// else reply(`*Salah!*`)
- }
+ else replyhydro('❌ Jawaban salah!')
+}
 //=========================================\\
 hydro.tebaktebakan = hydro.tebaktebakan ? hydro.tebaktebakan : {};
 if (tebaktebakan.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = tebaktebakan[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
+if (budy.toLowerCase() == 'nyerah') {
+ replyhydro('❌ Menyerah! Jawabannya: ' + jawaban)
+ delete tebaktebakan[m.sender.split('@')[0]]
+} else if (budy.toLowerCase() == jawaban) {
  hydro.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/14744917bea0185b52fb1.jpg' }, caption: `🎮 Tebak Tebakan 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? Silahkan Ketik Tebak Tebakan`}, {quoted:m}) 
  delete tebaktebakan[m.sender.split('@')[0]]
-} else console.log('*Jawaban Salah!*')
+} else replyhydro('❌ Jawaban salah!')
 }
 //menu thingy
 const timestamp = speed()
