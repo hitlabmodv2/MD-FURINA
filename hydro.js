@@ -2096,11 +2096,11 @@ reply(`${err}`)
 }
 _sewa.expiredCheck(hydro, sewa)
 //================================================================
-if (m.isGroup && !m.key.fromMe && isAutosimi ) {
+if (m.isGroup && !m.key.fromMe && isAutosimi && !isCmd && budy.trim().length > 2) {
 const HydroChaty = `${budy}`
 HydroAI(pushname,HydroChaty)
 }
-if (m.isGroup && isAutoAiGc && !m.key.fromMe) {
+if (m.isGroup && isAutoAiGc && !m.key.fromMe && !isCmd && budy.trim().length > 2) {
 const HydroChaty = `${budy}`
 HydroAI(pushname,HydroChaty)
 }
@@ -2111,7 +2111,7 @@ if (automati) {
 }
 
 
-if (!m.key.fromMe && m.isGroup && IsHydroChat) {
+if (!m.key.fromMe && m.isGroup && IsHydroChat && !isCmd && budy.trim().length > 2) {
 const HydroChaty = `${budy}`
 HydroAI(pushname,HydroChaty)
 }
