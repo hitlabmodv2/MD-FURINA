@@ -3640,7 +3640,7 @@ if (isCmd && !m.key.fromMe) {
     const user = global.db.users[m.sender]
     const allowWithoutRegister = ['daftar', 'menu', 'infogrup', 'infobot', 'bacaperaturan']
     
-    if (user && !user.registered && !allowWithoutRegister.includes(command)) {
+    if (user && !user.registered && !Ahmad && !allowWithoutRegister.includes(command)) {
         return hydro.sendMessage(m.chat, {
             text: `🚫 *Akses Ditolak!*\n\nKamu belum terdaftar sebagai pengguna bot ini.\n\n📋 *Cara Daftar:*\n➞ Ketik *${prefix}daftar nama,umur*\n➞ Contoh: *${prefix}daftar Budi,20*\n\n💡 Setelah daftar, kamu bisa menggunakan semua fitur bot secara penuh!`,
             contextInfo: {
