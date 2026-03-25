@@ -4021,7 +4021,7 @@ let teks = (`
 _memberikan pengalaman terbaik!"_ ✨
 
 🚀 *Powered By ${botname}*
-`))
+`)
 
 const bet = {
   title: "ʟɪsᴛ ᴍᴇɴᴜ",
