@@ -1,0 +1,93 @@
+🔍 Scan Session Folder
+━━━━━━━━━━━━━━━━━━━━
+📂 Total file terdeteksi: 78 file
+
+🔑 Pre-Key Files (61)
+  1. pre-key-32.json
+  2. pre-key-33.json
+  3. pre-key-34.json
+  4. pre-key-35.json
+  5. pre-key-36.json
+  6. pre-key-37.json
+  7. pre-key-38.json
+  8. pre-key-39.json
+  9. pre-key-40.json
+  10. pre-key-41.json
+  11. pre-key-42.json
+  12. pre-key-43.json
+  13. pre-key-44.json
+  14. pre-key-45.json
+  15. pre-key-47.json
+  16. pre-key-48.json
+  17. pre-key-49.json
+  18. pre-key-50.json
+  19. pre-key-51.json
+  20. pre-key-52.json
+  21. pre-key-53.json
+  22. pre-key-54.json
+  23. pre-key-55.json
+  24. pre-key-56.json
+  25. pre-key-57.json
+  26. pre-key-59.json
+  27. pre-key-60.json
+  28. pre-key-61.json
+  29. pre-key-62.json
+  30. pre-key-63.json
+  31. pre-key-64.json
+  32. pre-key-65.json
+  33. pre-key-66.json
+  34. pre-key-67.json
+  35. pre-key-68.json
+  36. pre-key-69.json
+  37. pre-key-70.json
+  38. pre-key-71.json
+  39. pre-key-72.json
+  40. pre-key-74.json
+  41. pre-key-75.json
+  42. pre-key-76.json
+  43. pre-key-77.json
+  44. pre-key-78.json
+  45. pre-key-79.json
+  46. pre-key-80.json
+  47. pre-key-81.json
+  48. pre-key-82.json
+  49. pre-key-83.json
+  50. pre-key-84.json
+  51. pre-key-86.json
+  52. pre-key-87.json
+  53. pre-key-88.json
+  54. pre-key-89.json
+  55. pre-key-91.json
+  56. pre-key-92.json
+  57. pre-key-93.json
+  58. pre-key-94.json
+  59. pre-key-95.json
+  60. pre-key-96.json
+  61. pre-key-97.json
+
+📨 Sender-Key Files (9)
+  1. sender-key-120363192554714254@g.us--6289667923162--48.json
+  2. sender-key-120363192554714254@g.us--81582920577063--0.json
+  3. sender-key-120363192554714254@g.us--97968623505429--0.json
+  4. sender-key-120363407152523539@g.us--274921661972673--13.json
+  5. sender-key-memory-120363192554714254@g.us.json
+  6. sender-key-status@broadcast--129334601846925--0.json
+  7. sender-key-status@broadcast--6288801736460--12.json
+  8. sender-key-status@broadcast--76790290767977--0.json
+  9. sender-key-status@broadcast--88661110579293--0.json
+
+💬 Session Files (8)
+  1. session-129334601846925.0.json
+  2. session-274921661972673.13.json
+  3. session-6288801736460.12.json
+  4. session-6289667923162.0.json
+  5. session-76790290767977.0.json
+  6. session-81582920577063.0.json
+  7. session-88661110579293.0.json
+  8. session-97968623505429.0.json
+
+━━━━━━━━━━━━━━━━━━━━
+🛡️ Aman (tidak dihapus):
+* creds.json
+
+⏳ Sedang memproses penghapusan...

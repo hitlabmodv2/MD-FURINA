@@ -20554,7 +20554,7 @@ try {
     item.startsWith('app-state')
   );
   if (filteredArray.length === 0) {
-    return replyhydro('✅ Tidak ada file session yang perlu dihapus.\n\n🛡️ File aman (tidak dihapus):\n• creds.json');
+    return replyhydro('✅ Tidak ada file session yang perlu dihapus.\n🛡️ Aman: creds.json');
   }
   const preKeyFiles = filteredArray.filter(f => f.startsWith('pre-key'));
   const senderKeyFiles = filteredArray.filter(f => f.startsWith('sender-key'));
@@ -20562,48 +20562,29 @@ try {
   const appStateFiles = filteredArray.filter(f => f.startsWith('app-state'));
   let listTeks = '🔍 *Scan Session Folder*\n';
   listTeks += '━━━━━━━━━━━━━━━━━━━━\n';
-  listTeks += '📂 Total file terdeteksi: *' + filteredArray.length + ' file*\n\n';
-  if (preKeyFiles.length > 0) {
-    listTeks += '🔑 *Pre-Key Files (' + preKeyFiles.length + ')*\n';
-    preKeyFiles.forEach((f, i) => { listTeks += '  ' + (i+1) + '. ' + f + '\n'; });
-    listTeks += '\n';
-  }
-  if (senderKeyFiles.length > 0) {
-    listTeks += '📨 *Sender-Key Files (' + senderKeyFiles.length + ')*\n';
-    senderKeyFiles.forEach((f, i) => { listTeks += '  ' + (i+1) + '. ' + f + '\n'; });
-    listTeks += '\n';
-  }
-  if (sessionFiles.length > 0) {
-    listTeks += '💬 *Session Files (' + sessionFiles.length + ')*\n';
-    sessionFiles.forEach((f, i) => { listTeks += '  ' + (i+1) + '. ' + f + '\n'; });
-    listTeks += '\n';
-  }
-  if (appStateFiles.length > 0) {
-    listTeks += '📱 *App-State Files (' + appStateFiles.length + ')*\n';
-    appStateFiles.forEach((f, i) => { listTeks += '  ' + (i+1) + '. ' + f + '\n'; });
-    listTeks += '\n';
-  }
+  listTeks += '📂 Total file terdeteksi: *' + filteredArray.length + ' file*\n';
   listTeks += '━━━━━━━━━━━━━━━━━━━━\n';
-  listTeks += '🛡️ *Aman (tidak dihapus):*\n• creds.json\n\n';
+  if (preKeyFiles.length > 0) listTeks += '🔑 Pre-Key Files (' + preKeyFiles.length + ')\n';
+  if (senderKeyFiles.length > 0) listTeks += '📨 Sender-Key Files (' + senderKeyFiles.length + ')\n';
+  if (sessionFiles.length > 0) listTeks += '💬 Session Files (' + sessionFiles.length + ')\n';
+  if (appStateFiles.length > 0) listTeks += '📱 App-State Files (' + appStateFiles.length + ')\n';
+  listTeks += '━━━━━━━━━━━━━━━━━━━━\n';
+  listTeks += '🛡️ Aman (tidak dihapus):\n• creds.json\n\n';
   listTeks += '⏳ Sedang memproses penghapusan...';
   replyhydro(listTeks);
   await sleep(2000);
   let berhasil = 0;
   let gagal = 0;
   filteredArray.forEach(file => {
-    try {
-      fs.unlinkSync(sessionFolder + '/' + file);
-      berhasil++;
-    } catch(e) {
-      gagal++;
-    }
+    try { fs.unlinkSync(sessionFolder + '/' + file); berhasil++; }
+    catch(e) { gagal++; }
   });
   await sleep(1000);
   let hasilTeks = '✅ *Clear Session Selesai!*\n';
   hasilTeks += '━━━━━━━━━━━━━━━━━━━━\n';
   hasilTeks += '🗑️ Berhasil dihapus: *' + berhasil + ' file*\n';
   if (gagal > 0) hasilTeks += '⚠️ Gagal dihapus: *' + gagal + ' file*\n';
-  hasilTeks += '🛡️ Aman tersimpan: *creds.json*\n';
+  hasilTeks += '🛡️ Aman tersimpan: creds.json\n';
   hasilTeks += '━━━━━━━━━━━━━━━━━━━━\n';
   hasilTeks += '💡 Bot tetap terhubung. Session bersih!';
   replyhydro(hasilTeks);
