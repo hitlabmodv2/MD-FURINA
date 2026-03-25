@@ -4024,77 +4024,93 @@ _memberikan pengalaman terbaik!"_ ✨
 `)
 
 const bet = {
-  title: "ʟɪsᴛ ᴍᴇɴᴜ",
+  title: "🌊 MENU BOT",
   sections: [
     {
-      title: `List menu yang sering dipakai`, 
-      highlight_label: `Populer`,
+      title: "━━━ 🌟 POPULER ━━━",
+      highlight_label: "Populer",
       rows: [
-        {
-          title: "sᴇᴍᴜᴀ ғɪᴛᴜʀ",
-          description: "📌 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ sᴇᴍᴜᴀ ғɪᴛᴜʀ ʏᴀɴɢ ᴛᴇʀsᴇᴅɪᴀ",
-          id: `allmenu`, 
-        },
+        { title: "📌 Semua Fitur",       description: "Tampilkan daftar lengkap semua fitur bot",          id: "allmenu" },
+        { title: "📖 Peraturan",          description: "Baca peraturan penggunaan bot sebelum pakai",       id: "bacaperaturan" },
+        { title: "💸 Donasi",             description: "Support bot agar terus berkembang via QRIS",        id: "donasi" },
+        { title: "📋 Info Bot",           description: "Informasi lengkap bot, versi, dan statistik",       id: "infobot" },
       ]
     },
     {
-      title: `ᴍᴇɴᴜ ʏᴀɴɢ ᴅɪᴘɪsᴀʜᴋᴀɴ`, 
-      highlight_label: ``,
+      title: "━━━ 🎮 HIBURAN & GAME ━━━",
+      highlight_label: "",
       rows: [
-        { title: "ᴘᴇʀᴀᴛᴜʀᴀɴ", description: "🎉 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ᴀᴛᴜʀᴀɴ", id: `bacaperaturan` },
-        { title: "ᴅᴏɴᴀsɪ", description: "💸 ᴅᴏɴᴀsɪ ʙᴏᴛ ᴀɢᴀʀ ᴅᴀᴘᴀᴛ ʙᴇʀᴋᴇᴍʙᴀɴɢ", id: `donasi` },
-        { title: "ғɪᴛᴜʀ ᴘᴇᴍɪʟɪᴋ", description: "👤 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴘᴇᴍɪʟɪᴋ", id: `ownermenu` },
-        { title: "ғɪᴛᴜʀ ɢʀᴏᴜᴘ", description: "👥 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ɢʀᴏᴜᴘ", id: `groupmenu` },
-        { title: "ғɪᴛᴜʀ ɢᴀᴍᴇ", description: "🎮 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴘᴇʀᴍᴀɪɴᴀɴ", id: `gamemenu` },
-        { title: "ғɪᴛᴜʀ sʜᴏᴘ", description: "🛍️ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ғɪᴛᴜʀ ᴊᴇʙᴇʜ", id: `storemenu` },
-        { title: "ғɪᴛᴜʀ ʙᴇʀɪᴛᴀ", description: "📮 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ʙᴇʀɪᴛᴀ", id: `beritamenu` },
-        { title: "ғɪᴛᴜʀ ᴄᴘᴀɴᴇʟ", description: "🛠️ ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴄʀᴇᴀᴛᴇ ᴘᴀɴᴇʟ", id: `cpanelmenu` },
-        { title: "ғɪᴛᴜʀ ᴘᴜsʜ", description: "💾 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴘᴜsʜ", id: `pushmenu` },
-        { title: "ғɪᴛᴜʀ ᴍᴇʀᴀᴍᴀʟ", description: "💰 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ʀᴀᴍᴀʟᴀɴ ғᴀᴋᴇ!", id: `primbonmenu` },
-        { title: "ғɪᴛᴜʀ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ", description: "📂 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴅᴏᴇɴʟᴏᴀᴅ ɪɢ/ᴛᴛ/ʏᴛ ᴅʟʟ", id: `downloadmenu` },
-        { title: "ғɪᴛᴜʀ ᴀɪ", description: "🤖 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴀɪ", id: `aimenu` },
-        { title: "ғɪᴛᴜʀ 18+", description: "🔞 ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ғɪᴛᴜʀ 18+", id: `nsfwmenu` },
-        { title: "ғɪᴛᴜʀ ᴀɴɪᴍʀ", description: "🤍 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴀɴɪᴍᴇ", id: `animemenu` },
-        { title: "ғɪᴛᴜʀ ᴇᴅɪᴛ ғᴏᴛᴏ", description: "🖼️ ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴇᴅɪᴛғᴏᴛᴏ", id: `ephoto360menu` },
-        { title: "ғɪᴛᴜʀ sᴇʀᴜ", description: "🥳 ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ғɪᴛᴜʀ ᴍᴇɴʏᴇɴᴀɴɢᴋᴀɴ", id: `funmenu` },
-        { title: "ғɪᴛᴜʀ ɪsʟᴀᴍ", description: "🕌 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ɪsʟᴀᴍ", id: `islamimenu` },
-        { title: "ғɪᴛᴜʀ ᴅᴀᴛᴀʙᴀsᴇ", description: "🖥️ ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴅᴀᴛᴀʙᴀsʀ", id: `databasemenu` },
-        { title: "ғɪᴛᴜʀ ʟᴀɪɴ-ʟᴀɪɴ", description: "📪 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴛɪᴅᴀᴋ ᴅɪᴋᴀᴛᴇɢᴏʀɪᴋᴀɴ", id: `othermenu` },
-        { title: "ғɪᴛᴜʀ ʀᴘɢ", description: "🧰 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ʀᴘɢ", id: `rpgmenu` },
-        { title: "ғɪᴛᴜʀ ᴄsᴜʙᴅᴏ", description: "🌐 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴄʀᴇᴀᴛᴇ sᴜʙᴅᴏᴍᴀɪɴ", id: `domainmenu` },
-        { title: "ғɪᴛᴜʀ ᴀɴᴏɴʏᴍᴏᴜsᴇ", description: "👤 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴀɴᴏɴʏᴍᴏᴜsᴇ", id: `anonymousmenu` },
-        { title: "ғɪᴛᴜʀ ʀᴠɪᴅᴇᴏ", description: "🎥 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ʀᴀɴᴅᴏᴍ ᴠɪᴅᴇᴏ", id: `randomvideomenu` },
-        { title: "ғɪᴛᴜʀ ʀᴘʜᴏᴛᴏ", description: "📷 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ʀᴀɴᴅᴏᴍ ғᴏᴛᴏ", id: `randomphotomenu` },
-        { title: "ғɪᴛᴜʀ sᴛɪᴄᴋᴇʀ", description: "📝 ᴍᴇᴍᴜɴᴄᴜᴋᴀɴ ғɪᴛᴜʀ sᴛɪᴄᴋᴇʀ", id: `stickermenu` },
-        { title: "ғɪᴛᴜʀ ǫᴜᴏᴛᴇs", description: "💬 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴋᴀᴛᴀ-ᴋᴀᴛᴀ", id: `quotesmenu` },
-        { title: "ғɪᴛᴜʀ sᴛᴀʟᴋ", description: "🔍 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ sᴛᴀʟᴋɪɴɢ", id: `stalkermenu` },
-        { title: "ғɪᴛᴜʀ ʙᴜɢ ᴡᴀ", description: "🐛 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ʙᴜɢ", id: `bugmenu` },
-        { title: "ғɪᴛᴜʀ ᴅɪɢɪᴛᴀʟᴏᴄᴇᴀɴ", description: "🌐 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴅɪɢɪᴛᴀʟᴏᴄᴇᴀɴ", id: `digitaloceanmenu` },
-        { title: "ғɪᴛᴜʀ ᴘᴛᴇʀᴏᴅᴀᴄᴛʏʟ", description: "⚙ ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ғɪᴛᴜʀ ᴘᴛᴇʀᴏᴅᴀᴄᴛʏʟ", id: `pyterodactylemenu` },
+        { title: "🎮 Game Menu",          description: "Tebak gambar, truth or dare, dan game seru lainnya", id: "gamemenu" },
+        { title: "🥳 Fun Menu",           description: "Fitur lucu dan menghibur, bikin senyum",            id: "funmenu" },
+        { title: "🎥 Random Video",       description: "Video random acak dari berbagai kategori",          id: "randomvideomenu" },
+        { title: "📷 Random Photo",       description: "Foto random acak berbagai tema",                   id: "randomphotomenu" },
+        { title: "💬 Quotes",             description: "Kata-kata motivasi, lucu, dan bijak",               id: "quotesmenu" },
+        { title: "🧰 RPG Menu",           description: "Game RPG lengkap: kerja, rampok, gacha, pet",      id: "rpgmenu" },
       ]
     },
     {
-      title: `ᴋᴇʙᴜᴛᴜʜᴀɴ & ʟᴀɪɴɴʏᴀ`, 
-      highlight_label: ``,
+      title: "━━━ 🛠️ TOOLS & UTILITAS ━━━",
+      highlight_label: "",
       rows: [
-        { title: "ʙᴜʏ ᴘᴀɴᴇʟ", description: "🚀 ᴏʀᴅᴇʀ ᴘᴀɴᴇʟ ᴘᴛᴇʀᴏᴅᴀᴄᴛʏʟ ᴅɪ ᴢᴀɴsᴘɪᴡ", id: `buypanel` },
-        { title: "sᴄʀɪᴘᴛ", description: "💳 sᴄ ɪɴɪ ғʀᴇᴇ ɴᴏ ᴇɴᴄ 100%", id: `script` },
-        { title: "ʀᴀᴛɪɴɢ", description: "🌟 ʀᴀᴛɪɴɢ ʙᴏᴛ ɪɴɪ", id: `rating` },
-        { title: "ɪɴғᴏ ʙᴏᴛ", description: "📋 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ɪɴғᴏʀᴍᴀsɪ ʙᴏᴛ", id: `infobot` },
+        { title: "📂 Downloader",         description: "Download video/foto dari IG, TikTok, YouTube, dll", id: "downloadmenu" },
+        { title: "📝 Sticker",            description: "Buat sticker, convert foto/video jadi sticker",     id: "stickermenu" },
+        { title: "🔍 Stalker",            description: "Cek profil WA, status, dan info pengguna",         id: "stalkermenu" },
+        { title: "🖼️ Edit Foto",          description: "Edit foto dengan efek keren dari Ephoto360",       id: "ephoto360menu" },
+        { title: "🤖 AI Menu",            description: "ChatGPT, Gemini, dan berbagai fitur AI canggih",   id: "aimenu" },
+        { title: "🛍️ Store Menu",         description: "Cek harga, produk, dan layanan di store",         id: "storemenu" },
       ]
     },
     {
-      title: `ʟᴀɪɴɴʏᴀ`, 
-      highlight_label: ``,
+      title: "━━━ 📰 INFO & RELIGI ━━━",
+      highlight_label: "",
       rows: [
-        { title: "sᴄʀɪᴘᴛ", description: "💳 sᴄ ɪɴɪ ғʀᴇᴇ ɴᴏ ᴇɴᴄ 100%", id: `script` },
-        { title: "ʀᴀᴛɪɴɢ", description: "🌟 ʀᴀᴛɪɴɢ ʙᴏᴛ ɪɴɪ", id: `rating` },
-        { title: "ɪɴғᴏ ʙᴏᴛ", description: "📋 ᴍᴇᴍᴜɴᴄᴜʟᴋᴀɴ ɪɴғᴏʀᴍᴀsɪ ʙᴏᴛ", id: `infobot` },
+        { title: "📮 Berita",             description: "Berita terkini dan terpercaya setiap hari",        id: "beritamenu" },
+        { title: "🕌 Islami",             description: "Jadwal sholat, doa harian, Al-Quran, hadits",      id: "islamimenu" },
+        { title: "💰 Primbon",            description: "Ramal nasib, zodiak, dan ramalan unik (fake fun)", id: "primbonmenu" },
+      ]
+    },
+    {
+      title: "━━━ 👥 GROUP & SOSIAL ━━━",
+      highlight_label: "",
+      rows: [
+        { title: "👥 Group Menu",         description: "Manajemen grup: kick, promote, welcome, dll",      id: "groupmenu" },
+        { title: "👤 Anonymous",          description: "Chat anonim tanpa diketahui identitas kamu",       id: "anonymousmenu" },
+        { title: "🔞 NSFW",              description: "Konten dewasa 18+ (aktifkan di grup khusus)",       id: "nsfwmenu" },
+        { title: "🤍 Anime",             description: "Gambar dan konten anime pilihan",                   id: "animemenu" },
+      ]
+    },
+    {
+      title: "━━━ 🔧 PANEL & SERVER ━━━",
+      highlight_label: "",
+      rows: [
+        { title: "🛠️ CPanel",            description: "Buat dan kelola server panel Pterodactyl",         id: "cpanelmenu" },
+        { title: "💾 Push / Deploy",      description: "Push file dan deploy server panel dengan mudah",   id: "pushmenu" },
+        { title: "🌊 Digital Ocean",      description: "Kelola VPS dan droplet Digital Ocean",             id: "digitaloceanmenu" },
+        { title: "⚙️ Pterodactyl",        description: "Fitur lengkap manajemen Pterodactyl panel",        id: "pyterodactylemenu" },
+        { title: "🌐 Domain / Subdo",     description: "Buat subdomain gratis dengan cepat",               id: "domainmenu" },
+      ]
+    },
+    {
+      title: "━━━ 🗄️ DATABASE & OWNER ━━━",
+      highlight_label: "",
+      rows: [
+        { title: "🖥️ Database",           description: "Kelola database pengguna, saldo, dan data bot",   id: "databasemenu" },
+        { title: "📪 Lainnya",            description: "Fitur lain yang tidak masuk kategori manapun",    id: "othermenu" },
+        { title: "👑 Owner Menu",         description: "Fitur khusus pemilik bot, akses penuh",            id: "ownermenu" },
+        { title: "🐛 Bug WA",             description: "Fitur bug dan crash WhatsApp (gunakan bijak!)",    id: "bugmenu" },
+      ]
+    },
+    {
+      title: "━━━ 💎 LAINNYA ━━━",
+      highlight_label: "",
+      rows: [
+        { title: "🚀 Beli Panel",         description: "Order panel Pterodactyl di Zanspiwptero",          id: "buypanel" },
+        { title: "💻 Script",             description: "Script bot ini gratis 100%, no enc!",              id: "script" },
+        { title: "⭐ Rating",             description: "Beri penilaian untuk bot ini (1-10)",              id: "rating" },
       ]
     }
   ]
 }
-
 await listbut2(m.chat, teks, bet, m)
 await hydro.sendMessage(from, { audio: { url: global.music}, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
 }
