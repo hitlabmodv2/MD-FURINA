@@ -1106,26 +1106,45 @@ hydro.sendMessage(m.chat,
 { text: teks,
 contextInfo:{
 mentionedJid:[sender],
-forwardingScore: 99,
+forwardingScore: 999,
 isForwarded: true,
 forwardedNewsletterMessageInfo: {
-      newsletterJid: `${channel}`,
-      serverMessageId: Math.floor(Math.random() * 1000) + 1,
-      newsletterName: `${channeln}`,
+      newsletterJid: `${global.channel}`,
+      serverMessageId: Math.floor(Math.random() * 9999) + 1,
+      newsletterName: `${global.channeln}`,
     },
 "externalAdReply": {
-"showAdAttribution": false,
+"showAdAttribution": true,
 "containsAutoReply": true,
-"title": `${botname}`,
-"body": `ಠ⁠ ⁠ل͟⁠ ⁠ಠ Akses Ditolak! `,
+"title": `🚫 ${global.botname}`,
+"body": `❌ Akses Ditolak — Kamu Tidak Diizinkan!`,
 "previewType": "VIDEO",
 "thumbnailUrl": 'https://i.ibb.co.com/TqWTGXVM/474091701-979544940732791-1475207296815939677-n.jpg',
-"sourceUrl": 'https://wa.me/6289688206739'}}},
+"sourceUrl": `https://wa.me/${global.ownernomer}`}}},
 { quoted: m})
 }
 
 const reply = (teks) => {
-hydro.sendMessage(from, { text: teks }, { quoted : m})
+hydro.sendMessage(m.chat,
+{ text: teks,
+contextInfo:{
+mentionedJid:[sender],
+forwardingScore: 999,
+isForwarded: true,
+forwardedNewsletterMessageInfo: {
+      newsletterJid: `${global.channel}`,
+      serverMessageId: Math.floor(Math.random() * 9999) + 1,
+      newsletterName: `${global.channeln}`,
+    },
+"externalAdReply": {
+"showAdAttribution": false,
+"containsAutoReply": true,
+"title": `⚡ ${global.botname}`,
+"body": `💬 Pesan dari Bot`,
+"previewType": "VIDEO",
+"thumbnailUrl": 'https://i.ibb.co.com/TqWTGXVM/474091701-979544940732791-1475207296815939677-n.jpg',
+"sourceUrl": `https://wa.me/${global.ownernomer}`}}},
+{ quoted: m})
 }
 const isUrl = (url) => {
     return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
