@@ -3280,10 +3280,10 @@
       "freelimit": 0,
       "lastclaim": 0,
       "skata": 0,
-      "registered": false,
+      "registered": true,
       "pc": 0,
-      "age": -1,
-      "regTime": -1,
+      "age": 26,
+      "regTime": "25/3/2026, 16.15.50",
       "unreg": false,
       "afk": -1,
       "banned": false,
@@ -3395,7 +3395,9 @@
       "bibitpisang": 0,
       "bibitapel": 0,
       "bibitmangga": 0,
-      "bibitjeruk": 0
+      "bibitjeruk": 0,
+      "name": "Hentong",
+      "sn": "SN-1523EFHT"
     },
     "6281973145146@s.whatsapp.net": {
       "afkTime": -1,
@@ -10478,22 +10480,22 @@
     "120363192554714254@g.us": {
       "totalChat": {
         "6289667923162@s.whatsapp.net": 73,
-        "120363192554714254@g.us": 149,
+        "120363192554714254@g.us": 150,
         "97968623505429@lid": 1,
         "6289688206739@s.whatsapp.net": 48,
-        "6289681008411@s.whatsapp.net": 13
+        "6289681008411@s.whatsapp.net": 14
       }
     },
     "120363421910941096@g.us": {
       "totalChat": {
-        "120363421910941096@g.us": 157,
-        "60128595945@s.whatsapp.net": 196
+        "120363421910941096@g.us": 241,
+        "60128595945@s.whatsapp.net": 246
       }
     },
     "120363407152523539@g.us": {
       "totalChat": {
         "120363407152523539@g.us": 4,
-        "6289667923162@s.whatsapp.net": 201
+        "6289667923162@s.whatsapp.net": 258
       }
     },
     "120363407696889754@newsletter": {
@@ -10513,7 +10515,7 @@
     },
     "6289681008411@s.whatsapp.net": {
       "totalChat": {
-        "6289681008411@s.whatsapp.net": 39
+        "6289681008411@s.whatsapp.net": 51
       }
     }
   },

@@ -11701,28 +11701,12 @@ case 'daftar': {
     user.regTime = tanggalDaftar
     user.registered = true
 
-    let caption = `
-╭─── *REGISTRASI BERHASIL*
-│ Nama: ${nama}
-│ Umur: ${umur}
-│ SN: ${kodeReg}
-│ Terdaftar pada: ${tanggalDaftar}
-╰────────────────`
+    const hariTanggal = new Date().toLocaleString('id-ID', { timeZone: 'Asia/Jakarta', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' })
 
-    await hydro.sendMessage(m.chat, {
-        text: caption,
-        contextInfo: {
-            mentionedJid: [m.sender],
-            externalAdReply: {
-                title: "✅ REGISTRASI BERHASIL",
-                body: "",
-                thumbnailUrl: global.thumbnail,
-                sourceUrl: "",
-                mediaType: 1,
-                renderLargerThumbnail: true
-            }
-        }
-    }, { quoted: m })
+    const caption = `╭───────────────────────────╮\n│  ✅ *REGISTRASI BERHASIL* ✅  │\n╰───────────────────────────╯\n\n🎉 Selamat *${nama}*!\nKamu resmi terdaftar sebagai pengguna bot!\n\n╭──── 📋 *Data Akun Kamu* ────╮\n│ 👤 Nama     : *${nama}*\n│ 🎂 Umur     : *${umur} tahun*\n│ 🔑 SN       : *${kodeReg}*\n│ 📅 Hari     : *${hariTanggal}*\n╰─────────────────────────────╯\n\n🚀 *Selamat datang di bot!*\nSekarang kamu bebas menikmati semua fitur!\n\n📌 *Tips Mulai:*\n• Ketik *${prefix}menu* → lihat semua fitur\n• Atau ketik *menu* tanpa prefix juga bisa loh!\n\n😂 _Jangan lupa bayar ya..._\n_eh wait, GRATIS kok wkwkwk!_ 🎊\n💪 _Selamat bersenang-senang, ${nama}!_ 🥳`
+
+    await hydro.sendMessage(m.chat, { react: { text: '🎉', key: m.key } })
+    replytolak(caption)
 }
 break
 case  'd19': {
