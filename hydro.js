@@ -16353,6 +16353,37 @@ hydro.sendMessage(from, { image: { url: ppuser }}, { quoted: m })
 }
 break 
 //=========================================\\
+case 'getppuser':{
+try {
+  let targetJid
+  if (m.isGroup) {
+    if (m.quoted) {
+      targetJid = m.quoted.sender
+    } else if (m.mentionedJid && m.mentionedJid[0]) {
+      targetJid = m.mentionedJid[0]
+    } else {
+      return replyhydro('*Reply pesan orang yang ingin diambil foto profilnya!*')
+    }
+  } else {
+    targetJid = m.chat
+  }
+  let ppUrl
+  try {
+    ppUrl = await hydro.profilePictureUrl(targetJid, 'image')
+  } catch (e) {
+    ppUrl = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
+  }
+  let targetNum = targetJid.split('@')[0]
+  await hydro.sendMessage(from, {
+    image: { url: ppUrl },
+    caption: '*Foto Profil*\nNomor: +' + targetNum
+  }, { quoted: m })
+} catch (err) {
+  replyhydro('Gagal mengambil foto profil: ' + err.message)
+}
+}
+break
+//=========================================\\
 case 'setppgroup': case 'setgcpp': case 'setgrouppp': {
 if (!m.isGroup) return replytolak(mess.only.group)
 if (!isAdmins && !Ahmad) return reply(mess.only.admin)
