@@ -16368,15 +16368,48 @@ try {
     targetJid = m.chat
   }
   let ppUrl
+  let isDefault = false
   try {
     ppUrl = await hydro.profilePictureUrl(targetJid, 'image')
   } catch (e) {
     ppUrl = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
+    isDefault = true
   }
-  let targetNum = targetJid.split('@')[0]
+  const axios = require('axios')
+  const sizeOf = require('image-size')
+  let imgBuffer, width = '?', height = '?', fileSize = '?', format = 'JPG'
+  try {
+    const res = await axios.get(ppUrl, { responseType: 'arraybuffer', timeout: 10000 })
+    imgBuffer = Buffer.from(res.data)
+    const dims = sizeOf(imgBuffer)
+    width = dims.width
+    height = dims.height
+    format = (dims.type || 'jpg').toUpperCase()
+    const bytes = imgBuffer.length
+    if (bytes < 1024) fileSize = bytes + ' B'
+    else if (bytes < 1024 * 1024) fileSize = (bytes / 1024).toFixed(1) + ' KB'
+    else fileSize = (bytes / (1024 * 1024)).toFixed(2) + ' MB'
+  } catch(e) { }
+  const targetNum = targetJid.split('@')[0]
+  const now = new Date()
+  const tgl = now.toLocaleDateString('id-ID', { day:'2-digit', month:'long', year:'numeric' })
+  const jam = now.toLocaleTimeString('id-ID', { hour:'2-digit', minute:'2-digit', second:'2-digit' })
+  const caption = [
+    '┌──「 *INFO FOTO PROFIL* 」',
+    '│',
+    '│  👤 *Nomor   :* +' + targetNum,
+    '│  📐 *Ukuran  :* ' + width + ' x ' + height + ' px',
+    '│  💾 *Size    :* ' + fileSize,
+    '│  🖼️ *Format  :* ' + format,
+    '│  📅 *Tanggal :* ' + tgl,
+    '│  🕐 *Waktu   :* ' + jam,
+    '│  🔒 *Status  :* ' + (isDefault ? 'Privat / Tidak Ada PP' : 'Publik'),
+    '│',
+    '└──────────────────'
+  ].join('\n')
   await hydro.sendMessage(from, {
-    image: { url: ppUrl },
-    caption: '*Foto Profil*\nNomor: +' + targetNum
+    image: imgBuffer ? imgBuffer : { url: ppUrl },
+    caption: caption
   }, { quoted: m })
 } catch (err) {
   replyhydro('Gagal mengambil foto profil: ' + err.message)
