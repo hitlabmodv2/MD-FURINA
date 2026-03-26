@@ -240,8 +240,14 @@ function loadDB() {
     return { chats: {} };
   }
 }
+let _saveDBTimer = null
 function saveDB(db) {
-  fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2));
+  if (_saveDBTimer) clearTimeout(_saveDBTimer)
+  _saveDBTimer = setTimeout(() => {
+    fs.writeFile(DB_FILE, JSON.stringify(db, null, 2), (err) => {
+      if (err) console.error('[saveDB error]', err.message)
+    })
+  }, 2000)
 }
 global.db = loadDB();
 if (global.db) global.db = {
