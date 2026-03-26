@@ -5,17 +5,22 @@
 
 const BASE_ANIME = 'https://raw.githubusercontent.com/Asthetic/AnimeBackgrounds/master/'
 
+// Semua file di bawah sudah diverifikasi ada di repo (no 404)
 const animeFiles = [
-  '0iIJKQD.jpg',   '1005374.jpg',   '1307022.jpg',   '1358236.jpg',
-  '1379424.jpg',   '1381914.jpg',   '1389069.jpg',   '1414803.jpg',
-  '1490695.jpg',   '1528177.jpg',   '1581325.jpg',   '1618898.jpg',
-  '1633849.jpg',   '1636127.jpg',   '1670834.jpg',   '1685247.jpg',
-  '1729050.jpg',   '1744040.jpg',   '1802710.jpg',   '1810810.jpg',
-  '1817984.jpg',   '1846028.jpg',   '1881012.jpg',   '1912588.jpg',
-  '1953963.jpg',   '1956758.jpg',   '2017618.jpg',   '2027241.jpg',
-  '2040478.jpg',   '2086562.jpg',   '2111524.jpg',   '2174300.jpg',
-  '2204927.jpg',   '2221855.jpg',   '2318203.jpg',   '2349373.jpg',
-  '2391574.jpg',   '2429538.jpg',   '2458014.jpg',   '2496373.jpg',
+  '0iIJKQD.jpg',          '0RV5iHG.png',          '0ZkpCE0.png',
+  '0bYF4pa.png',          '0icGBWS.png',           '1004724.png',
+  '1005374.jpg',          '115364036.jpg',          '12ro2yt.jpg',
+  '1307022.jpg',          '1334629815151.jpg',      '1384223872058.jpg',
+  '1392086843219.jpg',    '1392090149023.jpg',      '1397691544922.jpg',
+  '1397691610941.jpg',    '1397700480474.jpg',      '1397716997927.jpg',
+  '1397717273533.jpg',    '1397822926255.jpg',      '1435252821312.jpg',
+  '1437212783083.jpg',    '1446264470612.jpg',      '1453663569229.jpg',
+  '177264.jpg',           '177343.jpg',             '1PzuHbt.jpg',
+  '1en4Ty8.png',          '1kFKNj2.png',            '1mIA3Jf.png',
+  '1wIXARH.png',          '203.jpg',                '08tcen8w74y11.png',
+  '20151129022206617.jpg','20151129022208fbe.jpg',  '1920x1200_285.jpg',
+  '14f6s.jpg',            '148oe.png',              '154ov.png',
+  '114442-plastic-memories-plastic-memories.jpg',
 ]
 
 global.thumbnailList = [
