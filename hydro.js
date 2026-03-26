@@ -16959,9 +16959,17 @@ case 'hdvideo': {
 
   let q = m.quoted ? m.quoted : m
   let localMime = (q.msg || q)?.mimetype || mime || ''
+  if (!localMime && !m.quoted) localMime = (m.msg || m.message?.imageMessage || m.message?.videoMessage || m.message?.stickerMessage)?.mimetype || ''
 
   if (userLimit.limit < 5)
     return replyhydro(`Limit kamu kurang!\nButuh *5* limit.\nSisa limit: *${userLimit.limit}*`)
+
+  const doDownloadHD = async (target) => {
+    if (typeof target.download === 'function') return await target.download()
+    const mediaObj = target.msg || target
+    if (mediaObj?.url || mediaObj?.directPath) return await hydro.downloadMediaMessage(mediaObj)
+    throw new Error('Tidak bisa mendownload media')
+  }
 
   if (/video/.test(localMime)) {
 
@@ -16969,7 +16977,7 @@ case 'hdvideo': {
       await hydro.sendMessage(m.chat, { react: { text: '⌛', key: m.key } })
       replyhydro(global.mess.wait)
 
-      let buffer = await q.download()
+      let buffer = await doDownloadHD(q)
       let resultUrl = await hdvideo(buffer)
 
       await hydro.sendMessage(m.chat, {
@@ -16987,12 +16995,12 @@ case 'hdvideo': {
       replyhydro(global.mess.error.fitur)
     }
 
-  } else if (/image/.test(localMime) || /webp/.test(localMime)) {
+  } else if (/image|webp/.test(localMime)) {
 
     try {
       await hydro.sendMessage(m.chat, { react: { text: '⏱️', key: m.key } })
 
-      const buffer = await q.download()
+      const buffer = await doDownloadHD(q)
       let result = await hdr(buffer, 4)
 
       await hydro.sendMessage(m.chat, {
@@ -17011,7 +17019,7 @@ case 'hdvideo': {
     }
 
   } else {
-    replytolak("❗ Format tidak didukung. Harap reply gambar atau video.")
+    replytolak("❗ Format tidak didukung. Harap kirim gambar atau video dengan caption perintah, atau reply ke gambar/video.")
   }
 }
 break
@@ -35842,20 +35850,28 @@ case 'stiker':
 case 'sticker': {
   let q = m.quoted ? m.quoted : m
   let localMime = (q.msg || q)?.mimetype || mime || ''
+  if (!localMime && !m.quoted) localMime = (m.msg || m.message?.imageMessage || m.message?.videoMessage || m.message?.stickerMessage)?.mimetype || ''
 
   if (userLimit.limit < 1)
     return replyhydro(`Limit kamu kurang!\nButuh *1* limit.\n> Sisa limit: *${userLimit.limit}*`)
 
   let success = false
 
+  const doDownloadSticker = async (target) => {
+    if (typeof target.download === 'function') return await target.download()
+    const mediaObj = target.msg || target
+    if (mediaObj?.url || mediaObj?.directPath) return await hydro.downloadMediaMessage(mediaObj)
+    throw new Error('Tidak bisa mendownload media')
+  }
+
   try {
-    if (/image/.test(localMime)) {
-      let media = await q.download()
+    if (/image|webp/.test(localMime)) {
+      let media = await doDownloadSticker(q)
       await hydro.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
       success = true
     } else if (/video/.test(localMime)) {
       if ((q.msg || q).seconds > 11) return reply(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
-      let media = await q.download()
+      let media = await doDownloadSticker(q)
       await hydro.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
       success = true
     } else {
