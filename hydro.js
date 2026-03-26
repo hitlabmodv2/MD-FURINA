@@ -16957,19 +16957,19 @@ case 'hdvid':
 case 'vidhd':
 case 'hdvideo': {
 
-  if (!quoted) 
-    return replytolak(`📸 Reply gambar atau video dengan perintah *${prefix + command}*`)
+  let q = m.quoted ? m.quoted : m
+  let localMime = (q.msg || q)?.mimetype || mime || ''
 
   if (userLimit.limit < 5)
     return replyhydro(`Limit kamu kurang!\nButuh *5* limit.\nSisa limit: *${userLimit.limit}*`)
 
-  if (/video/.test(mime)) {
+  if (/video/.test(localMime)) {
 
     try {
       await hydro.sendMessage(m.chat, { react: { text: '⌛', key: m.key } })
       replyhydro(global.mess.wait)
 
-      let buffer = await quoted.download()
+      let buffer = await q.download()
       let resultUrl = await hdvideo(buffer)
 
       await hydro.sendMessage(m.chat, {
@@ -16987,12 +16987,12 @@ case 'hdvideo': {
       replyhydro(global.mess.error.fitur)
     }
 
-  } else if (/image/.test(mime) || /webp/.test(mime)) {
+  } else if (/image/.test(localMime) || /webp/.test(localMime)) {
 
     try {
       await hydro.sendMessage(m.chat, { react: { text: '⏱️', key: m.key } })
 
-      const buffer = await quoted.download()
+      const buffer = await q.download()
       let result = await hdr(buffer, 4)
 
       await hydro.sendMessage(m.chat, {
@@ -35840,7 +35840,8 @@ break
 case 's':
 case 'stiker':
 case 'sticker': {
-  if (!quoted) return reply(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
+  let q = m.quoted ? m.quoted : m
+  let localMime = (q.msg || q)?.mimetype || mime || ''
 
   if (userLimit.limit < 1)
     return replyhydro(`Limit kamu kurang!\nButuh *1* limit.\n> Sisa limit: *${userLimit.limit}*`)
@@ -35848,13 +35849,13 @@ case 'sticker': {
   let success = false
 
   try {
-    if (/image/.test(mime)) {
-      let media = await quoted.download()
+    if (/image/.test(localMime)) {
+      let media = await q.download()
       await hydro.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
       success = true
-    } else if (/video/.test(mime)) {
-      if ((quoted.msg || quoted).seconds > 11) return reply(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
-      let media = await quoted.download()
+    } else if (/video/.test(localMime)) {
+      if ((q.msg || q).seconds > 11) return reply(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
+      let media = await q.download()
       await hydro.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
       success = true
     } else {
