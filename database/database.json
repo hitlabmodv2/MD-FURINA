@@ -9106,7 +9106,21 @@
       "lastrampok": 0,
       "lastnebang": 0,
       "lastweekly": 0,
-      "lastmonthly": 0
+      "lastmonthly": 0,
+      "petfood": 0,
+      "botol": 0,
+      "kardus": 0,
+      "kaleng": 0,
+      "gelas": 0,
+      "plastik": 0,
+      "panda": 0,
+      "babihutan": 0,
+      "makanan": 0,
+      "bibitanggur": 0,
+      "bibitpisang": 0,
+      "bibitapel": 0,
+      "bibitmangga": 0,
+      "bibitjeruk": 0
     },
     "6285216433695@s.whatsapp.net": {
       "afkTime": -1,
@@ -9235,12 +9249,12 @@
     },
     "120363383540766761@g.us": {
       "totalChat": {
-        "6281393564657@s.whatsapp.net": 40,
+        "6281393564657@s.whatsapp.net": 46,
         "120363383540766761@g.us": 69,
         "6289688206739@s.whatsapp.net": 40,
-        "6283134844523@s.whatsapp.net": 35,
+        "6283134844523@s.whatsapp.net": 41,
         "6288226654518@s.whatsapp.net": 8,
-        "23674618863@s.whatsapp.net": 1,
+        "23674618863@s.whatsapp.net": 3,
         "6285175463174@s.whatsapp.net": 1,
         "6285163699722@s.whatsapp.net": 1,
         "6281283258825@s.whatsapp.net": 1,
@@ -9279,7 +9293,7 @@
         "6282393354095@s.whatsapp.net": 10,
         "6282292807007@s.whatsapp.net": 1,
         "6285183687492@s.whatsapp.net": 2,
-        "6281337711694@s.whatsapp.net": 4,
+        "6281337711694@s.whatsapp.net": 5,
         "6287753663297@s.whatsapp.net": 3,
         "6282268990535@s.whatsapp.net": 2,
         "6289688206739@s.whatsapp.net": 2,
@@ -9298,7 +9312,7 @@
         "60172160495@s.whatsapp.net": 2,
         "6285849012127@s.whatsapp.net": 1,
         "6285728458204@s.whatsapp.net": 1,
-        "6283833697404@s.whatsapp.net": 3,
+        "6283833697404@s.whatsapp.net": 4,
         "6281358899877@s.whatsapp.net": 1,
         "6285692790313@s.whatsapp.net": 1,
         "6282113794951@s.whatsapp.net": 1,
@@ -9371,7 +9385,7 @@
     },
     "120363368446211846@newsletter": {
       "totalChat": {
-        "120363368446211846@newsletter": 1
+        "120363368446211846@newsletter": 4
       }
     },
     "6289667923162@s.whatsapp.net": {

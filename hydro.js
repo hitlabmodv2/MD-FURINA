@@ -26789,14 +26789,14 @@ case 'bot': {
     });
     
     let result = response.data;
-                const xeonrl = googleTTS.getAudioUrl(result, {
+                const xeonrl = googleTTS.getAllAudioUrls(result, {
                 lang: "ID",
                 slow: false,
                 host: "https://translate.google.com",
             })
             return hydro.sendMessage(m.chat, {
                 audio: {
-                    url: xeonrl,
+                    url: xeonrl[0].url,
                 },
                 mimetype: 'audio/mp4',
                 ptt: true,
