@@ -16340,20 +16340,7 @@ await replyhydro(`*[ Done ]*`)
             }
             break
 //=========================================\\
-case 'getpp':{
-if (!m.isGroup) return replytolak ("Digunakan Khsus Dalam Group")
-let userss = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-let ghosst = userss
-	try {
-   var ppuser = await hydro.profilePictureUrl(ghosst, 'image')
-} catch (err) {
-   var ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
-}
-hydro.sendMessage(from, { image: { url: ppuser }}, { quoted: m })
-}
-break 
-//=========================================\\
-case 'getppuser':{
+case 'getpp': case 'getppuser':{
 try {
   let targetJid
   if (m.isGroup) {
