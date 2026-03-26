@@ -3,7 +3,7 @@
 // 🖼️  THUMBNAIL ANIME RANDOM
 // ==========================================
 
-const BASE_ANIME = 'https://raw.githubusercontent.com/Asthetic/AnimeBackgrounds/master/'
+const BASE_ANIME = 'https://cdn.jsdelivr.net/gh/Asthetic/AnimeBackgrounds@master/'
 
 // Semua file di bawah sudah diverifikasi ada di repo (no 404)
 const animeFiles = [
@@ -25,9 +25,9 @@ const animeFiles = [
 
 global.thumbnailList = [
   ...animeFiles.map(f => BASE_ANIME + f),
-  'https://raw.githubusercontent.com/ThePrimeagen/anime/master/hatsune.jpg',
-  'https://raw.githubusercontent.com/ThePrimeagen/anime/master/catumbrella.jpg',
-  'https://raw.githubusercontent.com/AhmadAkbarID/media/refs/heads/main/menu.jpg',
+  'https://cdn.jsdelivr.net/gh/ThePrimeagen/anime@master/hatsune.jpg',
+  'https://cdn.jsdelivr.net/gh/ThePrimeagen/anime@master/catumbrella.jpg',
+  'https://cdn.jsdelivr.net/gh/AhmadAkbarID/media@main/menu.jpg',
 ]
 
 // Setiap akses global.thumbnail → gambar anime random berganti otomatis
@@ -41,7 +41,7 @@ Object.defineProperty(global, 'thumbnail', {
 // 🎵  MUSIK RANDOM
 // ==========================================
 
-const BASE_AUDIO = 'https://github.com/FahriAdison/Base-Sound/raw/main/'
+const BASE_AUDIO = 'https://cdn.jsdelivr.net/gh/FahriAdison/Base-Sound@main/'
 
 global.musicList = [
   BASE_AUDIO + 'audio/MenuYuki.mp3',
