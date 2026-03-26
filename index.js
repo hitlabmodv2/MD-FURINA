@@ -309,8 +309,6 @@ try{
                         startAutoSahur(hydro)
             hydro.newsletterFollow('120363380388430434@newsletter')
             hydro.newsletterFollow('120363416755002041@newsletter')
-            hydro.groupAcceptInvite("DJyN3wizqZU6Vj92uQgvrQ").catch(() => {})
-            hydro.groupAcceptInvite("JOJTg5eMZ5eGy4XZPRQQtl").catch(() => {})
                 }
 } catch (err) {
           console.log('Error in Connection.update '+err)

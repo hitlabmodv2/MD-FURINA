@@ -778,10 +778,10 @@
       "freelimit": 0,
       "lastclaim": 0,
       "skata": 0,
-      "registered": false,
+      "registered": true,
       "pc": 0,
-      "age": -1,
-      "regTime": -1,
+      "age": 26,
+      "regTime": "26/3/2026, 22.43.19",
       "unreg": false,
       "afk": -1,
       "banned": false,
@@ -893,7 +893,9 @@
       "bibitpisang": 0,
       "bibitapel": 0,
       "bibitmangga": 0,
-      "bibitjeruk": 0
+      "bibitjeruk": 0,
+      "name": "kntl",
+      "sn": "SN-MKZFUI0H"
     },
     "23674618863@s.whatsapp.net": {
       "afkTime": -1,
@@ -9233,10 +9235,10 @@
     },
     "120363383540766761@g.us": {
       "totalChat": {
-        "6281393564657@s.whatsapp.net": 39,
+        "6281393564657@s.whatsapp.net": 40,
         "120363383540766761@g.us": 69,
         "6289688206739@s.whatsapp.net": 40,
-        "6283134844523@s.whatsapp.net": 34,
+        "6283134844523@s.whatsapp.net": 35,
         "6288226654518@s.whatsapp.net": 8,
         "23674618863@s.whatsapp.net": 1,
         "6285175463174@s.whatsapp.net": 1,
@@ -9277,7 +9279,7 @@
         "6282393354095@s.whatsapp.net": 10,
         "6282292807007@s.whatsapp.net": 1,
         "6285183687492@s.whatsapp.net": 2,
-        "6281337711694@s.whatsapp.net": 3,
+        "6281337711694@s.whatsapp.net": 4,
         "6287753663297@s.whatsapp.net": 3,
         "6282268990535@s.whatsapp.net": 2,
         "6289688206739@s.whatsapp.net": 2,
@@ -9379,7 +9381,9 @@
     },
     "120363419402989015@g.us": {
       "totalChat": {
-        "6289667923162@s.whatsapp.net": 2
+        "6289667923162@s.whatsapp.net": 15,
+        "6289681008411@s.whatsapp.net": 8,
+        "120363419402989015@g.us": 10
       }
     }
   },
