@@ -35902,8 +35902,11 @@ case 'wm': {
 
   let success = false
 
+  const wmSource = m.quoted ? m.quoted : (/image|video|sticker/.test((m.msg || m.message?.imageMessage || m.message?.videoMessage || m.message?.stickerMessage)?.mimetype || '') ? m : null)
+  if (!wmSource) return reply(`Kirim/Reply gambar, video, atau stiker dengan caption ${prefix+command}`)
+
   try {
-    let media = await hydro.downloadAndSaveMediaMessage(quoted)
+    let media = await hydro.downloadAndSaveMediaMessage(wmSource)
     let jancok = new Sticker(media, {
       pack: satu,
       author: dua,
