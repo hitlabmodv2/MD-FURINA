@@ -249,6 +249,26 @@ function saveDB(db) {
     })
   }, 2000)
 }
+
+let _saveCmdTimer = null
+function saveCmdAsync(_db) {
+  if (_saveCmdTimer) clearTimeout(_saveCmdTimer)
+  _saveCmdTimer = setTimeout(() => {
+    fs.writeFile('./database/command.json', JSON.stringify(_db, null, 2), (err) => {
+      if (err) console.error('[saveCmd error]', err.message)
+    })
+  }, 1500)
+}
+
+let _saveCmdUserTimer = null
+function saveCmdUserAsync(u) {
+  if (_saveCmdUserTimer) clearTimeout(_saveCmdUserTimer)
+  _saveCmdUserTimer = setTimeout(() => {
+    fs.writeFile('./database/commandUser.json', JSON.stringify(u, null, 2), (err) => {
+      if (err) console.error('[saveCmdUser error]', err.message)
+    })
+  }, 1500)
+}
 global.db = loadDB();
 if (global.db) global.db = {
 sticker: {},
@@ -2270,7 +2290,7 @@ posi = i
 })
 if (posi === null) {
 u.push({jid: m.sender, db: [{nama: nama, count: 0}]})
-fs.writeFileSync('./database/commandUser.json', JSON.stringify(u, null, 2));
+saveCmdUserAsync(u);
 Object.keys(u).forEach((i) => {
 if (u[i].jid === m.sender) {
 posi = i
@@ -2285,10 +2305,10 @@ pos = i
 })
 if (pos === null) {
 u[posi].db.push({nama: nama, count: 1})
-fs.writeFileSync('./database/commandUser.json', JSON.stringify(u, null, 2));
+saveCmdUserAsync(u);
 } else {
 u[posi].db[pos].count += 1
-fs.writeFileSync('./database/commandUser.json', JSON.stringify(u, null, 2));
+saveCmdUserAsync(u);
 }
 }
 }
@@ -2353,10 +2373,10 @@ posi = i
 })
 if (posi === null) {
 _db.push({nama: nama, count: 1})
-fs.writeFileSync('./database/command.json',JSON.stringify(_db, null, 2));
+saveCmdAsync(_db);
 } else {
 _db[posi].count += 1
-fs.writeFileSync('./database/command.json',JSON.stringify(_db, null, 2));
+saveCmdAsync(_db);
 }
 }
 
