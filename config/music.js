@@ -3,36 +3,27 @@
 // 🖼️  THUMBNAIL ANIME RANDOM
 // ==========================================
 
-const BASE_ANIME = 'https://cdn.jsdelivr.net/gh/Asthetic/AnimeBackgrounds@master/'
+const _thumbFallback = 'https://i.ibb.co/TqWTGXVM/474091701-979544940732791-1475207296815939677-n.jpg'
 
-// Semua file di bawah sudah diverifikasi ada di repo (no 404)
-const animeFiles = [
-  '0iIJKQD.jpg',          '0RV5iHG.png',          '0ZkpCE0.png',
-  '0bYF4pa.png',          '0icGBWS.png',           '1004724.png',
-  '1005374.jpg',          '115364036.jpg',          '12ro2yt.jpg',
-  '1307022.jpg',          '1334629815151.jpg',      '1384223872058.jpg',
-  '1392086843219.jpg',    '1392090149023.jpg',      '1397691544922.jpg',
-  '1397691610941.jpg',    '1397700480474.jpg',      '1397716997927.jpg',
-  '1397717273533.jpg',    '1397822926255.jpg',      '1435252821312.jpg',
-  '1437212783083.jpg',    '1446264470612.jpg',      '1453663569229.jpg',
-  '177264.jpg',           '177343.jpg',             '1PzuHbt.jpg',
-  '1en4Ty8.png',          '1kFKNj2.png',            '1mIA3Jf.png',
-  '1wIXARH.png',          '203.jpg',                '08tcen8w74y11.png',
-  '20151129022206617.jpg','20151129022208fbe.jpg',  '1920x1200_285.jpg',
-  '14f6s.jpg',            '148oe.png',              '154ov.png',
-  '114442-plastic-memories-plastic-memories.jpg',
-]
+let _cachedThumb = _thumbFallback
 
-global.thumbnailList = [
-  ...animeFiles.map(f => BASE_ANIME + f),
-  'https://cdn.jsdelivr.net/gh/ThePrimeagen/anime@master/hatsune.jpg',
-  'https://cdn.jsdelivr.net/gh/ThePrimeagen/anime@master/catumbrella.jpg',
-  'https://cdn.jsdelivr.net/gh/AhmadAkbarID/media@main/menu.jpg',
-]
+async function _refreshThumb() {
+  try {
+    const res = await fetch('https://api.waifu.pics/sfw/waifu', {
+      signal: AbortSignal.timeout(5000)
+    })
+    const json = await res.json()
+    if (json && json.url) _cachedThumb = json.url
+  } catch {
+    // tetap pakai cache lama, tidak error
+  }
+}
 
-// Setiap akses global.thumbnail → gambar anime random berganti otomatis
+_refreshThumb()
+setInterval(_refreshThumb, 3 * 60 * 1000)
+
 Object.defineProperty(global, 'thumbnail', {
-  get: () => global.thumbnailList[Math.floor(Math.random() * global.thumbnailList.length)],
+  get: () => _cachedThumb,
   configurable: true,
   enumerable: true
 })
