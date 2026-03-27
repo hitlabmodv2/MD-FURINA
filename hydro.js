@@ -3713,8 +3713,8 @@ const latensi = speed() - timestamp
 const mark = "0@s.whatsapp.net"
 
 //menu image randomizer
-let picaks = [flaming,fluming,flarun,flasmurf]
-let picak = picaks[Math.floor(Math.random() * picaks.length)]
+//let picaks = [flaming,fluming,flarun,flasmurf]
+let picak = global.thumbnail
 
 //emote
 const emote = (satu, dua) => {
