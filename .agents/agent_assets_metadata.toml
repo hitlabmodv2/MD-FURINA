@@ -30,3 +30,9 @@ id = "19tjQfadwyDAspvB_AQUU"
 uri = "file://realtime/isya.png"
 type = "image"
 title = "🌙 Isya - Malam Berbintang dengan Masjid Bercahaya"
+
+[[outputs]]
+id = "fj79B0cPOaxXqs-3Mthdz"
+uri = "file://MD-FURINA.zip"
+type = "unspecified"
+title = "MD-FURINA.zip"
