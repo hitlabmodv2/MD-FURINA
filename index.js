@@ -520,15 +520,15 @@ const _prayerImages = {
     Isya:    './realtime/isya.png',
 }
 
-// Audio azan lokal (tersimpan di realtime/)
-// Subuh: azan_subuh.mp3 (versi dengan "As-sholatu khayrum minan-nawm")
-// Selain Subuh: azan_reguler.mp3
+// URL audio azan realtime (islamcan.com CDN - verified 200 OK)
+// Subuh (azan3): versi panjang - ada kalimat "As-sholatu khayrum minan-nawm"
+// Masing-masing waktu punya suara azan berbeda
 const _prayerAudio = {
-    Subuh:   './realtime/azan_subuh.mp3',
-    Dzuhur:  './realtime/azan_reguler.mp3',
-    Ashar:   './realtime/azan_reguler.mp3',
-    Maghrib: './realtime/azan_reguler.mp3',
-    Isya:    './realtime/azan_reguler.mp3',
+    Subuh:   'https://www.islamcan.com/audio/adhan/azan3.mp3',
+    Dzuhur:  'https://www.islamcan.com/audio/adhan/azan1.mp3',
+    Ashar:   'https://www.islamcan.com/audio/adhan/azan2.mp3',
+    Maghrib: 'https://www.islamcan.com/audio/adhan/azan4.mp3',
+    Isya:    'https://www.islamcan.com/audio/adhan/azan5.mp3',
 }
 
 const _arabicPrayer = {
@@ -604,13 +604,12 @@ setInterval(async () => {
                 try {
                     // Kirim gambar + caption
                     await hydro.sendMessage(chatId, { image: masjidBuf, caption })
-                    // Kirim suara azan sebagai voice note
-                    const audioPath = _prayerAudio[prayer]
-                    if (audioPath && fs.existsSync(audioPath)) {
+                    // Kirim suara azan sebagai voice note (dari URL realtime)
+                    const audioUrl = _prayerAudio[prayer]
+                    if (audioUrl) {
                         try {
-                            const azanBuf = fs.readFileSync(audioPath)
                             await hydro.sendMessage(chatId, {
-                                audio: azanBuf,
+                                audio: { url: audioUrl },
                                 mimetype: 'audio/mpeg',
                                 ptt: true
                             })
