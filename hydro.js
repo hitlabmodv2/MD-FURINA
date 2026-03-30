@@ -1039,6 +1039,13 @@ if (db.users[m.sender].afkTime > -1) {
 
     user.afkTime = -1
     user.afkReason = ''
+    if (global.afkGroupsDB && m.chat && m.sender) {
+        if (global.afkGroupsDB[m.chat] && global.afkGroupsDB[m.chat][m.sender]) {
+            delete global.afkGroupsDB[m.chat][m.sender]
+            if (!Object.keys(global.afkGroupsDB[m.chat]).length) delete global.afkGroupsDB[m.chat]
+            global.saveAfkGroups()
+        }
+    }
 }
 
 		// auto set bio
@@ -36354,6 +36361,9 @@ case 'afk': {
     let user = global.db.users[m.sender]
     user.afkTime = + new Date
     user.afkReason = args.join(" ")
+    if (!global.afkGroupsDB[m.chat]) global.afkGroupsDB[m.chat] = {}
+    global.afkGroupsDB[m.chat][m.sender] = { name: pushname, reason: args.join(" ") || '-', time: +new Date }
+    global.saveAfkGroups()
 
     replyhydro(
 `✅ *Kamu telah AFK!*  
@@ -36364,6 +36374,38 @@ case 'afk': {
 ─────────────────────
 💡 Jangan khawatir, status AFK akan hilang otomatis kalau kamu kirim pesan lagi.
 `.trim())
+}
+break
+case 'listafk': {
+    if (!m.isGroup) return replytolak(mess.only.group)
+    const _afkGroup = global.afkGroupsDB[m.chat] || {}
+    const _afkList = Object.entries(_afkGroup)
+        .sort((a, b) => a[1].time - b[1].time)
+    if (!_afkList.length) return replyhydro('✅ Tidak ada anggota yang sedang AFK di grup ini.')
+    const _nowMs = +new Date
+    let _listText = _afkList.map(([jid, data], idx) => {
+        const dur = _nowMs - data.time
+        const h = Math.floor(dur / 3600000)
+        const mi = Math.floor(dur / 60000) % 60
+        const s = Math.floor(dur / 1000) % 60
+        const durStr = [h, mi, s].map(v => String(v).padStart(2,'0')).join(':')
+        const rank = idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : `${idx+1}.`
+        const alasan = data.reason && data.reason !== '-' ? data.reason : '_Tidak ada alasan_'
+        return `${rank} *${data.name}*\n   💤 Alasan : ${alasan}\n   ⏳ Durasi : ${durStr}`
+    }).join('\n\n')
+    replyhydro(
+`╔══════════════════════╗
+║  😴  *DAFTAR AFK GRUP*  😴  ║
+╚══════════════════════╝
+
+📋 Total AFK : *${_afkList.length} orang*
+⏰ Realtime  : *${require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss') + ' WIB'}*
+
+${_listText}
+
+〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️
+💡 _Urutan berdasarkan siapa yang AFK duluan._`
+    )
 }
 break
 case 'animewall': case 'animewallpaper':

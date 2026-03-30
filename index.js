@@ -63,6 +63,11 @@ function saveAutoSholat() {
     fs.writeFileSync('./database/autosholat.json', JSON.stringify(autoSholatDB, null, 2))}
 global.autoSholatDB = autoSholatDB
 global.saveAutoSholat = saveAutoSholat
+let afkGroupsDB = JSON.parse(fs.readFileSync('./database/afkgroups.json'));
+function saveAfkGroups() {
+    fs.writeFileSync('./database/afkgroups.json', JSON.stringify(afkGroupsDB, null, 2))}
+global.afkGroupsDB = afkGroupsDB
+global.saveAfkGroups = saveAfkGroups
 const { parsePhoneNumber } = require("libphonenumber-js")
 let _welcome = JSON.parse(fs.readFileSync('./database/welcome.json'))
 let _left = JSON.parse(fs.readFileSync('./database/left.json'))
