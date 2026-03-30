@@ -580,30 +580,24 @@ setInterval(async () => {
             const _pesan = _prayerMsg[prayer] || `_Bersegeralah menunaikan sholat tepat waktu._ 🤲`
             const _emo = _prayerEmoji[prayer] || '🕌'
             const caption =
-                `*السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ*\n\n` +
-                `┏━━━━━━━━━━━━━━━━━━━━━┓\n` +
-                `┃   ${_emo}  *P A N G G I L A N  S H O L A T*  ${_emo}   ┃\n` +
-                `┗━━━━━━━━━━━━━━━━━━━━━┛\n\n` +
+                `╔══════════════════╗\n` +
+                `  ${_emo}  *WAKTU SHOLAT*  ${_emo}\n` +
+                `╚══════════════════╝\n\n` +
                 `📅 *${_hariTgl}*\n` +
-                `🕐 *${_jamWib} WIB*\n\n` +
-                `╔══════════════════════╗\n` +
-                `║  🔔 *ADZAN BERKUMANDANG* 🔔  ║\n` +
-                `╠══════════════════════╣\n` +
-                `║                            ║\n` +
-                `║  🕌 *${prayer}*  —  *${_arabicPrayer[prayer] || ''}*  ║\n` +
-                `║  _(${_arabicMeaning[prayer] || ''})_  ║\n` +
-                `║                            ║\n` +
-                `║  ⏰ Waktu : *${waktu} WIB*        ║\n` +
-                `║  📍 Kota  : *${city}* & sekitarnya ║\n` +
-                `║                            ║\n` +
-                `╚══════════════════════╝\n\n` +
+                `🕐 Pukul *${_jamWib} WIB*\n\n` +
+                `┌─────────────────────\n` +
+                `│ ✨ Telah masuk waktu\n` +
+                `│ 🕌 *${prayer}*\n` +
+                `│ _(${_arabicMeaning[prayer] || ''})_\n` +
+                `│ ⏰ Pukul *${waktu} WIB*\n` +
+                `│ 📍 *${city}* & sekitarnya\n` +
+                `└─────────────────────\n\n` +
                 `${_pesan}\n\n` +
-                `▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n` +
-                `🤲 *Semoga Allah SWT menerima sholat kita,*\n` +
-                `*mengampuni segala dosa-dosa kita,*\n` +
-                `*dan memberkahi setiap langkah kita.*\n\n` +
-                `*آمِيْنَ يَا رَبَّ الْعَالَمِيْنَ* 🌊\n` +
-                `▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`
+                `〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n` +
+                `🤲 Semoga Allah SWT menerima sholat kita,\n` +
+                `mengampuni segala dosa-dosa kita,\n` +
+                `dan memberkahi setiap langkah kita.\n\n` +
+                `*Aamiin Ya Rabbal Aalamiin* 🌊`
             for (const [chatId, enabled] of Object.entries(global.autoSholatDB)) {
                 if (!enabled) continue
                 try {
