@@ -808,6 +808,7 @@ hydro.sendPresenceUpdate('unavailable', from)
 
 for (let jid of mentionUser) {
     if (m.key.fromMe) continue
+    if (command === 'afk') continue
     if (jid === m.sender) continue
 
     let user = global.db.users[jid]
