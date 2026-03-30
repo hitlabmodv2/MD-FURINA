@@ -1026,17 +1026,8 @@ function clockString(ms) {
 if (db.users[m.sender].afkTime > -1) {
     let user = global.db.users[m.sender]
 
-    m.reply(
-`✅ *Kamu berhenti AFK!*  
-
-👤 ${pushname} kembali aktif.  
-💤 Alasan sebelumnya : ${user.afkReason ? user.afkReason : '-'}  
-⏳ Durasi AFK : ${clockString(new Date - user.afkTime)}
-
-─────────────────────
-💡 Selamat datang kembali! Selamat beraktifitas.
-`.trim())
-
+    const _afkDurStop = clockString(new Date - user.afkTime)
+    const _afkReasonStop = user.afkReason ? user.afkReason : '-'
     user.afkTime = -1
     user.afkReason = ''
     if (global.afkGroupsDB && m.chat && m.sender) {
@@ -1046,6 +1037,32 @@ if (db.users[m.sender].afkTime > -1) {
             global.saveAfkGroups()
         }
     }
+    const _sisaAfk = Object.entries(global.afkGroupsDB[m.chat] || {}).sort((a,b) => a[1].time - b[1].time)
+    let _sisaText = ''
+    if (_sisaAfk.length > 0) {
+        const nowMs2 = +new Date
+        const _rows = _sisaAfk.map(([jid, d], i) => {
+            const dur2 = nowMs2 - d.time
+            const h2 = Math.floor(dur2/3600000), mi2 = Math.floor(dur2/60000)%60, s2 = Math.floor(dur2/1000)%60
+            const ds = [h2,mi2,s2].map(v=>String(v).padStart(2,'0')).join(':')
+            const rank2 = i===0?'🥇':i===1?'🥈':i===2?'🥉':(i+1)+'.'
+            const al2 = d.reason && d.reason!=='-' ? d.reason : 'tidak ada alasan'
+            return `${rank2} *${d.name}* — ${al2} (${ds})`
+        }).join('\n')
+        _sisaText = `\n\n┌─────────────────────\n│ 😴 *Yang masih AFK di grup:*\n│\n` + _rows.split('\n').map(r=>`│ ${r}`).join('\n') + `\n└─────────────────────`
+    }
+    replyhydro(
+`╔══════════════════════╗
+║   ✅  *KEMBALI AKTIF*   ✅   ║
+╚══════════════════════╝
+
+👤 *\${pushname}* sudah kembali aktif!
+💤 Alasan AFK   : \${_afkReasonStop}
+⏳ Total AFK    : *\${_afkDurStop}*\${_sisaText}
+
+〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️
+💡 _Selamat datang kembali, semangat beraktivitas!_ 🎉
+`.trim())
 }
 
 		// auto set bio
@@ -36365,14 +36382,20 @@ case 'afk': {
     global.afkGroupsDB[m.chat][m.sender] = { name: pushname, reason: args.join(" ") || '-', time: +new Date }
     global.saveAfkGroups()
 
+    const _totalAfkGrup = Object.keys(global.afkGroupsDB[m.chat] || {}).length
     replyhydro(
-`✅ *Kamu telah AFK!*  
+`╔══════════════════════╗
+║   😴  *KAMU MASUK AFK*   😴   ║
+╚══════════════════════╝
 
-👤 ${pushname} sekarang AFK.  
-💤 Alasan : ${args.length ? args.join(" ") : '-'}  
+👤 *\${pushname}* sedang AFK.
+💤 Alasan  : \${args.length ? args.join(\" \") : '_Tidak ada alasan_'}
+🕐 Sejak   : \${require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss') + ' WIB'}
+👥 AFK di grup : *\${_totalAfkGrup} orang* (termasuk kamu)
 
-─────────────────────
-💡 Jangan khawatir, status AFK akan hilang otomatis kalau kamu kirim pesan lagi.
+〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️
+💡 _Status AFK hilang otomatis saat kamu kirim pesan._
+💡 _Ketik_ *.listafk* _untuk lihat siapa saja yang AFK._
 `.trim())
 }
 break
