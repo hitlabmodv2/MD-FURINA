@@ -520,15 +520,29 @@ const _prayerImages = {
     Isya:    './realtime/isya.png',
 }
 
+// Audio azan lokal (tersimpan di realtime/)
+// Subuh: azan_subuh.mp3 (versi dengan "As-sholatu khayrum minan-nawm")
+// Selain Subuh: azan_reguler.mp3
+const _prayerAudio = {
+    Subuh:   './realtime/azan_subuh.mp3',
+    Dzuhur:  './realtime/azan_reguler.mp3',
+    Ashar:   './realtime/azan_reguler.mp3',
+    Maghrib: './realtime/azan_reguler.mp3',
+    Isya:    './realtime/azan_reguler.mp3',
+}
+
 const _arabicPrayer = {
     Subuh: 'الصُّبْح', Dzuhur: 'الظُّهْر', Ashar: 'الْعَصْر', Maghrib: 'الْمَغْرِب', Isya: 'الْعِشَاء'
 }
 const _arabicMeaning = {
-    Subuh:   '_(Fajar — Cahaya pertama sebelum matahari terbit)_',
-    Dzuhur:  '_(Tengah Hari — Saat matahari condong ke barat)_',
-    Ashar:   '_(Petang — Sore menjelang matahari terbenam)_',
-    Maghrib: '_(Senja — Saat matahari terbenam di ufuk barat)_',
-    Isya:    '_(Malam — Kegelapan langit setelah mega merah hilang)_'
+    Subuh:   'Fajar — Cahaya pertama sebelum matahari terbit',
+    Dzuhur:  'Tengah Hari — Saat matahari condong ke barat',
+    Ashar:   'Petang — Sore menjelang matahari terbenam',
+    Maghrib: 'Senja — Saat matahari terbenam di ufuk barat',
+    Isya:    'Malam — Kegelapan langit setelah mega merah hilang'
+}
+const _prayerEmoji = {
+    Subuh: '🌅', Dzuhur: '☀️', Ashar: '🌤️', Maghrib: '🌆', Isya: '🌙'
 }
 
 setInterval(async () => {
@@ -544,11 +558,11 @@ setInterval(async () => {
         const _hariTgl = _nowMoment.locale('id').format('dddd, D MMMM YYYY')
         const _jamWib = _nowMoment.format('HH:mm:ss')
         const _prayerMsg = {
-            Subuh:   `🌅 _Subuh adalah sholat yang paling berat bagi orang munafik,_\n_namun paling mulia bagi orang beriman._\n\n_Bangunlah dari tidurmu, sucikan dirimu,_\n_dan sambut fajar dengan sujud kepada Allah._`,
-            Dzuhur:  `☀️ _Di tengah kesibukan hari ini, berhentilah sejenak._\n_Tinggalkan urusan dunia untuk menghadap Sang Pencipta._\n\n_Sholat Dzuhur adalah pengingat bahwa segala_\n_aktivitasmu hanya bermakna jika dilandasi ibadah._`,
-            Ashar:   `🌤️ _Jaga sholat Ashar dengan sebaik-baiknya,_\n_karena Allah secara khusus menyebutnya sebagai_\n_"sholat wustha" — sholat yang paling utama._\n\n_Jangan biarkan sore harimu berlalu tanpa sujud._`,
-            Maghrib: `🌆 _Matahari telah terbenam, tanda hari hampir usai._\n_Sudahkah kita bersyukur atas nikmat hari ini?_\n\n_Segera tunaikan sholat Maghrib sebelum waktunya habis,_\n_karena waktunya sangat singkat dan mulia._`,
-            Isya:    `🌙 _Sholat Isya adalah penutup ibadah harian kita._\n_Akhiri harimu dengan bersujud kepada Allah,_\n_memohon ampunan dan keberkahan untuk esok hari._\n\n_Jangan biarkan matamu terpejam sebelum menunaikannya._`
+            Subuh:   `_"Subuh adalah sholat yang paling berat bagi orang munafik,_\n_namun paling mulia bagi orang beriman."_\n\n_Bangunlah dari tidurmu, sucikan dirimu,_\n_dan sambut fajar dengan sujud kepada Allah SWT._`,
+            Dzuhur:  `_"Di tengah kesibukan hari ini, berhentilah sejenak."_\n_Tinggalkan urusan dunia untuk menghadap Sang Pencipta._\n\n_Sholat Dzuhur adalah pengingat bahwa segala_\n_aktivitasmu hanya bermakna jika dilandasi ibadah._`,
+            Ashar:   `_"Jagalah sholat Ashar dengan sebaik-baiknya,"_\n_karena Allah secara khusus menyebutnya sebagai_\n_"sholat wustha" — sholat yang paling utama._\n\n_Jangan biarkan sore harimu berlalu tanpa sujud._`,
+            Maghrib: `_"Matahari telah terbenam, tanda hari hampir usai."_\n_Sudahkah kita bersyukur atas nikmat hari ini?_\n\n_Segera tunaikan sholat Maghrib sebelum waktunya habis,_\n_karena waktunya sangat singkat dan mulia._`,
+            Isya:    `_"Sholat Isya adalah penutup ibadah harian kita."_\n_Akhiri harimu dengan bersujud kepada Allah,_\n_memohon ampunan dan keberkahan untuk esok hari._\n\n_Jangan biarkan matamu terpejam sebelum menunaikannya._`
         }
         for (const [prayer, waktu] of Object.entries(times)) {
             if (now !== waktu) continue
@@ -559,30 +573,51 @@ setInterval(async () => {
             if (!fs.existsSync(prayerImgPath)) continue
             const masjidBuf = fs.readFileSync(prayerImgPath)
             const _pesan = _prayerMsg[prayer] || `_Bersegeralah menunaikan sholat tepat waktu._ 🤲`
+            const _emo = _prayerEmoji[prayer] || '🕌'
             const caption =
-                `🕌 *السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ*\n\n` +
-                `╔══════════════════╗\n` +
-                `  🌙 *WAKTU SHOLAT* 🌙\n` +
-                `╚══════════════════╝\n\n` +
+                `*السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ*\n\n` +
+                `┏━━━━━━━━━━━━━━━━━━━━━┓\n` +
+                `┃   ${_emo}  *P A N G G I L A N  S H O L A T*  ${_emo}   ┃\n` +
+                `┗━━━━━━━━━━━━━━━━━━━━━┛\n\n` +
                 `📅 *${_hariTgl}*\n` +
-                `🕐 Pukul *${_jamWib} WIB*\n\n` +
-                `┌─────────────────────\n` +
-                `│ ✨ Telah masuk waktu\n` +
-                `│ 🕌 *${prayer}* — ${_arabicPrayer[prayer] || ''}\n` +
-                `│ ${_arabicMeaning[prayer] || ''}\n` +
-                `│ ⏰ Pukul *${waktu} WIB*\n` +
-                `│ 📍 *${city}* & sekitarnya\n` +
-                `└─────────────────────\n\n` +
+                `🕐 *${_jamWib} WIB*\n\n` +
+                `╔══════════════════════╗\n` +
+                `║  🔔 *ADZAN BERKUMANDANG* 🔔  ║\n` +
+                `╠══════════════════════╣\n` +
+                `║                            ║\n` +
+                `║  🕌 *${prayer}*  —  *${_arabicPrayer[prayer] || ''}*  ║\n` +
+                `║  _(${_arabicMeaning[prayer] || ''})_  ║\n` +
+                `║                            ║\n` +
+                `║  ⏰ Waktu : *${waktu} WIB*        ║\n` +
+                `║  📍 Kota  : *${city}* & sekitarnya ║\n` +
+                `║                            ║\n` +
+                `╚══════════════════════╝\n\n` +
                 `${_pesan}\n\n` +
-                `〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n` +
-                `🤲 _Semoga Allah SWT menerima sholat kita,_\n` +
-                `_mengampuni segala dosa-dosa kita,_\n` +
-                `_dan memberkahi setiap langkah kita._\n\n` +
-                `*آمِيْنَ يَا رَبَّ الْعَالَمِيْنَ* 🌊`
+                `▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n` +
+                `🤲 *Semoga Allah SWT menerima sholat kita,*\n` +
+                `*mengampuni segala dosa-dosa kita,*\n` +
+                `*dan memberkahi setiap langkah kita.*\n\n` +
+                `*آمِيْنَ يَا رَبَّ الْعَالَمِيْنَ* 🌊\n` +
+                `▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`
             for (const [chatId, enabled] of Object.entries(global.autoSholatDB)) {
                 if (!enabled) continue
                 try {
+                    // Kirim gambar + caption
                     await hydro.sendMessage(chatId, { image: masjidBuf, caption })
+                    // Kirim suara azan sebagai voice note
+                    const audioPath = _prayerAudio[prayer]
+                    if (audioPath && fs.existsSync(audioPath)) {
+                        try {
+                            const azanBuf = fs.readFileSync(audioPath)
+                            await hydro.sendMessage(chatId, {
+                                audio: azanBuf,
+                                mimetype: 'audio/mpeg',
+                                ptt: true
+                            })
+                        } catch (audioErr) {
+                            // Audio gagal, tidak masalah — gambar sudah terkirim
+                        }
+                    }
                 } catch (e) {}
             }
             for (const k of Object.keys(_prayerSentToday)) {
