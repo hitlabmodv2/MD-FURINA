@@ -38507,8 +38507,27 @@ reply('tunggu sebentar ya..')
   });
 };
 const hasilny = await getFBInfo(text)
-let vd = `*${hasilny.title}*`
-await hydro.sendMessage(m.chat, {video: {url: hasilny.sd}, caption: vd})
+const _now = new Date()
+const _tgl = _now.toLocaleDateString("id-ID", { weekday: "long", year: "numeric", month: "long", day: "numeric" })
+const _jam = _now.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit", second: "2-digit" })
+let vd = `╔══════════════════════╗
+║  📹  *FACEBOOK VIDEO DL*  ║
+╚══════════════════════╝
+│
+├─▶ 📝 *Judul Video :*
+│   ${hasilny.title || "Tidak tersedia"}
+│
+├─▶ 🕐 *Waktu Download :*
+│   ${_jam} WIB
+│
+├─▶ 📅 *Tanggal :*
+│   ${_tgl}
+│
+├─▶ 🎥 *Kualitas :*
+│   SD Quality
+│
+╰─▶ ✅ *Berhasil diunduh!*`
+await hydro.sendMessage(m.chat, {video: {url: hasilny.sd}, caption: vd}, {quoted: m})
   } catch (error) {
     replyhydro('Yah error kak')
   }
