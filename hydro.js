@@ -816,15 +816,15 @@ for (let jid of mentionUser) {
     let afkTime = user.afkTime
     if (!afkTime || afkTime < 0) continue
     let reason = user.afkReason || ''
-    replyhydro(
-`👤 *${pushname}* jangan tag dia!  
 
-📌 Status: *AFK*  
-💤 Alasan : ${reason ? reason : '-'}  
-⏳ Durasi : ${clockString(new Date - afkTime)}
 
-─────────────────────
-`.trim())
+
+
+
+
+
+
+
 }
 
 const roleFromLevel = (level = 0) => {
