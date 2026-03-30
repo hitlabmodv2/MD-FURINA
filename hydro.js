@@ -1023,7 +1023,7 @@ function clockString(ms) {
   console.log({ms,h,m,s})
   return [h, m, s].map(v => v.toString().padStart(2, 0) ).join(':')
 }
-if (db.users[m.sender].afkTime > -1) {
+if (db.users[m.sender].afkTime > -1 && command !== 'afk') {
     let user = global.db.users[m.sender]
 
     const _afkDurStop = clockString(new Date - user.afkTime)
@@ -1056,9 +1056,9 @@ if (db.users[m.sender].afkTime > -1) {
 ║   ✅  *KEMBALI AKTIF*   ✅   ║
 ╚══════════════════════╝
 
-👤 *\${pushname}* sudah kembali aktif!
-💤 Alasan AFK   : \${_afkReasonStop}
-⏳ Total AFK    : *\${_afkDurStop}*\${_sisaText}
+👤 *${pushname}* sudah kembali aktif!
+💤 Alasan AFK   : ${_afkReasonStop}
+⏳ Total AFK    : *${_afkDurStop}*${_sisaText}
 
 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️
 💡 _Selamat datang kembali, semangat beraktivitas!_ 🎉
