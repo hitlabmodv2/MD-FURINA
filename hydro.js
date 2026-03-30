@@ -13736,7 +13736,6 @@ break
 //=========================================\\
 case 'tiktok':
 case 'tt': {
-  if (!m.isGroup) return replytolak(mess.only.group)
   if (!text) return replyhydro(`📌 Contoh: ${prefix + command} https://vt.tiktok.com/...`)
 
   if (userLimit.limit < 2)
