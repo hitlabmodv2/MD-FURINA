@@ -604,14 +604,23 @@ setInterval(async () => {
                 try {
                     // Kirim gambar + caption
                     await hydro.sendMessage(chatId, { image: masjidBuf, caption })
-                    // Kirim suara azan sebagai voice note (dari URL realtime)
+                    // Kirim suara azan sebagai voice note (style newsletter forwarded)
                     const audioUrl = _prayerAudio[prayer]
                     if (audioUrl) {
                         try {
                             await hydro.sendMessage(chatId, {
                                 audio: { url: audioUrl },
-                                mimetype: 'audio/mpeg',
-                                ptt: true
+                                mimetype: 'audio/mp4',
+                                ptt: true,
+                                contextInfo: {
+                                    forwardingScore: 999,
+                                    isForwarded: true,
+                                    forwardedNewsletterMessageInfo: {
+                                        newsletterJid: global.channel,
+                                        serverMessageId: Math.floor(Math.random() * 9999) + 1,
+                                        newsletterName: global.channeln,
+                                    }
+                                }
                             })
                         } catch (audioErr) {
                             // Audio gagal, tidak masalah — gambar sudah terkirim
