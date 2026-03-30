@@ -36388,10 +36388,10 @@ case 'afk': {
 ║   😴  *KAMU MASUK AFK*   😴   ║
 ╚══════════════════════╝
 
-👤 *\${pushname}* sedang AFK.
-💤 Alasan  : \${args.length ? args.join(\" \") : '_Tidak ada alasan_'}
-🕐 Sejak   : \${require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss') + ' WIB'}
-👥 AFK di grup : *\${_totalAfkGrup} orang* (termasuk kamu)
+👤 *${pushname}* sedang AFK.
+💤 Alasan  : ${args.length ? args.join(" ") : '_Tidak ada alasan_'}
+🕐 Sejak   : ${require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss') + ' WIB'}
+👥 AFK di grup : *${_totalAfkGrup} orang* (termasuk kamu)
 
 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️
 💡 _Status AFK hilang otomatis saat kamu kirim pesan._
