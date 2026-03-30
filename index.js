@@ -563,11 +563,11 @@ setInterval(async () => {
         const _hariTgl = _nowMoment.locale('id').format('dddd, D MMMM YYYY')
         const _jamWib = _nowMoment.format('HH:mm:ss')
         const _prayerMsg = {
-            Subuh:   `_"Subuh adalah sholat yang paling berat bagi orang munafik,_\n_namun paling mulia bagi orang beriman."_\n\n_Bangunlah dari tidurmu, sucikan dirimu,_\n_dan sambut fajar dengan sujud kepada Allah SWT._`,
-            Dzuhur:  `_"Di tengah kesibukan hari ini, berhentilah sejenak."_\n_Tinggalkan urusan dunia untuk menghadap Sang Pencipta._\n\n_Sholat Dzuhur adalah pengingat bahwa segala_\n_aktivitasmu hanya bermakna jika dilandasi ibadah._`,
-            Ashar:   `_"Jagalah sholat Ashar dengan sebaik-baiknya,"_\n_karena Allah secara khusus menyebutnya sebagai_\n_"sholat wustha" — sholat yang paling utama._\n\n_Jangan biarkan sore harimu berlalu tanpa sujud._`,
-            Maghrib: `_"Matahari telah terbenam, tanda hari hampir usai."_\n_Sudahkah kita bersyukur atas nikmat hari ini?_\n\n_Segera tunaikan sholat Maghrib sebelum waktunya habis,_\n_karena waktunya sangat singkat dan mulia._`,
-            Isya:    `_"Sholat Isya adalah penutup ibadah harian kita."_\n_Akhiri harimu dengan bersujud kepada Allah,_\n_memohon ampunan dan keberkahan untuk esok hari._\n\n_Jangan biarkan matamu terpejam sebelum menunaikannya._`
+            Subuh:   `_"Subuh adalah sholat yang paling berat bagi orang munafik,_\n_namun paling mulia bagi orang beriman."_\n\n_Bangunlah dari tidurmu, sucikan dirimu,_\n_dan sambut fajar dengan sujud kepada Allah SWT._\n\n💧 *Tips Wudhu Subuh:*\n_Wudhu di waktu Subuh menyucikan diri dari tidur (hadats kecil)._\n_Gunakan air bersih, niatkan dalam hati karena Allah SWT._\n_Subhanallah — betapa mulianya memulai hari dengan bersuci._`,
+            Dzuhur:  `_"Di tengah kesibukan hari ini, berhentilah sejenak."_\n_Tinggalkan urusan dunia untuk menghadap Sang Pencipta._\n\n_Sholat Dzuhur adalah pengingat bahwa segala_\n_aktivitasmu hanya bermakna jika dilandasi ibadah._\n\n💧 *Tips Wudhu Dzuhur:*\n_Perbarui wudhumu sebelum sholat Dzuhur._\n_Jika wudhu dari Subuh belum batal, boleh digunakan._\n_Namun memperbarui wudhu adalah sunnah yang dianjurkan._`,
+            Ashar:   `_"Jagalah sholat Ashar dengan sebaik-baiknya,"_\n_karena Allah secara khusus menyebutnya sebagai_\n_"sholat wustha" — sholat yang paling utama._\n\n_Jangan biarkan sore harimu berlalu tanpa sujud._\n\n💧 *Tips Wudhu Ashar:*\n_Cek kembali wudhumu sebelum sholat Ashar._\n_Jika sudah batal, segeralah berwudhu dengan sempurna._\n_Allahu Akbar — Allah Maha Besar, layak disambut dengan bersuci._`,
+            Maghrib: `_"Matahari telah terbenam, tanda hari hampir usai."_\n_Sudahkah kita bersyukur atas nikmat hari ini?_\n\n_Segera tunaikan sholat Maghrib sebelum waktunya habis,_\n_karena waktunya sangat singkat dan mulia._\n\n💧 *Tips Wudhu Maghrib:*\n_Waktu Maghrib sangat singkat — segera berwudhu!_\n_Jangan tunda wudhu, karena sholat Maghrib mudah terlewat._\n_Alhamdulillah — syukuri hari ini dengan sholat tepat waktu._`,
+            Isya:    `_"Sholat Isya adalah penutup ibadah harian kita."_\n_Akhiri harimu dengan bersujud kepada Allah,_\n_memohon ampunan dan keberkahan untuk esok hari._\n\n_Jangan biarkan matamu terpejam sebelum menunaikannya._\n\n💧 *Tips Wudhu Isya:*\n_Berwudhu sebelum tidur setelah sholat Isya adalah sunnah._\n_Tidur dalam keadaan berwudhu = tidur dalam keadaan suci._\n_Insya Allah — doa dan tidur kita dijaga oleh Allah SWT._`
         }
         for (const [prayer, waktu] of Object.entries(times)) {
             if (now !== waktu) continue
@@ -593,6 +593,20 @@ setInterval(async () => {
                 `│ 📍 *${city}* & sekitarnya\n` +
                 `└─────────────────────\n\n` +
                 `${_pesan}\n\n` +
+                `┌─────────────────────\n` +
+                `│ 💧 *Tata Cara Wudhu Sebelum Sholat*\n` +
+                `│\n` +
+                `│ 1️⃣ Niat wudhu karena Allah SWT\n` +
+                `│ 2️⃣ Basuh kedua telapak tangan (3x)\n` +
+                `│ 3️⃣ Berkumur & bersihkan hidung (3x)\n` +
+                `│ 4️⃣ Basuh seluruh wajah (3x)\n` +
+                `│ 5️⃣ Basuh tangan hingga siku (3x)\n` +
+                `│ 6️⃣ Usap sebagian kepala (1x)\n` +
+                `│ 7️⃣ Basuh kaki hingga mata kaki (3x)\n` +
+                `│\n` +
+                `│ 🔑 *Wudhu adalah kunci sah-nya sholat*\n` +
+                `│ 🌊 Air yang suci & mensucikan\n` +
+                `└─────────────────────\n\n` +
                 `〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n` +
                 `🤲 Semoga Allah SWT menerima sholat kita,\n` +
                 `mengampuni segala dosa-dosa kita,\n` +
