@@ -1137,7 +1137,7 @@ async function sendhydroMessage(chatId, message, options = {}){
     return await hydro.relayMessage(chatId, generate.message, { messageId: generate.key.id })
 }
 
-const replyhydro = (teks, quotedMsg) => {
+function replyhydro(teks, quotedMsg) {
 hydro.sendMessage(m.chat,
 { text: teks,
 contextInfo:{
