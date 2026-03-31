@@ -31,7 +31,7 @@ This script is created by [Ahmad](https://github.com/AhmadAkbarID) using Node.js
 
 #### 🚀 Deploy to Railway (Recommended)
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/github)
+[![Deploy on Railway](https://img.shields.io/badge/Deploy%20on-Railway-7B3FE4?style=for-the-badge&logo=railway&logoColor=white)](https://railway.com/new/github)
 
 > Klik tombol di atas → pilih repo **MD-FURINA** → Railway otomatis deteksi `Dockerfile` → klik **Deploy**
 
