@@ -81,6 +81,52 @@ const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep, reSize } = require('./lib/myfunc')
 
 const prefix = ''
+
+// =============================================
+// AUTO SYNC DATABASE → GITHUB (REALTIME)
+// =============================================
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+const GITHUB_REPO  = process.env.GITHUB_REPO
+
+async function pushFileToGitHub(filePath) {
+    if (!GITHUB_TOKEN || !GITHUB_REPO) return
+    try {
+        const content = fs.readFileSync(filePath, 'utf-8')
+        const encoded = Buffer.from(content).toString('base64')
+        const apiPath = filePath.replace(/^\.\//, '').replace(/\\/g, '/')
+        const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${apiPath}`
+        let sha = null
+        try {
+            const get = await axios.get(url, { headers: { Authorization: `token ${GITHUB_TOKEN}`, 'User-Agent': 'HydroBot' } })
+            sha = get.data.sha
+        } catch (_) {}
+        await axios.put(url, {
+            message: `sync: update ${apiPath}`,
+            content: encoded,
+            ...(sha ? { sha } : {})
+        }, { headers: { Authorization: `token ${GITHUB_TOKEN}`, 'User-Agent': 'HydroBot' } })
+    } catch (e) {}
+}
+
+const _syncTimers = {}
+function watchAndSync(filePath) {
+    if (!GITHUB_TOKEN || !GITHUB_REPO) return
+    fs.watch(filePath, () => {
+        clearTimeout(_syncTimers[filePath])
+        _syncTimers[filePath] = setTimeout(() => pushFileToGitHub(filePath), 5000)
+    })
+}
+
+if (GITHUB_TOKEN && GITHUB_REPO) {
+    try {
+        const dbFiles = fs.readdirSync('./database').filter(f => f.endsWith('.json'))
+        dbFiles.forEach(f => watchAndSync(`./database/${f}`))
+        watchAndSync('./config.json')
+        console.log('[+] Auto Sync GitHub aktif — database akan sync realtime ke GitHub')
+    } catch (_) {}
+}
+// =============================================
+
 global.db = JSON.parse(fs.readFileSync('./database/database.json'))
 if (global.db) global.db = {
 sticker: {},
