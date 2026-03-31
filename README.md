@@ -31,14 +31,13 @@ This script is created by [Ahmad](https://github.com/AhmadAkbarID) using Node.js
 
 #### 🚀 Deploy to Railway (Recommended)
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template?template=https://github.com/hitlabmodv2/MD-FURINA)
+**Cara Deploy ke Railway:**
 
-**Deploy Manual ke Railway:**
-
-1. Buka [railway.com](https://railway.com) → **New Project** → **Deploy from GitHub repo**
-2. Pilih repo `MD-FURINA`
-3. Railway otomatis deteksi `Dockerfile` → Builder otomatis ke **Dockerfile**
-4. Klik **Deploy**
+1. Buka [railway.com](https://railway.com) → **New Project**
+2. Pilih **Deploy from GitHub repo**
+3. Pilih repo `MD-FURINA`
+4. Railway otomatis deteksi `Dockerfile` → Builder otomatis ke **Dockerfile**
+5. Klik **Deploy**
 
 > ✅ `Dockerfile` sudah include: **Node.js 22**, **ffmpeg**, **libcairo**, **libpango** — semua dependency audio & gambar sudah otomatis ter-install
 
