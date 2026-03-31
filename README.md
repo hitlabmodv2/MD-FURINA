@@ -28,6 +28,29 @@ This script is created by [Ahmad](https://github.com/AhmadAkbarID) using Node.js
 [![Grup WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FvSBEz1UezQ4G7Xwfrr9sF) 
 
 ---
+
+#### 🚀 Deploy to Railway (Recommended)
+
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template?template=https://github.com/hitlabmodv2/MD-FURINA)
+
+**Deploy Manual ke Railway:**
+
+1. Buka [railway.com](https://railway.com) → **New Project** → **Deploy from GitHub repo**
+2. Pilih repo `MD-FURINA`
+3. Railway otomatis deteksi `Dockerfile` → Builder otomatis ke **Dockerfile**
+4. Klik **Deploy**
+
+> ✅ `Dockerfile` sudah include: **Node.js 22**, **ffmpeg**, **libcairo**, **libpango** — semua dependency audio & gambar sudah otomatis ter-install
+
+| Yang Di-install Otomatis | Fungsi |
+|---|---|
+| Node.js 22 | Runtime bot |
+| ffmpeg | Audio VN & konversi suara |
+| libcairo + libpango | Fitur canvas/gambar |
+| npm install | Semua package bot |
+
+---
+
 #### Deploy to Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/AhmadAkbarID/hydro)
 
