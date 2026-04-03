@@ -145,7 +145,7 @@ async function tiktokv3(url) {
                                         title: res.music_info.title,
                                         author: res.music_info.author,
                                         album: res.music_info.album ? res.music_info.album : null,
-                                        url: res.music ? 'https://www.tikwm.com' + res.music : res.music_info.play
+                                        url: (res.music_info?.play && res.music_info.play.startsWith('http')) ? res.music_info.play : (res.music ? 'https://www.tikwm.com' + res.music : null)
                                 },
                                 stats: {
                                         views: formatNumber(res.play_count),

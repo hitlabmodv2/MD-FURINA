@@ -2708,16 +2708,10 @@ if (
             interactiveMessage: {
               body: { 
                 text:
-`╔══════════════════╗
-   📸 *TikTok Slides*
-╚══════════════════╝
-👤 *Author:* ${author}
-📝 *Desc:* ${title}
+`📸 *Tiktok Slides*
+👤 ${author}
+📝 ${title}
 
-━━━━━━━━━━━━━━━━━━
-> 📊 *Views:* ${stats.views} | ❤️ *Likes:* ${stats.likes}
-> 💬 *Komentar:* ${stats.comment} | 🔄 *Share:* ${stats.share}
-━━━━━━━━━━━━━━━━━━
 > Sisa limit: ${userLimit.limit - 2}`
               },
               carouselMessage: {
@@ -2744,16 +2738,14 @@ if (
     await hydro.sendMessage(m.chat, {
       video: { url: videoUrl },
       caption:
-`╔══════════════════╗
-   🎥 *TikTok Video*
-╚══════════════════╝
-👤 *Author:* ${author}
-📝 *Desc:* ${title}
+`🎥 *Tiktok Video*
 
-━━━━━━━━━━━━━━━━━━
-> 📊 *Views:* ${stats.views} | ❤️ *Likes:* ${stats.likes}
-> 💬 *Komentar:* ${stats.comment} | 🔄 *Share:* ${stats.share}
-━━━━━━━━━━━━━━━━━━
+👤 Author: ${author}
+📝 Desc: ${title}
+
+📊 Views: ${stats.views} | ❤️ ${stats.likes}
+💬 ${stats.comment}
+
 > Sisa limit: ${userLimit.limit - 2}`,
       footer: '',
       buttons: [
@@ -13805,16 +13797,11 @@ case 'tt': {
             interactiveMessage: {
               body: {
                 text:
-`╔══════════════════╗
-   📸 *TikTok Slides*
-╚══════════════════╝
-👤 *Author:* ${author}
-📝 *Desc:* ${title}
+`📸 *Tiktok Slides*
+👤 ${author}
+📝 ${title}
+📊 View: ${stats.views} | Like: ${stats.likes}
 
-━━━━━━━━━━━━━━━━━━
-> 📊 *Views:* ${stats.views} | ❤️ *Likes:* ${stats.likes}
-> 💬 *Komentar:* ${stats.comment} | 🔄 *Share:* ${stats.share}
-━━━━━━━━━━━━━━━━━━
 > Sisa limit: ${userLimit.limit - 2}`
               },
               carouselMessage: {
@@ -13841,16 +13828,14 @@ case 'tt': {
     await hydro.sendMessage(m.chat, {
       video: { url: videoUrl },
       caption:
-`╔══════════════════╗
-   🎥 *TikTok Video*
-╚══════════════════╝
-👤 *Author:* ${author}
-📝 *Desc:* ${title}
+`🎥 *Tiktok Video*
 
-━━━━━━━━━━━━━━━━━━
-> 📊 *Views:* ${stats.views} | ❤️ *Likes:* ${stats.likes}
-> 💬 *Komentar:* ${stats.comment} | 🔄 *Share:* ${stats.share}
-━━━━━━━━━━━━━━━━━━
+👤 Author: ${author}
+📝 Desc: ${title}
+
+📊 Views: ${stats.views} | ❤️ ${stats.likes}
+💬 ${stats.comment} | 🔄 ${stats.share}
+
 > Sisa limit: ${userLimit.limit - 2}`,
       footer: '',
       buttons: [
