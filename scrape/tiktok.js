@@ -25,16 +25,24 @@ async function tiktokv3(url) {
 
                         async function expandTikTokUrl(u) {
                                 if (!/https?:\/\/(vt|vm)\.tiktok\.com\//i.test(u)) return u
-                                const r = await axios.get(u, {
-                                        maxRedirects: 10,
-                                        timeout: 20000,
-                                        headers: {
-                                                'User-Agent': 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Mobile Safari/537.36',
-                                                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-                                        },
-                                        validateStatus: s => s >= 200 && s < 400
+                                return new Promise((res) => {
+                                        const https = require('https')
+                                        const req = https.get(u, {
+                                                headers: { 'User-Agent': 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Mobile Safari/537.36' }
+                                        }, (r) => {
+                                                const location = r.headers?.location
+                                                r.resume()
+                                                if (location && /tiktok\.com\/@[^/]+\/video\/\d+/.test(location)) {
+                                                        res(location.split('?')[0])
+                                                } else if (location && location.includes('tiktok.com')) {
+                                                        res(location)
+                                                } else {
+                                                        res(u)
+                                                }
+                                        })
+                                        req.on('error', () => res(u))
+                                        req.setTimeout(15000, () => { req.destroy(); res(u) })
                                 })
-                                return r?.request?.res?.responseUrl || u
                         }
 
                         async function tikwmFetch(form, attempt = 1) {
@@ -229,16 +237,24 @@ async function tiktokv1(url) {
         try {
                 async function expandTikTokUrl(u) {
                         if (!/https?:\/\/(vt|vm)\.tiktok\.com\//i.test(u)) return u
-                        const r = await axios.get(u, {
-                                maxRedirects: 10,
-                                timeout: 20000,
-                                headers: {
-                                        'User-Agent': 'Mozilla/5.0 (Linux; Android 10) Chrome/120 Mobile Safari/537.36',
-                                        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-                                },
-                                validateStatus: s => s >= 200 && s < 400
+                        return new Promise((res) => {
+                                const https = require('https')
+                                const req = https.get(u, {
+                                        headers: { 'User-Agent': 'Mozilla/5.0 (Linux; Android 10) Chrome/120 Mobile Safari/537.36' }
+                                }, (r) => {
+                                        const location = r.headers?.location
+                                        r.resume()
+                                        if (location && /tiktok\.com\/@[^/]+\/video\/\d+/.test(location)) {
+                                                res(location.split('?')[0])
+                                        } else if (location && location.includes('tiktok.com')) {
+                                                res(location)
+                                        } else {
+                                                res(u)
+                                        }
+                                })
+                                req.on('error', () => res(u))
+                                req.setTimeout(15000, () => { req.destroy(); res(u) })
                         })
-                        return r?.request?.res?.responseUrl || u
                 }
 
                 const expanded = await expandTikTokUrl(url)

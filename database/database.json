@@ -774,7 +774,7 @@
       "money": 1000,
       "exp": 0,
       "level": 0,
-      "limit": 97,
+      "limit": 95,
       "freelimit": 0,
       "lastclaim": 0,
       "skata": 0,
@@ -11187,7 +11187,21 @@
       "lastrampok": 0,
       "lastnebang": 0,
       "lastweekly": 0,
-      "lastmonthly": 0
+      "lastmonthly": 0,
+      "petfood": 0,
+      "botol": 0,
+      "kardus": 0,
+      "kaleng": 0,
+      "gelas": 0,
+      "plastik": 0,
+      "panda": 0,
+      "babihutan": 0,
+      "makanan": 0,
+      "bibitanggur": 0,
+      "bibitpisang": 0,
+      "bibitapel": 0,
+      "bibitmangga": 0,
+      "bibitjeruk": 0
     }
   },
   "chats": {
@@ -11281,7 +11295,7 @@
         "6282189076619@s.whatsapp.net": 2,
         "6285799241374@s.whatsapp.net": 1,
         "6285326821295@s.whatsapp.net": 1,
-        "6285163013550@s.whatsapp.net": 1
+        "6285163013550@s.whatsapp.net": 2
       }
     },
     "120363421910941096@g.us": {
@@ -11362,9 +11376,9 @@
     "120363419402989015@g.us": {
       "totalChat": {
         "6289667923162@s.whatsapp.net": 15,
-        "6289681008411@s.whatsapp.net": 10,
-        "120363419402989015@g.us": 15,
-        "6289688206739@s.whatsapp.net": 2
+        "6289681008411@s.whatsapp.net": 13,
+        "120363419402989015@g.us": 22,
+        "6289688206739@s.whatsapp.net": 3
       }
     },
     "120363407696889754@newsletter": {
