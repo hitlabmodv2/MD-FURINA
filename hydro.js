@@ -13863,29 +13863,55 @@ case 'igvideo':
 case 'igimage': 
 case 'igvid': 
 case 'igimg': {
-    if (!text) return m.reply(global.mess.query.link);   
-    if (!text.match(/instagram.com\/(p|reel|tv|stories)/gi)) return m.reply('❌ URL Instagram tidak valid.');
-    await hydro.sendMessage(m.chat, { react: { text: `⏱️`, key: m.key }});
+    if (!text) return m.reply(global.mess.query.link);
+    if (!text.match(/instagram\.com\/(p|reel|tv|stories)/gi)) return m.reply('❌ URL Instagram tidak valid.');
+    await hydro.sendMessage(m.chat, { react: { text: `⏱️`, key: m.key } });
     try {
         const res = await igdl(text);
         if (res.status && res.result && res.result.downloadUrl.length > 0) {
             const { metadata, downloadUrl } = res.result;
-            const cap = `👤 *Username:* ${metadata.username || '-'}\n📝 *Caption:* ${metadata.caption || '-'}\n🌐 *Source:* ${res.source}`;         
+            const cap =
+`╔══════════════════╗
+   📸 *Instagram Media*
+╚══════════════════╝
+👤 *Author:* @${metadata.username || '-'}
+📝 *Caption:* ${metadata.caption || '-'}
+📅 *Tanggal:* ${metadata.date || '-'}
+
+━━━━━━━━━━━━━━━━━━
+> ❤️ *Likes:* ${metadata.likes || '0'} | 💬 *Komentar:* ${metadata.comments || '0'}
+━━━━━━━━━━━━━━━━━━
+> Sisa limit: ${userLimit.limit - 2}`;
+
+            const isImage = (url) => /\.jpg|\.webp|\.png|ftype=jpg/i.test(url);
+            let videoUrl = null;
+
             for (let url of downloadUrl) {
-                if (url.includes('.jpg') || url.includes('.webp') || url.includes('.png') || url.includes('ftype=jpg')) {
-                    await hydro.sendMessage(m.chat, { image: { url: url }, caption: cap }, { quoted: m });
+                if (isImage(url)) {
+                    await hydro.sendMessage(m.chat, { image: { url }, caption: cap }, { quoted: m });
                 } else {
-                    await hydro.sendMessage(m.chat, { video: { url: url }, caption: cap }, { quoted: m });
+                    videoUrl = url;
+                    await hydro.sendMessage(m.chat, { video: { url }, caption: cap }, { quoted: m });
                 }
-            }          
-            await hydro.sendMessage(m.chat, { react: { text: `✅`, key: m.key }});
-            
+            }
+
+            if (videoUrl) {
+                await hydro.sendMessage(m.chat, {
+                    audio: { url: videoUrl },
+                    mimetype: 'audio/mp4',
+                    fileName: 'ig-audio.mp4'
+                }, { quoted: m });
+            }
+
+            await hydro.sendMessage(m.chat, { react: { text: `✅`, key: m.key } });
+            userLimit.limit -= 2;
         } else {
-            await hydro.sendMessage(m.chat, { react: { text: `❌`, key: m.key }});
+            await hydro.sendMessage(m.chat, { react: { text: `❌`, key: m.key } });
             m.reply(global.mess.error.fitur);
         }
     } catch (error) {
-        await hydro.sendMessage(m.chat, { react: { text: `❌`, key: m.key }});
+        console.error('❌ Error igdl:', error.message);
+        await hydro.sendMessage(m.chat, { react: { text: `❌`, key: m.key } });
         m.reply(global.mess.error.fitur);
     }
 }
