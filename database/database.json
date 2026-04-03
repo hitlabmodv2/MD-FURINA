@@ -774,7 +774,7 @@
       "money": 1000,
       "exp": 0,
       "level": 0,
-      "limit": 91,
+      "limit": 89,
       "freelimit": 0,
       "lastclaim": 0,
       "skata": 0,
@@ -11451,9 +11451,9 @@
   "chats": {
     "120363192554714254@g.us": {
       "totalChat": {
-        "120363192554714254@g.us": 186,
-        "6289688206739@s.whatsapp.net": 129,
-        "6289681008411@s.whatsapp.net": 16,
+        "120363192554714254@g.us": 190,
+        "6289688206739@s.whatsapp.net": 131,
+        "6289681008411@s.whatsapp.net": 17,
         "6289667923162@s.whatsapp.net": 74
       }
     },
